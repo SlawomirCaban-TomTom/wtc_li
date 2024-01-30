@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LI-Info-Page", "LI-Info-Page.csproj", "{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}.Debug|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5938BD2-A494-4082-B2A8-77F12300DF89}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = application/x-aspx
+	EndGlobalSection
+EndGlobal
