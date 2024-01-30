@@ -9,7 +9,7 @@
         window.setTimeout(function () {
 
             // Move to a new location or you can do something else
-            window.location.href = "https://wtcadp.azurewebsites.net/wtc/wtc_main.aspx";
+            window.location.href = "https://wtc-li.azurewebsites.net/wtc/wtc_main.aspx";
 
         }, 1500);
 

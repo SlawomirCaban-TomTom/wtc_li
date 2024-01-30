@@ -62,7 +62,7 @@ namespace TomTom_Info_Page.WTC
             {
 
 
-                Response.Redirect("https://wtcadp.azurewebsites.net/wtc/wtc_main.aspx");
+                Response.Redirect("https://wtc-li.azurewebsites.net/wtc/wtc_main.aspx");
             }
 
         }

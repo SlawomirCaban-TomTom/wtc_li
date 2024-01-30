@@ -322,7 +322,7 @@ namespace TomTom_Info_Page.WTC
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("https://wtcadp.azurewebsites.net/WTC/wtc_main.aspx");
+            Response.Redirect("https://wtc-li.azurewebsites.net/WTC/wtc_main.aspx");
         }
         private string ConvertSortDirectionToSql(SortDirection sortDirection)
         {

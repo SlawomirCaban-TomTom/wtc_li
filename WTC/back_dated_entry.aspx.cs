@@ -80,7 +80,7 @@ namespace TomTom_Info_Page.WTC
                 else
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert(' User not started work!')</script>");
-                   // Response.Redirect("https://wtcadp.azurewebsites.net/wtc/wtc_main.aspx");
+                   // Response.Redirect("https://wtc-li.azurewebsites.net/wtc/wtc_main.aspx");
                 }
             }
            

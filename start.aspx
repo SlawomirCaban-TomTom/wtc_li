@@ -17,26 +17,7 @@
     <tr>
                 
                 <td align="center"><asp:Image ID="Image1" runat="server" BorderColor="#FFFF66" BorderStyle="Inset" 
-                        BorderWidth="3px" ImageUrl="~/img/ADP_LODZ.jpg" Height="525px" Width="944px"  />
-                    </tr>
-                    <tr><td>
-                        
-                     
-                       
-                </td>
-            
-        </tr>
-<tr><td>
-                        
-                     
-                       
-                </td>
-            
-        </tr>
-  <tr>
-                
-                <td align="center"><asp:Image ID="Image2" runat="server" BorderColor="#FFFF66" BorderStyle="Inset" 
-                        BorderWidth="3px" ImageUrl="~/img/ADP_PUNE.png" Height="480px" Width="954px"  />
+                        BorderWidth="3px" ImageUrl="~/img/i.jpg" Height="525px" Width="944px"  />
                     </tr>
                     <tr><td>
                         

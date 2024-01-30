@@ -174,14 +174,14 @@
 </tr>
                 <tr>
                     <td class="style2">
-                        <asp:Label runat="server" Text="Search Project:"></asp:Label></td>
+                        <asp:Label runat="server" Text="Search Program:"></asp:Label></td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tb_mask" runat="server" Width="162px" BackColor="#FFFF99" BorderColor="Yellow"></asp:TextBox>
                         <asp:Button runat="server" Text="GO!" OnClick="Unnamed6_Click" ID="btn_go"></asp:Button></td>
                 </tr>
                 <tr>
                     <td class="style2">
-                        <asp:Label runat="server" Text="Search Task:"></asp:Label></td>
+                        <asp:Label runat="server" Text="Search Activity:"></asp:Label></td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tb_task_mask" runat="server" BackColor="#FFFF99" BorderColor="Yellow" Width="162px"></asp:TextBox>
                         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="GO!" />
@@ -189,7 +189,7 @@
                 </tr>
                 <tr>
                     <td class="style2">
-                        <asp:Label runat="server" Text="MPPI Project:"></asp:Label>
+                        <asp:Label runat="server" Text="Program:"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_project" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_project_SelectedIndexChanged" Width="370px">
@@ -204,7 +204,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Feature:"></asp:Label>
+                        <asp:Label runat="server" Text="Activity:"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_task" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_task_SelectedIndexChanged" ToolTip="Please report DPA as main subtask if you are working on DPA projects (unless other reporting rules were set)" Width="370px">
@@ -217,10 +217,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Operation type:" ID="lbl_sub_task"></asp:Label>
+                        <asp:Label runat="server" Text="Operation type:" ID="lbl_sub_task" Visible="false"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
