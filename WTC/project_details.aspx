@@ -73,12 +73,11 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Project"></asp:MenuItem>                           
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Programs"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Program"></asp:MenuItem>                           
               <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
               <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/shift_allowence.aspx" Text="Shift Allowence" Value="Shift Allowence"></asp:MenuItem>
-           </Items>
+                   </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
@@ -96,7 +95,7 @@
 <tr>
 
 <td class="auto-style16">
-<asp:Label runat="server" Text="Project Name:" ></asp:Label>
+<asp:Label runat="server" Text="Program:" ></asp:Label>
 </td>
 <td>
 <asp:Label runat="server" Text="" id ="lbl_p_name" ></asp:Label>
@@ -111,7 +110,7 @@
 <tr>
 
 <td class="auto-style16">
-<asp:Label runat="server" Text="PU:" ></asp:Label>
+<asp:Label runat="server" Text="Requesting Unit:" ></asp:Label>
 <td>
 <asp:Label runat="server" Text="" id ="lbl_pu" ></asp:Label>
 
@@ -136,9 +135,9 @@
     <Columns>
         <asp:BoundColumn DataField="task_type_id" HeaderText="task_type_id" Visible="false">
         </asp:BoundColumn>
-        <asp:BoundColumn DataField="task_type_name" HeaderText="Task Name">
+        <asp:BoundColumn DataField="task_type_name" HeaderText="Activity">
         </asp:BoundColumn>
-        <asp:TemplateColumn HeaderText="Active Task">
+        <asp:TemplateColumn HeaderText="Active/nonActive">
          <ItemTemplate>
                          <asp:radiobuttonlist ID="rb_active" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="rb_active_change">
                                  <asp:ListItem Value="1">Active</asp:ListItem>
@@ -156,10 +155,10 @@
        
 <br />
 <hr />
-<h4><b>Add new feature to project</b></h4>
+<h4><b>Add new activity to Program</b></h4>
     <table>
         <tr>
-            <td class="auto-style7"><strong>Task Name</strong></td>     
+            <td class="auto-style7"><strong>new Activity</strong></td>     
         </tr>
          <tr>
             <td class="auto-style5">
@@ -167,7 +166,7 @@
          </tr>
     </table>
     <br />
-<asp:Button ID="Button1" runat="server" Text="Add new feature" OnClick="Button1_Click" />
+<asp:Button ID="Button1" runat="server" Text="Add new Activity" OnClick="Button1_Click" />
     <br />
 
     <asp:Label runat="server" id="lbl_err" Font-Bold="True" ForeColor="Red" 

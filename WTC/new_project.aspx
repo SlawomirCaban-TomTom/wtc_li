@@ -29,28 +29,27 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Project"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/shift_allowence.aspx" Text="Shift Allowence" Value="Shift Allowence"></asp:MenuItem>
-            </Items>
+              </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
 
-        <h1>Add new Project/Task</h1>
+        <h1>Add new Program</h1>
         <h4>
             <asp:Label runat="server" Text="required format:"></asp:Label>
         </h4>
         <table>
             <tr>
-                <td>project name</td>
+                <td>Program</td>
                 <td>;</td>
-                <td>feature</td>
+                <td>Activity</td>
                 <td>;</td>
-                <td>PU</td>
+                <td>Requesting Unit</td>
                 </tr>
         </table>
         <br />
@@ -122,17 +121,13 @@
         <h4>active values:</h4>
         <table align="left">
             <tr>
-                <td valign="top" align="center">PUs</td>
-                <td valign="top" align="center">Features</td>
-            </tr>
-            <tr>
                 <td valign="top">
                     <asp:GridView ID="gv_pus" runat="server" AutoGenerateColumns="False"
                         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
                         CellPadding="4" DataSourceID="sds_pus"
                         ForeColor="Black" GridLines="Horizontal">
                         <Columns>
-                            <asp:BoundField DataField="pu" HeaderText="PU" SortExpression="pu"></asp:BoundField>
+                            <asp:BoundField DataField="pu" HeaderText="Requesting Unit" SortExpression="pu"></asp:BoundField>
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -149,7 +144,7 @@
                         CellPadding="4" DataSourceID="sds_tools"
                         ForeColor="Black" GridLines="Horizontal">
                         <Columns>
-                            <asp:BoundField DataField="task_type_name" HeaderText="Feature" SortExpression="task_type_name"></asp:BoundField>
+                            <asp:BoundField DataField="task_type_name" HeaderText="Activities" SortExpression="task_type_name"></asp:BoundField>
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

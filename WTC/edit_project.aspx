@@ -23,12 +23,11 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Project"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
              <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                  <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/shift_allowence.aspx" Text="Shift Allowence" Value="Shift Allowence"></asp:MenuItem>
-         
+              
               </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -56,9 +55,9 @@
         <asp:BoundField DataField="project_id" HeaderText="project_id" 
             InsertVisible="False" ReadOnly="True" SortExpression="project_id" 
             Visible="False"></asp:BoundField>
-        <asp:BoundField DataField="project_name" HeaderText="project_name" 
+        <asp:BoundField DataField="project_name" HeaderText="Program" 
             SortExpression="project_name"></asp:BoundField>
-       <asp:BoundField DataField="PU" HeaderText="PU" SortExpression="PU">
+       <asp:BoundField DataField="PU" HeaderText="PU" SortExpression="Requesting Unit">
         </asp:BoundField>
         <asp:HyperLinkField ShowHeader="False" Text="Details" DataNavigateUrlFields="project_id" DataNavigateUrlFormatString="project_details.aspx?ID={0}"></asp:HyperLinkField>
     </Columns>

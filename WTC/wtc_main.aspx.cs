@@ -548,8 +548,8 @@ namespace TomTom_Info_Page.WTC
             Session["project_id"] = ddl_project.SelectedValue;
 
             Session["task_id"] = null;
-            ddl_sub_task.Visible = true;
-            lbl_sub_task.Visible = true;
+            ddl_sub_task.Visible = false;
+            lbl_sub_task.Visible = false;
             ddl_sub_task.Enabled = true;
             Session["sub_task_id"] = null;
         }

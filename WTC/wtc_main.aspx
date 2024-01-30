@@ -42,12 +42,11 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Project"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/shift_allowence.aspx" Text="Shift Allowence" Value="Shift Allowence"></asp:MenuItem>
-         
+               
             </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -226,7 +225,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Description:"></asp:Label>
+                        <asp:Label runat="server" Text="Comment:"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tb_desc" runat="server" Height="23px" MaxLength="50" Width="365px"></asp:TextBox>
