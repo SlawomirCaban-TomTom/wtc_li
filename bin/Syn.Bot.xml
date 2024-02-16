@@ -1248,7 +1248,7 @@
             The context request lifespan.
             </value>
             <remarks>A <see cref="T:Syn.Bot.Oscova.ContextItem"/> is removed after being idle for the specified lifespan.</remarks>
-            <remarks>Default is <c>5</c></remarks>
+            <remarks>Default is <c>2</c></remarks>
         </member>
         <member name="P:Syn.Bot.Oscova.BotConfiguration.ShowIntentInterpretation">
             <summary>
@@ -1329,6 +1329,12 @@
             Gets or sets a value indicating if caching is enabled.
             </summary>
             <remarks>Caching improves performance however requires additional memory. Default value is <c>true</c>.</remarks>
+        </member>
+        <member name="P:Syn.Bot.Oscova.BotConfiguration.RemoveInputContextOnMatch">
+            <summary>
+            Removes the input context of an intent when it is triggered.
+            </summary>
+            <remarks>Default value is <c>true</c></remarks>
         </member>
         <member name="T:Syn.Bot.Oscova.BotStats">
             <summary>
@@ -1940,6 +1946,11 @@
             </summary>
             <param name="entityType">Type of the entity.</param>
         </member>
+        <member name="P:Syn.Bot.Oscova.Collections.RecognizerCollection.RegisteredTypes">
+            <summary>
+            Gets currently registered entity type names.
+            </summary>
+        </member>
         <member name="M:Syn.Bot.Oscova.Collections.RecognizerCollection.IsCompositeType(System.String)">
             <summary>
             Determines whether the specified entity type is composite.
@@ -2021,8 +2032,40 @@
             <summary>
             Creates, adds and returns a trait by Id. If the trait already exists then it returns the instance.
             </summary>
-            <param name="traitId"></param>
+            <param name="traitName"></param>
             <returns></returns>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.ActionParameter.Name">
+            <summary>
+            Parameter Name.
+            </summary>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.ActionParameter.Value">
+            <summary>
+            Parameter Value.
+            </summary>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.ActionParameterCollection.Item(System.String)">
+            <summary>
+            Gets the parameter with the specified name if it exists else returns <seealso cref="F:Syn.Bot.Oscova.Composer.Models.ActionParameter.Empty"/>
+            </summary>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.DialogModel.Name">
+            <summary>
+            The name of the dialog.
+            </summary>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.DialogModel.Domain">
+            <summary>
+            The domain under which the dialog is accessible.
+            </summary>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Composer.Models.EventModel.Name">
+            <summary>
+            Gets or sets the event name.
+            </summary>
         </member>
         <member name="T:Syn.Bot.Oscova.Context">
             <summary>
@@ -2143,6 +2186,11 @@
         <member name="P:Syn.Bot.Oscova.Context.Count">
             <summary>
             Returns the number of context items added.
+            </summary>
+        </member>
+        <member name="P:Syn.Bot.Oscova.Context.ActionParameters">
+            <summary>
+            Gets the collection of parameters passed when target action was called.
             </summary>
         </member>
         <member name="P:Syn.Bot.Oscova.Context.SessionEntities">
@@ -2373,6 +2421,15 @@
             </summary>
             <param name="entityType">Entity name</param>
             <param name="match">Regular expression match instance.</param>
+        </member>
+        <member name="M:Syn.Bot.Oscova.Entities.PatternEntity.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+            <remarks><see cref="P:Syn.Bot.Oscova.Entities.PatternEntity.Value"/> is returned.</remarks>
         </member>
         <member name="T:Syn.Bot.Oscova.Entities.TextEntity">
             <summary>
@@ -3194,6 +3251,24 @@
             <summary>
             Gets the bot statistics.
             </summary>
+        </member>
+        <member name="M:Syn.Bot.Oscova.OscovaBot.ImportAgent(Syn.Bot.Oscova.Composer.BotProject)">
+            <summary>
+            Imports a Bot Project from the instance provided.
+            </summary>
+            <param name="agentProject"></param>
+        </member>
+        <member name="M:Syn.Bot.Oscova.OscovaBot.ImportAgent(System.String)">
+            <summary>
+            Imports a Bot project from the file path provided.
+            </summary>
+            <param name="filePath">The path to the Zip project file.</param>
+        </member>
+        <member name="M:Syn.Bot.Oscova.OscovaBot.ImportAgent(System.Byte[])">
+            <summary>
+            Imports a Bot project from the file stream bytes.
+            </summary>
+            <param name="projectFileData">Array of bytes of the Zip project file.</param>
         </member>
         <member name="M:Syn.Bot.Oscova.OscovaBot.ImportWorkspace(System.String)">
             <summary>
@@ -4114,7 +4189,7 @@
             <param name="entries"></param>
             <param name="reader"></param>
         </member>
-        <member name="M:Syn.Bot.Oscova.Utilities.CsvUtility.ImportEntities(Syn.Bot.Oscova.OscovaBot,System.IO.TextReader)">
+        <member name="M:Syn.Bot.Oscova.Utilities.CsvUtility.GetEntityModels(System.IO.TextReader)">
             <summary>
             Imports Entity Types and their values from a CSV file.
             </summary>

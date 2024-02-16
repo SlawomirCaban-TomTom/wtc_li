@@ -158,6 +158,11 @@
               Looks up a localized string similar to Error occured when reading config secion &apos;{0}&apos;..
             </summary>
         </member>
+        <member name="P:Microsoft.AspNet.SessionState.Resources.SR.Invalid_provider_option">
+            <summary>
+              Looks up a localized string similar to The value for the &apos;{0}&apos; option on provider name &apos;{1}&apos; is invalid..
+            </summary>
+        </member>
         <member name="P:Microsoft.AspNet.SessionState.Resources.SR.Invalid_session_custom_provider">
             <summary>
               Looks up a localized string similar to The custom session state store provider name &apos;{0}&apos; is invalid..
@@ -170,7 +175,7 @@
         </member>
         <member name="P:Microsoft.AspNet.SessionState.Resources.SR.Not_Support_SessionState_Mode">
             <summary>
-              Looks up a localized string similar to SessionStateAsync module only supports InProce and Custom mode..
+              Looks up a localized string similar to SessionStateAsync module only supports InProc and Custom mode..
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.SessionState.Resources.SR.Null_value_for_SessionStateItemCollection">
@@ -391,6 +396,9 @@
             </summary>
             <param name="expireCallback"></param>
             <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNet.SessionState.SessionStateStoreProviderAsyncBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+            <inheritdoc />
         </member>
     </members>
 </doc>

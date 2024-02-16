@@ -4,6 +4,39 @@
         <name>Microsoft.Identity.Web.Certificateless</name>
     </assembly>
     <members>
+        <member name="T:Microsoft.Identity.Web.AzureIdentityForKubernetesClientAssertion">
+            <summary>
+            Gets a signed assertion from Azure workload identity for kubernetes when an app is running in a container
+            in Azure Kubernetes Services. See https://aka.ms/ms-id-web/certificateless and
+            https://learn.microsoft.com/azure/aks/workload-identity-overview
+            </summary>
+        </member>
+        <member name="M:Microsoft.Identity.Web.AzureIdentityForKubernetesClientAssertion.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Gets a signed assertion from Azure workload identity for kubernetes. The file path is provided
+            by an environment variable ("AZURE_FEDERATED_TOKEN_FILE")
+            See https://aka.ms/ms-id-web/certificateless.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Identity.Web.AzureIdentityForKubernetesClientAssertion.#ctor(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Gets a signed assertion from a file.
+            See https://aka.ms/ms-id-web/certificateless.
+            </summary>
+            <param name="filePath">Path to a file containing the signed assertion.</param>
+            <param name="logger">Logger.</param>
+        </member>
+        <member name="M:Microsoft.Identity.Web.AzureIdentityForKubernetesClientAssertion.GetClientAssertion(System.Threading.CancellationToken)">
+            <summary>
+            Get the signed assertion from a file.
+            </summary>
+            <returns>The signed assertion.</returns>
+        </member>
+        <member name="T:Microsoft.Identity.Web.AzureIdentityForKubernetesClientAssertion.Logger">
+            <summary>
+            Performant logging messages.
+            </summary>
+        </member>
         <member name="T:Microsoft.Identity.Web.CertificatelessOptions">
             <summary>
             Options for configuring CertificatelessOptions.
@@ -16,7 +49,7 @@
             </summary>
             The default is <c>false.</c>
         </member>
-        <member name="P:Microsoft.Identity.Web.CertificatelessOptions.ManagedIdentityObjectId">
+        <member name="P:Microsoft.Identity.Web.CertificatelessOptions.ManagedIdentityClientId">
             <summary>
             The value is used to establish a connection between external workload identities
             and Azure Active Directory. If Azure AD is the issuer, this value should be the object
@@ -50,37 +83,32 @@
             Expiry of the client assertion.
             </summary>
         </member>
-        <member name="T:Microsoft.Identity.Web.ClientAssertionDescription">
+        <member name="T:Microsoft.Identity.Web.ClientAssertionProviderBase">
             <summary>
             Description of a client assertion in the application configuration.
             See https://aka.ms/ms-id-web/client-assertions.
             </summary>
         </member>
-        <member name="M:Microsoft.Identity.Web.ClientAssertionDescription.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.Identity.Web.ClientAssertion}})">
+        <member name="M:Microsoft.Identity.Web.ClientAssertionProviderBase.GetClientAssertion(System.Threading.CancellationToken)">
             <summary>
-            Constructor of a ClientAssertionDescription.
+            Gets the Client assertion
             </summary>
-            <param name="clientAssertionProvider">delegate providing the client assertion
-            when it is necessary.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
         </member>
-        <member name="P:Microsoft.Identity.Web.ClientAssertionDescription.ClientAssertionProvider">
-            <summary>
-            delegate to get the client assertion.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Identity.Web.ClientAssertionDescription._clientAssertion">
+        <member name="F:Microsoft.Identity.Web.ClientAssertionProviderBase._clientAssertion">
             <summary>
             Client assertion.
             </summary>
         </member>
-        <member name="M:Microsoft.Identity.Web.ClientAssertionDescription.GetSignedAssertion(System.Threading.CancellationToken)">
+        <member name="M:Microsoft.Identity.Web.ClientAssertionProviderBase.GetSignedAssertion(System.Threading.CancellationToken)">
             <summary>
             Get the signed assertion (and refreshes it if needed).
             </summary>
             <param name="cancellationToken">Cancellation token.</param>
             <returns>The signed assertion.</returns>
         </member>
-        <member name="P:Microsoft.Identity.Web.ClientAssertionDescription.Expiry">
+        <member name="P:Microsoft.Identity.Web.ClientAssertionProviderBase.Expiry">
             <summary>
             Expiry of the client assertion.
             </summary>
@@ -90,45 +118,18 @@
             See https://aka.ms/ms-id-web/certificateless.
             </summary>
         </member>
-        <member name="M:Microsoft.Identity.Web.ManagedIdentityClientAssertion.#ctor">
-            <summary>
-            See https://aka.ms/ms-id-web/certificateless.
-            </summary>
-        </member>
         <member name="M:Microsoft.Identity.Web.ManagedIdentityClientAssertion.#ctor(System.String)">
             <summary>
             See https://aka.ms/ms-id-web/certificateless.
             </summary>
-            <param name="managedIdentityClientId"></param>
+            <param name="managedIdentityClientId">Optional ClientId of the Managed Identity or Workload Identity</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.ManagedIdentityClientAssertion.GetSignedAssertionFromFederatedTokenProvider(System.Threading.CancellationToken)">
+        <member name="M:Microsoft.Identity.Web.ManagedIdentityClientAssertion.GetClientAssertion(System.Threading.CancellationToken)">
             <summary>
             Prototype of certificate-less authentication using a signed assertion
             acquired with managed identity (certificateless).
             </summary>
             <returns>The signed assertion.</returns>
-        </member>
-        <member name="P:Microsoft.Identity.Web.ManagedIdentityClientAssertion.ClientAssertionProvider">
-            <summary>
-            Delegate to get the client assertion.
-            </summary>
-        </member>
-        <member name="F:Microsoft.Identity.Web.ManagedIdentityClientAssertion._clientAssertion">
-            <summary>
-            Client assertion.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Identity.Web.ManagedIdentityClientAssertion.GetSignedAssertion(System.Threading.CancellationToken)">
-            <summary>
-            Get the signed assertion (and refreshes it if needed).
-            </summary>
-            <param name="cancellationToken">Cancellation token.</param>
-            <returns>The signed assertion.</returns>
-        </member>
-        <member name="P:Microsoft.Identity.Web.ManagedIdentityClientAssertion.Expiry">
-            <summary>
-            Expiry of the client assertion.
-            </summary>
         </member>
     </members>
 </doc>

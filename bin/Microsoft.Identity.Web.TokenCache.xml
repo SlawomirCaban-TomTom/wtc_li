@@ -20,6 +20,11 @@
             with the app token cache.
             </summary>
         </member>
+        <member name="P:Microsoft.Identity.Web.TokenCacheProviders.CacheSerializerHints.TelemetryData">
+            <summary>
+            Stores details to log to MSAL's telemetry client
+            </summary>
+        </member>
         <member name="T:Microsoft.Identity.Web.TokenCacheProviders.Distributed.DistributedTokenCacheAdapterExtension">
             <summary>
             Extension class used to add distributed token cache serializer to MSAL.
@@ -119,7 +124,7 @@
             LoggingMessage class for MsalDistributedTokenCacheAdapter.
             </summary>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.MemoryCacheRead(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.MemoryCacheRead(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32)">
             <summary>
             Memory cache read.
             </summary>
@@ -128,7 +133,6 @@
             <param name="operation">Cache operation (Read, Write, etc...).</param>
             <param name="cacheKey">MSAL.NET cache key.</param>
             <param name="cacheSize">Cache size in bytes, or 0 if empty.</param>
-            <param name="ex">Exception.</param>
         </member>
         <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.MemoryCacheRemove(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Exception)">
             <summary>
@@ -140,7 +144,7 @@
             <param name="cacheKey">MSAL.NET cache key.</param>
             <param name="ex">Exception.</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.MemoryCacheCount(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Int32,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.MemoryCacheCount(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Int32)">
             <summary>
             Memory cache count.
             </summary>
@@ -148,9 +152,8 @@
             <param name="cacheType">Distributed or Memory.</param>
             <param name="operation">Cache operation (Read, Write, etc...).</param>
             <param name="count">L1 cache count.</param>
-            <param name="ex">Exception.</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheState(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32,System.Boolean,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheState(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32,System.Boolean)">
             <summary>
             L2 cache state logging.
             </summary>
@@ -160,9 +163,8 @@
             <param name="cacheKey">MSAL.NET cache key.</param>
             <param name="cacheSize">Cache size in bytes, or 0 if empty.</param>
             <param name="inRetry">L2 cache retry due to possible connection issue.</param>
-            <param name="ex">Exception.</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheStateWithTime(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32,System.Boolean,System.Double,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheStateWithTime(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Int32,System.Boolean,System.Double)">
             <summary>
             L2 cache state logging.
             </summary>
@@ -173,7 +175,6 @@
             <param name="cacheSize">Cache size in bytes, or 0 if empty.</param>
             <param name="inRetry">L2 cache retry due to possible connection issue.</param>
             <param name="time">Time in milliseconds.</param>
-            <param name="ex">Exception.</param>
         </member>
         <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheRetry(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Exception)">
             <summary>
@@ -185,7 +186,7 @@
             <param name="cacheKey">MSAL.NET cache key.</param>
             <param name="ex">Exception.</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheReadTime(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Double,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheReadTime(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Double)">
             <summary>
             L2 cache retry.
             </summary>
@@ -193,7 +194,6 @@
             <param name="cacheType">Distributed or Memory.</param>
             <param name="operation">Cache operation (Read, Write, etc...).</param>
             <param name="time">Time in milliseconds.</param>
-            <param name="ex">Exception.</param>
         </member>
         <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.DistributedCacheConnectionError(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Boolean,System.String,System.Exception)">
             <summary>
@@ -206,41 +206,42 @@
             <param name="errorMessage">Error message.</param>
             <param name="ex">Exception.</param>
         </member>
-        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.BackPropagateL2toL1(Microsoft.Extensions.Logging.ILogger,System.Int64,System.Exception)">
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapter.Logger.BackPropagateL2toL1(Microsoft.Extensions.Logging.ILogger,System.Int64)">
             <summary>
             Back propagate L2 to L1.
             </summary>
             <param name="logger">ILogger.</param>
             <param name="cacheSize">Cache size in bytes, or 0 if empty.</param>
-            <param name="ex">Exception.</param>
         </member>
         <member name="T:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions">
             <summary>
             Options for the MSAL token cache serialization adapter,
-            which delegates the serialization to the IDistributedCache implementations
+            which delegates the serialization to the <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache"/> implementations
             available with .NET Core.
             </summary>
         </member>
         <member name="P:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions.L1CacheOptions">
             <summary>
-            Options of the In Memory (L1) cache.
+            Options of the in-memory (L1) cache.
             </summary>
         </member>
         <member name="P:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions.OnL2CacheFailure">
             <summary>
             Callback offered to the app to be notified when the L2 cache fails.
             This way the app is given the possibility to act on the L2 cache,
-            for instance, in the case of Redis, to reconnect. This is left to the application as it's
+            for instance, in the case of Redis exception, to reconnect. This is left to the application as it's
             the only one that knows about the real implementation of the L2 cache.
-            The handler should return <c>true</c> if the cache should try again the operation, and
+            The handler should return <c>true</c> if the cache should try the operation again, and
             <c>false</c> otherwise. When <c>true</c> is passed and the retry fails, an exception
             will be thrown.
             </summary>
         </member>
         <member name="P:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions.L1ExpirationTimeRatio">
             <summary>
-            Value more than 0, less than 1, to set the In Memory (L1) cache
-            expiration time values relative to the Distributed (L2) cache.
+            Value must be more than 0 and less than or equal to 1.
+            Sets the ratio of the in-memory (L1) cache expiration time
+            relative to the distributed (L2) cache (e.g. when set to .5, 
+            the L1 cache entry expiry is half the time of the L2 cache expiry).
             Default is 1.
             </summary>
         </member>
@@ -252,15 +253,15 @@
         </member>
         <member name="P:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions.DisableL1Cache">
             <summary>
-            Disable the L1 (InMemory) cache.
+            Disable the in-memory (L1) cache.
             Useful in scenarios where multiple apps share the same
-            L2 cache.
+            distributed (L2) cache.
             </summary>
             The default is <c>false.</c>
         </member>
         <member name="P:Microsoft.Identity.Web.TokenCacheProviders.Distributed.MsalDistributedTokenCacheAdapterOptions.EnableAsyncL2Write">
             <summary>
-            Enable writing to the L2 cache to be async (fire and forget).
+            Enable writing to the distributed (L2) cache to be async (i.e. fire-and-forget).
             This improves performance as the MSAL.NET will not have to wait
             for the write to complete.
             </summary>
@@ -358,6 +359,14 @@
             <param name="cacheKey">Token cache key.</param>
             <returns>Read Bytes.</returns>
         </member>
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.InMemory.MsalMemoryTokenCacheProvider.ReadCacheBytesAsync(System.String,Microsoft.Identity.Web.TokenCacheProviders.CacheSerializerHints)">
+            <summary>
+            Method to be overridden by concrete cache serializers to Read the cache bytes.
+            </summary>
+            <param name="cacheKey">Cache key.</param>
+            <param name="cacheSerializerHints">Hints for the cache serialization implementation optimization.</param>
+            <returns>Read bytes.</returns>
+        </member>
         <member name="M:Microsoft.Identity.Web.TokenCacheProviders.InMemory.MsalMemoryTokenCacheProvider.WriteCacheBytesAsync(System.String,System.Byte[])">
             <summary>
             Writes a token cache blob to the serialization cache (identified by its key).
@@ -374,6 +383,12 @@
             <param name="bytes">Bytes to write.</param>
             <param name="cacheSerializerHints">Hints for the cache serialization implementation optimization.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that completes when a write operation has completed.</returns>
+        </member>
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.InMemory.MsalMemoryTokenCacheProvider.DetermineCacheEntryExpiry(Microsoft.Identity.Web.TokenCacheProviders.CacheSerializerHints)">
+            <summary>
+            _cacheOptions.AbsoluteExpirationRelativeToNow represents either a user-provided expiration or the default, if not set.
+            Between the suggested expiry and expiry from options, the shorter one takes precedence.
+            </summary>
         </member>
         <member name="T:Microsoft.Identity.Web.TokenCacheProviders.MsalAbstractTokenCacheProvider">
             <summary>
@@ -481,6 +496,13 @@
             <param name="cacheKey">Cache key.</param>
             <param name="cacheSerializerHints">Hints for the cache serialization implementation optimization.</param>
             <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents a completed remove key operation.</returns>
+        </member>
+        <member name="M:Microsoft.Identity.Web.TokenCacheProviders.MsalAbstractTokenCacheProvider.GetSuggestedCacheKey(Microsoft.Identity.Client.TokenCacheNotificationArgs)">
+            <summary>
+            Method to be overridden by concrete cache serializers to express the suggested key.
+            </summary>
+            <param name="args">Parameters used by MSAL call</param>
+            <returns>A string that contains the cache key suggested by MSAL.NET.</returns>
         </member>
         <member name="T:Microsoft.Identity.Web.TokenCacheProviders.MsalAbstractTokenCacheProvider.Logger">
             <summary>
