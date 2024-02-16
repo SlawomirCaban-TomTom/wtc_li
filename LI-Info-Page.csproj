@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -46,200 +45,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Documents and Settings\caban\My Documents\Visual Studio 2008\AjaxControlToolkit.Binary.NET35\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Azure.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Core.1.6.0\lib\net461\Azure.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Azure.Identity, Version=1.3.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Identity.1.3.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
-    </Reference>
-    <Reference Include="Azure.Security.KeyVault.Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Security.KeyVault.Certificates.4.1.0\lib\netstandard2.0\Azure.Security.KeyVault.Certificates.dll</HintPath>
-    </Reference>
-    <Reference Include="Azure.Security.KeyVault.Secrets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Security.KeyVault.Secrets.4.1.0\lib\netstandard2.0\Azure.Security.KeyVault.Secrets.dll</HintPath>
-    </Reference>
     <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\ClosedXML.dll</HintPath>
     </Reference>
-    <Reference Include="Discord.Net.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Discord.Net.Core.2.4.0\lib\net461\Discord.Net.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.Rest, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Discord.Net.Rest.2.4.0\lib\net461\Discord.Net.Rest.dll</HintPath>
-    </Reference>
-    <Reference Include="Discord.Net.WebSocket, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Discord.Net.WebSocket.2.4.0\lib\net461\Discord.Net.WebSocket.dll</HintPath>
-    </Reference>
     <Reference Include="DropDownCheckBoxes">
       <HintPath>C:\Users\caban\Downloads\DropDownCheckBoxes.dll</HintPath>
     </Reference>
-    <Reference Include="Jint, Version=0.0.0.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
-      <HintPath>packages\Jint.2.11.58\lib\net451\Jint.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SessionState.SessionStateModule, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.SessionState.SessionStateModule.1.1.0\lib\Net462\Microsoft.AspNet.SessionState.SessionStateModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=5.0.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNetCore.Cryptography.Internal.5.0.8\lib\net461\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=5.0.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNetCore.DataProtection.5.0.8\lib\net461\Microsoft.AspNetCore.DataProtection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=5.0.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNetCore.DataProtection.Abstractions.5.0.8\lib\net461\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Caching.Memory.5.0.0\lib\net461\Microsoft.Extensions.Caching.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.5.0.0\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.Binder.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.CommandLine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.CommandLine.5.0.0\lib\net461\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.EnvironmentVariables.5.0.0\lib\net461\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.FileExtensions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.Json.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\lib\net461\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.FileProviders.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.FileProviders.Physical.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.FileSystemGlobbing.5.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Hosting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Hosting.5.0.0\lib\net461\Microsoft.Extensions.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Hosting.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.Configuration.5.0.0\lib\net461\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Console, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.Console.5.0.0\lib\net461\Microsoft.Extensions.Logging.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Debug, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.Debug.5.0.0\lib\net461\Microsoft.Extensions.Logging.Debug.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.EventLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.EventLog.5.0.0\lib\net461\Microsoft.Extensions.Logging.EventLog.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.EventSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Logging.EventSource.5.0.0\lib\net461\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Options.ConfigurationExtensions.5.0.0\lib\net461\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Client, Version=4.42.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.4.42.0\lib\net461\Microsoft.Identity.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.16.5.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.2.16.5\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Web, Version=1.25.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Web.1.25.3\lib\net472\Microsoft.Identity.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Web.Certificate, Version=1.25.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Web.Certificate.1.25.3\lib\net472\Microsoft.Identity.Web.Certificate.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Web.Certificateless, Version=1.25.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Web.Certificateless.1.25.3\lib\netstandard2.0\Microsoft.Identity.Web.Certificateless.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Identity.Web.TokenCache, Version=1.25.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Web.TokenCache.1.25.3\lib\net472\Microsoft.Identity.Web.TokenCache.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.23.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.23.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Logging.6.23.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.LoggingExtensions, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.LoggingExtensions.6.23.1\lib\netstandard2.0\Microsoft.IdentityModel.LoggingExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.6.23.1\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.23.1\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.23.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Validators, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Validators.6.23.1\lib\net472\Microsoft.IdentityModel.Validators.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Cors, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Cors.4.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Host.HttpListener.4.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Hosting, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Owin.Hosting.4.1.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.RedisSessionStateProvider, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Web.RedisSessionStateProvider.4.0.1\lib\net462\Microsoft.Web.RedisSessionStateProvider.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -252,74 +71,23 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
-      <HintPath>packages\Pipelines.Sockets.Unofficial.1.0.7\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
-    </Reference>
-    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
-      <HintPath>packages\StackExchange.Redis.2.0.519\lib\net472\StackExchange.Redis.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Bot, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Bot.5.0.0\lib\net461\Syn.Bot.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Bot.Channels, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Bot.Channels.2.5.1\lib\net461\Syn.Bot.Channels.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Oryzer, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Oryzer.1.5.0\lib\net461\Syn.Oryzer.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Platform.2.0.1\lib\net461\Syn.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Utilities, Version=1.7.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Utilities.1.7.5\lib\net461\Syn.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Syn.Workspace, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Syn.Workspace.1.6.0\lib\net461\Syn.Workspace.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.PerformanceCounter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Diagnostics.PerformanceCounter.4.5.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
-    </Reference>
     <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.23.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Interactive.Async, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>packages\System.Interactive.Async.4.0.0\lib\net461\System.Interactive.Async.dll</HintPath>
-    </Reference>
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Pipelines, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.IO.Pipelines.4.5.1\lib\netstandard2.0\System.IO.Pipelines.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Async, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>packages\System.Linq.Async.4.0.0\lib\net461\System.Linq.Async.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -345,23 +113,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.ProtectedData.4.5.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Xml.6.0.1\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
-    </Reference>
     <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Channels, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Channels.4.5.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -370,9 +123,6 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -389,8 +139,307 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Telegram.Bot, Version=15.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Telegram.Bot.15.7.1\lib\net45\Telegram.Bot.dll</HintPath>
+    <Reference Include="System.Web.Cors">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.3.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SessionState.SessionStateModule">
+      <HintPath>packages\Microsoft.AspNet.SessionState.SessionStateModule.2.0.0\lib\Net462\Microsoft.AspNet.SessionState.SessionStateModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal">
+      <HintPath>packages\Microsoft.AspNetCore.Cryptography.Internal.8.0.2\lib\net462\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions">
+      <HintPath>packages\Microsoft.AspNetCore.DataProtection.Abstractions.8.0.2\lib\net462\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>packages\Microsoft.Extensions.FileSystemGlobbing.8.0.0\lib\net462\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Abstractions">
+      <HintPath>packages\Microsoft.Identity.Abstractions.5.1.0\lib\net462\Microsoft.Identity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web.Diagnostics">
+      <HintPath>packages\Microsoft.Identity.Web.Diagnostics.2.17.0\lib\net472\Microsoft.Identity.Web.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.7.3.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.7.3.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>packages\Microsoft.Owin.Cors.4.2.2\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>packages\Microsoft.Owin.Host.HttpListener.4.2.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>packages\Microsoft.Owin.Hosting.4.2.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Utilities">
+      <HintPath>packages\Syn.Utilities.1.7.7\lib\net461\Syn.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Oryzer">
+      <HintPath>packages\Syn.Oryzer.1.6.0\lib\net461\Syn.Oryzer.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Platform">
+      <HintPath>packages\Syn.Platform.2.0.6\lib\net461\Syn.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Workspace">
+      <HintPath>packages\Syn.Workspace.1.7.0\lib\net461\Syn.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Diagnostics.PerformanceCounter">
+      <HintPath>packages\System.Diagnostics.PerformanceCounter.8.0.0\lib\net462\System.Diagnostics.PerformanceCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Esprima">
+      <HintPath>packages\Esprima.3.0.4\lib\net462\Esprima.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint">
+      <HintPath>packages\Jint.3.0.0\lib\net462\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Physical.8.0.0\lib\net462\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Bot">
+      <HintPath>packages\Syn.Bot.6.0.7\lib\net461\Syn.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client">
+      <HintPath>packages\Microsoft.Identity.Client.4.59.0\lib\net462\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs">
+      <HintPath>packages\System.Security.Cryptography.Pkcs.7.0.2\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData">
+      <HintPath>packages\System.Security.Cryptography.ProtectedData.8.0.0\lib\net462\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>packages\System.Security.Cryptography.Xml.8.0.0\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl">
+      <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal">
+      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.4.59.0\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.LoggingExtensions">
+      <HintPath>packages\Microsoft.IdentityModel.LoggingExtensions.7.3.1\lib\netstandard2.0\Microsoft.IdentityModel.LoggingExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>packages\System.IO.Pipelines.8.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipelines.Sockets.Unofficial">
+      <HintPath>packages\Pipelines.Sockets.Unofficial.2.2.8\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Async">
+      <HintPath>packages\System.Linq.Async.6.0.1\lib\net48\System.Linq.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>packages\System.Interactive.Async.6.0.1\lib\net48\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>packages\System.Threading.Channels.8.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>packages\StackExchange.Redis.2.7.17\lib\net472\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.RedisSessionStateProvider">
+      <HintPath>packages\Microsoft.Web.RedisSessionStateProvider.5.0.4\lib\net472\Microsoft.Web.RedisSessionStateProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Discord.Net.Core">
+      <HintPath>packages\Discord.Net.Core.3.13.1\lib\net461\Discord.Net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Discord.Net.Rest">
+      <HintPath>packages\Discord.Net.Rest.3.13.1\lib\net461\Discord.Net.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="Discord.Net.WebSocket">
+      <HintPath>packages\Discord.Net.WebSocket.3.13.1\lib\net461\Discord.Net.WebSocket.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>packages\Microsoft.Extensions.Configuration.8.0.0\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Binder.8.0.1\lib\net462\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine">
+      <HintPath>packages\Microsoft.Extensions.Configuration.CommandLine.8.0.0\lib\net462\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <HintPath>packages\Microsoft.Extensions.Configuration.EnvironmentVariables.8.0.0\lib\net462\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>packages\Microsoft.Extensions.Configuration.FileExtensions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory">
+      <HintPath>packages\Microsoft.Extensions.Caching.Memory.8.0.0\lib\net462\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Diagnostics.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Diagnostics.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Hosting.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection">
+      <HintPath>packages\Microsoft.AspNetCore.DataProtection.8.0.2\lib\net462\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http">
+      <HintPath>packages\Microsoft.Extensions.Http.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug">
+      <HintPath>packages\Microsoft.Extensions.Logging.Debug.8.0.0\lib\net462\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventLog">
+      <HintPath>packages\Microsoft.Extensions.Logging.EventLog.8.0.0\lib\net462\Microsoft.Extensions.Logging.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <HintPath>packages\Microsoft.Extensions.Options.ConfigurationExtensions.8.0.0\lib\net462\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Diagnostics">
+      <HintPath>packages\Microsoft.Extensions.Diagnostics.8.0.0\lib\net462\Microsoft.Extensions.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration">
+      <HintPath>packages\Microsoft.Extensions.Logging.Configuration.8.0.0\lib\net462\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web.TokenCache">
+      <HintPath>packages\Microsoft.Identity.Web.TokenCache.2.17.0\lib\net472\Microsoft.Identity.Web.TokenCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>packages\System.Text.Json.8.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Json.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>packages\Microsoft.Extensions.Configuration.UserSecrets.8.0.0\lib\net462\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>packages\Microsoft.Extensions.Logging.Console.8.0.0\lib\net462\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventSource">
+      <HintPath>packages\Microsoft.Extensions.Logging.EventSource.8.0.0\lib\net462\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting">
+      <HintPath>packages\Microsoft.Extensions.Hosting.8.0.0\lib\net462\Microsoft.Extensions.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.7.3.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.7.3.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.7.3.1\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.7.3.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.7.3.1\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Validators">
+      <HintPath>packages\Microsoft.IdentityModel.Validators.7.3.1\lib\net472\Microsoft.IdentityModel.Validators.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data">
+      <HintPath>packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core">
+      <HintPath>packages\Azure.Core.1.37.0\lib\net472\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity">
+      <HintPath>packages\Azure.Identity.1.10.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Security.KeyVault.Certificates">
+      <HintPath>packages\Azure.Security.KeyVault.Certificates.4.6.0\lib\netstandard2.0\Azure.Security.KeyVault.Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Security.KeyVault.Secrets">
+      <HintPath>packages\Azure.Security.KeyVault.Secrets.4.6.0\lib\netstandard2.0\Azure.Security.KeyVault.Secrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web.Certificateless">
+      <HintPath>packages\Microsoft.Identity.Web.Certificateless.2.17.0\lib\netstandard2.0\Microsoft.Identity.Web.Certificateless.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web.Certificate">
+      <HintPath>packages\Microsoft.Identity.Web.Certificate.2.17.0\lib\net472\Microsoft.Identity.Web.Certificate.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web.TokenAcquisition">
+      <HintPath>packages\Microsoft.Identity.Web.TokenAcquisition.2.17.0\lib\net472\Microsoft.Identity.Web.TokenAcquisition.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Web">
+      <HintPath>packages\Microsoft.Identity.Web.2.17.0\lib\net472\Microsoft.Identity.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Telegram.Bot">
+      <HintPath>packages\Telegram.Bot.19.0.0\lib\netstandard2.0\Telegram.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Bot.Channels">
+      <HintPath>packages\Syn.Bot.Channels.3.1.3\lib\net461\Syn.Bot.Channels.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -617,12 +666,4 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Ten projekt zawiera odwołania do pakietów NuGet, których nie ma na tym komputerze. Użyj przywracania pakietów NuGet, aby je pobrać. Aby uzyskać więcej informacji, zobacz http://go.microsoft.com/fwlink/?LinkID=322105. Brakujący plik: {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets'))" />
-  </Target>
-  <Import Project="packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets" Condition="Exists('packages\Microsoft.Extensions.Configuration.UserSecrets.5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" />
 </Project>

@@ -1,29 +1,37 @@
 ﻿<Properties StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/wtc_main.aspx">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/new_project.aspx">
     <Files>
       <File FileName="web.config" />
       <File FileName="packages.config" />
-      <File FileName="start.aspx" />
-      <File FileName="Master_Page.Master" />
-      <File FileName="WTC/wtc_main.aspx" Line="1" Column="1" />
+      <File FileName="start.aspx" Line="28" Column="14" />
+      <File FileName="Master_Page.Master" Line="1" Column="1" />
+      <File FileName="WTC/wtc_main.aspx" Line="46" Column="113" />
+      <File FileName="Master_Page.Master.designer.cs" Line="1" Column="1" />
+      <File FileName="WTC/wtc_main.aspx.cs" Line="361" Column="48" />
+      <File FileName="WTC/edit_project.aspx" Line="27" Column="113" />
+      <File FileName="WTC/project_details.aspx" Line="140" Column="57" />
+      <File FileName="WTC/new_project.aspx" Line="147" Column="94" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="LI-Info-Page" selected="True">
+          <Node name="LI-Info-Page">
             <Node name="LI-Info-Page">
-              <Node name="WTC" expanded="True" />
+              <Node name="WTC">
+                <Node name="new_project.aspx" selected="True" />
+              </Node>
+              <Node name="Master_Page.Master" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
