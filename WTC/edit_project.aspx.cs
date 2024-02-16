@@ -22,8 +22,7 @@ namespace TomTom_Info_Page.WTC
             if (ddl_pu.SelectedIndex > 0)
                 query = query + " and pu='" + ddl_pu.SelectedItem.Text + "'";
             if (ddl_state.SelectedIndex == 1)
-                query = query + " and a.project_id in (select distinct project_id from int_project_task_type where is_active = 1)";
-
+                query = query + " and a.project_id in (select distinct project_id from int_project_task_type where is_active = 1)
             query = query + " order by project_name";
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
