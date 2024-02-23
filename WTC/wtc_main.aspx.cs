@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 //using System.Globalization;
 namespace TomTom_Info_Page.WTC
 {

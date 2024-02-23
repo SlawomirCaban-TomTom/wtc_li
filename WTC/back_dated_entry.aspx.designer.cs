@@ -120,15 +120,7 @@ namespace TomTom_Info_Page.WTC
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender txtdate_CalendarExtender;
-
-        /// <summary>
-        /// Label22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
+      
         protected global::System.Web.UI.WebControls.Label Label22;
 
         /// <summary>
