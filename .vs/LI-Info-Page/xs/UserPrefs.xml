@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="WTC/edit_project.aspx.cs">
     <Files>
       <File FileName="web.config" />
@@ -17,24 +16,22 @@
       <File FileName="WTC/wtc_main.aspx.cs" />
       <File FileName="WTC/edit_project.aspx" />
       <File FileName="WTC/project_details.aspx" />
-      <File FileName="WTC/edit_project.aspx.cs" Line="25" Column="130" />
+      <File FileName="WTC/edit_project.aspx.cs" Line="22" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LI-Info-Page">
-            <Node name="LI-Info-Page">
-              <Node name="WTC">
-                <Node name="edit_project.aspx" expanded="True">
-                  <Node name="edit_project.aspx.cs" selected="True" />
-                </Node>
-                <Node name="project_details.aspx" expanded="True" />
+            <Node name="LI-Info-Page" expanded="True">
+              <Node name="Packages" expanded="True" selected="True" />
+              <Node name="WTC" expanded="True">
+                <Node name="edit_project.aspx" expanded="True" />
               </Node>
-              <Node name="Master_Page.Master" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
