@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/back_dated_entry.aspx.designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="start.aspx">
     <Files>
-      <File FileName="web.config" />
-      <File FileName="packages.config" />
-      <File FileName="start.aspx" />
+      <File FileName="web.config" Line="46" Column="105" />
+      <File FileName="packages.config" Line="104" Column="12" />
+      <File FileName="start.aspx" Line="1" Column="1" />
       <File FileName="Master_Page.Master" />
       <File FileName="WTC/wtc_main.aspx" />
       <File FileName="Master_Page.Master.designer.cs" />
@@ -12,7 +12,7 @@
       <File FileName="WTC/project_details.aspx" />
       <File FileName="WTC/edit_project.aspx.cs" />
       <File FileName="test.aspx.cs" />
-      <File FileName="start.aspx.cs" />
+      <File FileName="start.aspx.cs" Line="2" Column="1" />
       <File FileName="Master_Page.Master.cs" />
       <File FileName="BotService.aspx.cs" />
       <File FileName="WTC/time.aspx.cs" />
@@ -30,32 +30,13 @@
       <File FileName="WTC/new_project.aspx.cs" />
       <File FileName="WTC/project_details.aspx.cs" />
       <File FileName="WTC/back_dated_entry.aspx.designer.cs" Line="123" Column="7" />
+      <File FileName="start.aspx.designer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="LI-Info-Page">
+          <Node name="LI-Info-Page" selected="True">
             <Node name="LI-Info-Page">
-              <Node name="Service References" expanded="True" />
-              <Node name="TEAMS" expanded="True">
-                <Node name="TEAMS_content.aspx" expanded="True" />
-                <Node name="teams_content2.aspx" expanded="True" />
-              </Node>
-              <Node name="WTC" expanded="True">
-                <Node name="back_dated_entry.aspx" expanded="True">
-                  <Node name="back_dated_entry.aspx.designer.cs" selected="True" />
-                </Node>
-                <Node name="calendar.aspx" expanded="True" />
-                <Node name="edit_project.aspx" expanded="True" />
-                <Node name="enjoy.aspx" expanded="True" />
-                <Node name="history.aspx" expanded="True" />
-                <Node name="leaves_history.aspx" expanded="True" />
-                <Node name="new_project.aspx" expanded="True" />
-                <Node name="project_details.aspx" expanded="True" />
-                <Node name="time.aspx" expanded="True" />
-                <Node name="wtc_main.aspx" expanded="True" />
-              </Node>
-              <Node name="BotService.aspx" expanded="True" />
               <Node name="Master_Page.Master" expanded="True" />
               <Node name="start.aspx" expanded="True" />
               <Node name="test.aspx" expanded="True" />
@@ -65,11 +46,12 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
