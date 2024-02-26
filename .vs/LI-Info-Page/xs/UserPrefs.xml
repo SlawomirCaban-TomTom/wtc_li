@@ -1,9 +1,5 @@
-﻿<Properties NuGet.AddPackagesDialog.IncludePrerelease="True" StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|">
-  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/edit_project.aspx.cs">
+﻿<Properties StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/back_dated_entry.aspx.designer.cs">
     <Files>
       <File FileName="web.config" />
       <File FileName="packages.config" />
@@ -14,22 +10,66 @@
       <File FileName="WTC/wtc_main.aspx.cs" />
       <File FileName="WTC/edit_project.aspx" />
       <File FileName="WTC/project_details.aspx" />
-      <File FileName="WTC/edit_project.aspx.cs" Line="22" Column="42" />
+      <File FileName="WTC/edit_project.aspx.cs" />
+      <File FileName="test.aspx.cs" />
+      <File FileName="start.aspx.cs" />
+      <File FileName="Master_Page.Master.cs" />
+      <File FileName="BotService.aspx.cs" />
+      <File FileName="WTC/time.aspx.cs" />
+      <File FileName="reports/NDE_report.aspx" />
+      <File FileName="reports/NDE_report.aspx.cs" />
+      <File FileName="reports/NDE_report.aspx.designer.cs" />
+      <File FileName="TEAMS/TEAMS_content.aspx" />
+      <File FileName="TEAMS/TEAMS_content.aspx.cs" />
+      <File FileName="TEAMS/teams_content2.aspx.cs" />
+      <File FileName="WTC/back_dated_entry.aspx.cs" />
+      <File FileName="WTC/calendar.aspx.cs" />
+      <File FileName="WTC/enjoy.aspx.cs" />
+      <File FileName="WTC/history.aspx.cs" />
+      <File FileName="WTC/leaves_history.aspx.cs" />
+      <File FileName="WTC/new_project.aspx.cs" />
+      <File FileName="WTC/project_details.aspx.cs" />
+      <File FileName="WTC/back_dated_entry.aspx.designer.cs" Line="123" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LI-Info-Page">
-            <Node name="LI-Info-Page" expanded="True">
-              <Node name="Packages" expanded="True" selected="True" />
-              <Node name="WTC" expanded="True">
-                <Node name="edit_project.aspx" expanded="True" />
+            <Node name="LI-Info-Page">
+              <Node name="Service References" expanded="True" />
+              <Node name="TEAMS" expanded="True">
+                <Node name="TEAMS_content.aspx" expanded="True" />
+                <Node name="teams_content2.aspx" expanded="True" />
               </Node>
+              <Node name="WTC" expanded="True">
+                <Node name="back_dated_entry.aspx" expanded="True">
+                  <Node name="back_dated_entry.aspx.designer.cs" selected="True" />
+                </Node>
+                <Node name="calendar.aspx" expanded="True" />
+                <Node name="edit_project.aspx" expanded="True" />
+                <Node name="enjoy.aspx" expanded="True" />
+                <Node name="history.aspx" expanded="True" />
+                <Node name="leaves_history.aspx" expanded="True" />
+                <Node name="new_project.aspx" expanded="True" />
+                <Node name="project_details.aspx" expanded="True" />
+                <Node name="time.aspx" expanded="True" />
+                <Node name="wtc_main.aspx" expanded="True" />
+              </Node>
+              <Node name="BotService.aspx" expanded="True" />
+              <Node name="Master_Page.Master" expanded="True" />
+              <Node name="start.aspx" expanded="True" />
+              <Node name="test.aspx" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
