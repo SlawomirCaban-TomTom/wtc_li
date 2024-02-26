@@ -37,8 +37,7 @@
         &nbsp;
     </div>
     <form id="form1" runat="server">
-        <cc1:ToolkitScriptManager runat="server"></cc1:ToolkitScriptManager>
-        <a href="/Start.aspx">
+<a href="/Start.aspx">
             <img alt="Local Intelligence Info Page" src="/img/tt_logo.bmp" style="width: 193px; border: 0;" /></a>
         <asp:Label ID="Label1" runat="server" Text="LI Information Page" Style="font-family: Arial, Helvetica, sans-serif; font-size: x-large; font-weight: 600;"></asp:Label>
         <br />
