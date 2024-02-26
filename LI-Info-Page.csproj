@@ -430,6 +430,9 @@
       <HintPath>packages\Syn.Bot.Channels.3.1.3\lib\net461\Syn.Bot.Channels.dll</HintPath>
     </Reference>
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>Service References\AjaxControlToolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BotService.aspx.cs">
@@ -613,6 +616,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Service References\AjaxControlToolkit.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
