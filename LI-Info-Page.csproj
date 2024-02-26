@@ -203,7 +203,7 @@
       <HintPath>packages\Esprima.3.0.4\lib\net462\Esprima.dll</HintPath>
     </Reference>
     <Reference Include="Jint">
-      <HintPath>packages\Jint.3.0.0\lib\net462\Jint.dll</HintPath>
+      <HintPath>packages\Jint.3.0.1\lib\net462\Jint.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Primitives">
       <HintPath>packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>

@@ -254,7 +254,17 @@
         </member>
         <member name="M:Jint.Engine.SetValue(System.String,System.Object)">
             <summary>
-            Registers an object value as variable, creates an interop wrapper when needed..
+            Registers an object value as variable, creates an interop wrapper when needed.
+            </summary>
+        </member>
+        <member name="M:Jint.Engine.SetValue(System.String,System.Type)">
+            <summary>
+            Registers an object value as variable, creates an interop wrapper when needed.
+            </summary>
+        </member>
+        <member name="M:Jint.Engine.SetValue``1(System.String,``0)">
+            <summary>
+            Registers an object value as variable, creates an interop wrapper when needed.
             </summary>
         </member>
         <member name="M:Jint.Engine.ResetCallStack">
@@ -4510,6 +4520,29 @@
             Represents a FunctionInstance wrapping a CLR getter.
             </summary>
         </member>
+        <member name="M:Jint.Runtime.Interop.InteropHelper.IsAssignableToGenericType(System.Type,System.Type)">
+            <summary>
+            resources:
+            https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection
+            https://stackoverflow.com/questions/74616/how-to-detect-if-type-is-another-generic-type/1075059#1075059
+            https://docs.microsoft.com/en-us/dotnet/api/system.type.isconstructedgenerictype?view=net-6.0
+            This can be improved upon - specifically as mentioned in the above MS document:
+            GetGenericParameterConstraints()
+            and array handling - i.e.
+            GetElementType()
+            </summary>
+        </member>
+        <member name="M:Jint.Runtime.Interop.InteropHelper.CalculateMethodParameterScore(Jint.Engine,System.Reflection.ParameterInfo,Jint.Native.JsValue)">
+            <summary>
+            Determines how well parameter type matches target method's type.
+            </summary>
+        </member>
+        <member name="M:Jint.Runtime.Interop.InteropHelper.CalculateMethodScore(Jint.Engine,Jint.Runtime.Interop.MethodDescriptor,Jint.Native.JsValue[])">
+            <summary>
+            Method's match score tells how far away it's from ideal candidate. 0 = ideal, bigger the the number,
+            the farther away the candidate is from ideal match. Negative signals impossible match.
+            </summary>
+        </member>
         <member name="T:Jint.Runtime.Interop.IObjectConverter">
             <summary>
             When implemented, converts a CLR value to a <see cref="T:Jint.Native.JsValue"/> instance
@@ -4618,6 +4651,16 @@
         <member name="T:Jint.Runtime.Interop.SetterFunction">
             <summary>
             Represents a FunctionInstance wrapping a CLR setter.
+            </summary>
+        </member>
+        <member name="P:Jint.Runtime.Interop.TypeDescriptor.IsIntegerIndexed">
+            <summary>
+            Is this read-write indexed.
+            </summary>
+        </member>
+        <member name="P:Jint.Runtime.Interop.TypeDescriptor.IntegerIndexerProperty">
+            <summary>
+            Read-write indexer.
             </summary>
         </member>
         <member name="T:Jint.Runtime.Interop.TypeResolver">
@@ -4752,7 +4795,7 @@
             https://tc39.es/ecma262/#sec-asyncblockstart
             </summary>
         </member>
-        <member name="M:Jint.Runtime.Interpreter.JintFunctionDefinition.EvaluateGeneratorBody(Jint.Native.Function.Function,Jint.Native.JsValue[])">
+        <member name="M:Jint.Runtime.Interpreter.JintFunctionDefinition.EvaluateGeneratorBody(Jint.Runtime.Interpreter.EvaluationContext,Jint.Native.Function.Function,Jint.Native.JsValue[])">
             <summary>
             https://tc39.es/ecma262/#sec-runtime-semantics-evaluategeneratorbody
             </summary>
@@ -5574,209 +5617,9 @@
             https://tc39.es/ecma262/#sec-isintegralnumber
             </summary>
         </member>
-        <member name="M:Jint.Runtime.TypeConverter.CalculateMethodScore(Jint.Engine,Jint.Runtime.Interop.MethodDescriptor,Jint.Native.JsValue[])">
-            <summary>
-            Method's match score tells how far away it's from ideal candidate. 0 = ideal, bigger the the number,
-            the farther away the candidate is from ideal match. Negative signals impossible match.
-            </summary>
-        </member>
-        <member name="M:Jint.Runtime.TypeConverter.IsAssignableToGenericType(System.Type,System.Type)">
-            <summary>
-            resources:
-            https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection
-            https://stackoverflow.com/questions/74616/how-to-detect-if-type-is-another-generic-type/1075059#1075059
-            https://docs.microsoft.com/en-us/dotnet/api/system.type.isconstructedgenerictype?view=net-6.0
-            This can be improved upon - specifically as mentioned in the above MS document:
-            GetGenericParameterConstraints()
-            and array handling - i.e.
-            GetElementType()
-            </summary>
-        </member>
-        <member name="M:Jint.Runtime.TypeConverter.CalculateMethodParameterScore(Jint.Engine,System.Reflection.ParameterInfo,Jint.Native.JsValue)">
-            <summary>
-            Determines how well parameter type matches target method's type.
-            </summary>
-        </member>
         <member name="T:Jint.Runtime.TypeErrorException">
             <summary>
             Workaround for situation where engine is not easily accessible.
-            </summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
-            <summary>
-            Reserved to be used by the compiler for tracking metadata.
-            This class should not be used by developers in source code.
-            </summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.AsyncMethodBuilderAttribute">
-            <summary>
-            Indicates the type of the async method builder that should be used by a language compiler to
-            build the attributed async method or to build the attributed type when used as the return type
-            of an async method.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderAttribute.#ctor(System.Type)">
-            <summary>Initializes the <see cref="T:System.Runtime.CompilerServices.AsyncMethodBuilderAttribute"/>.</summary>
-            <param name="builderType">The <see cref="T:System.Type"/> of the associated builder.</param>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.AsyncMethodBuilderAttribute.BuilderType">
-            <summary>Gets the <see cref="T:System.Type"/> of the associated builder.</summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
-            <summary>
-            An attribute that allows parameters to receive the expression of other parameters.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"/> class.
-            </summary>
-            <param name="parameterName">The condition parameter value.</param>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.ParameterName">
-            <summary>
-            Gets the parameter name the expression is retrieved from.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.CollectionBuilderAttribute.#ctor(System.Type,System.String)">
-            <summary>
-            Initialize the attribute to refer to the <paramref name="methodName"/> method on the <paramref name="builderType"/> type.
-            </summary>
-            <param name="builderType">The type of the builder to use to construct the collection.</param>
-            <param name="methodName">The name of the method on the builder to use to construct the collection.</param>
-            <remarks>
-            <paramref name="methodName"/> must refer to a static method that accepts a single parameter of
-            type <see cref="T:System.ReadOnlySpan`1"/> and returns an instance of the collection being built containing
-            a copy of the data from that span.  In future releases of .NET, additional patterns may be supported.
-            </remarks>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.BuilderType">
-            <summary>
-            Gets the type of the builder to use to construct the collection.
-            </summary>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.MethodName">
-            <summary>
-            Gets the name of the method on the builder to use to construct the collection.
-            </summary>
-            <remarks>
-            This should match the metadata name of the target method.
-            For example, this might be ".ctor" if targeting the type's constructor.
-            </remarks>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
-            <summary>
-            Indicates that compiler support for a particular feature is required for the location where this attribute is applied.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
-            <summary>
-            Creates a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute"/> type.
-            </summary>
-            <param name="featureName">The name of the feature to indicate.</param>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName">
-            <summary>
-            The name of the compiler feature.
-            </summary>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.IsOptional">
-            <summary>
-            If true, the compiler can choose to allow access to the location where this attribute is applied if it does not understand <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/>.
-            </summary>
-        </member>
-        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RefStructs">
-            <summary>
-            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the ref structs C# feature.
-            </summary>
-        </member>
-        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RequiredMembers">
-            <summary>
-            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the required members C# feature.
-            </summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute">
-            <summary>
-            Indicates which arguments to a method involving an interpolated string handler should be passed to that handler.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute"/> class.
-            </summary>
-            <param name="argument">The name of the argument that should be passed to the handler.</param>
-            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
-        </member>
-        <member name="M:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.#ctor(System.String[])">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute"/> class.
-            </summary>
-            <param name="arguments">The names of the arguments that should be passed to the handler.</param>
-            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
-        </member>
-        <member name="P:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.Arguments">
-            <summary>
-            Gets the names of the arguments that should be passed to the handler.
-            </summary>
-            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.InterpolatedStringHandlerAttribute">
-            <summary>
-            Indicates the attributed type is to be used as an interpolated string handler.
-            </summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.ModuleInitializerAttribute">
-             <summary>
-             Used to indicate to the compiler that a method should be called
-             in its containing module's initializer.
-             </summary>
-             <remarks>
-             When one or more valid methods
-             with this attribute are found in a compilation, the compiler will
-             emit a module initializer which calls each of the attributed methods.
-            
-             Certain requirements are imposed on any method targeted with this attribute:
-             - The method must be `static`.
-             - The method must be an ordinary member method, as opposed to a property accessor, constructor, local function, etc.
-             - The method must be parameterless.
-             - The method must return `void`.
-             - The method must not be generic or be contained in a generic type.
-             - The method's effective accessibility must be `internal` or `public`.
-            
-             The specification for module initializers in the .NET runtime can be found here:
-             https://github.com/dotnet/runtime/blob/main/docs/design/specs/Ecma-335-Augments.md#module-initializer
-             </remarks>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
-            <summary>
-            Specifies that a type has required members or that a member is required.
-            </summary>
-        </member>
-        <member name="T:System.Runtime.CompilerServices.RequiresLocationAttribute">
-            <summary>
-            Reserved for use by a compiler for tracking metadata.
-            This attribute should not be used by developers in source code.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute"/> class.
-            </summary>
-        </member>
-        <member name="M:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute"/> class with the specified message.
-            </summary>
-            <param name="message">An optional message associated with this attribute instance.</param>
-        </member>
-        <member name="P:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.Message">
-            <summary>
-            Returns the optional message associated with this attribute instance.
-            </summary>
-        </member>
-        <member name="P:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.Url">
-            <summary>
-            Returns the optional URL associated with this attribute instance.
             </summary>
         </member>
         <member name="M:System.Text.ValueStringBuilder.GetPinnableReference">
@@ -5812,40 +5655,6 @@
             Number of chars requested beyond current position.
             </param>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
-            <summary>
-            Specifies that null is allowed as an input even if the corresponding type disallows it.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
-            <summary>
-            Specifies that null is disallowed as an input even if the corresponding type allows it.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
-            <summary>
-            Applied to a method that will never return under any circumstance.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
-            <summary>
-            Specifies that the method will not return if the associated Boolean parameter is passed the specified value.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
-            <summary>
-            Initializes the attribute with the specified parameter value.
-            </summary>
-            <param name="parameterValue">
-            The condition parameter value. Code after the method will be considered unreachable
-            by diagnostics if the argument to the associated parameter matches this value.
-            </param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
-            <summary>
-            Gets the condition parameter value.
-            </summary>
-        </member>
         <member name="T:System.Diagnostics.CodeAnalysis.ExperimentalAttribute">
             <summary>
             Indicates that an API is experimental and it may change in the future.
@@ -5879,115 +5688,6 @@
             </summary>
             <value>The format string that represents a URL to corresponding documentation.</value>
             <remarks>An example format string is <c>https://contoso.com/obsoletion-warnings/{0}</c>.</remarks>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
-            <summary>
-            Specifies that an output may be null even if the corresponding type disallows it.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
-            <summary>
-            Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
-            <summary>
-            Initializes the attribute with the specified return value condition.
-            </summary>
-            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter may be null.</param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
-            <summary>
-            Gets the return value condition.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
-            <summary>
-            Specifies that the method or property will ensure that the listed field and property members have not-null values.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String)">
-            <summary>
-            Initializes the attribute with a field or property member.
-            </summary>
-            <param name="member">The field or property member that is promised to be not-null.</param>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String[])">
-            <summary>
-            Initializes the attribute with the list of field and property members.
-            </summary>
-            <param name="members">The list of field and property members that are promised to be not-null.</param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.Members">
-            <summary>
-            Gets field or property member names.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
-            <summary>
-            Specifies that the method or property will ensure that the listed field and property
-            members have not-null values when returning with the specified return value condition.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
-            <summary>
-            Initializes the attribute with the specified return value condition and a field or property member.
-            </summary>
-            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
-            <param name="member">The field or property member that is promised to be not-null.</param>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
-            <summary>
-            Initializes the attribute with the specified return value condition and list of field and property members.
-            </summary>
-            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
-            <param name="members">The list of field and property members that are promised to be not-null.</param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
-            <summary>
-            Gets the return value condition.
-            </summary>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
-            <summary>
-            Gets field or property member names.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
-            <summary>
-            Specifies that an output will not be null even if the corresponding type allows it.
-            Specifies that an input argument was not null when the call returns.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
-            <summary>
-            Specifies that the output will be non-null if the named parameter is non-null.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
-            <summary>
-            Initializes the attribute with the associated parameter name.
-            </summary>
-            <param name="parameterName">The associated parameter name. The output will be non-null if the argument to the parameter specified is non-null.</param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
-            <summary>
-            Gets the associated parameter name.
-            </summary>
-        </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
-            <summary>
-            Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.
-            </summary>
-        </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
-            <summary>
-            Initializes the attribute with the specified return value condition.
-            </summary>
-            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
-        </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
-            <summary>Gets the return value condition.</summary>
         </member>
         <member name="T:System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute">
             <summary>
@@ -6079,70 +5779,245 @@
             </para>
             </remarks>
         </member>
-        <member name="T:System.Index">
-            <summary>Represent a type can be used to index a collection either from the start or the end.</summary>
+        <member name="T:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute">
+            <summary>
+            Indicates that the specified method requires the ability to generate new code at runtime,
+            for example through <see cref="N:System.Reflection"/>.
+            </summary>
             <remarks>
-            Index is used by the C# compiler to support the new index syntax
-            <code>
-            int[] someArray = new int[5] { 1, 2, 3, 4, 5 } ;
-            int lastElement = someArray[^1]; // lastElement = 5
+            This allows tools to understand which methods are unsafe to call when compiling ahead of time.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute"/> class
+            with the specified message.
+            </summary>
+            <param name="message">
+            A message that contains information about the usage of dynamic code.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.Message">
+            <summary>
+            Gets a message that contains information about the usage of dynamic code.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.RequiresDynamicCodeAttribute.Url">
+            <summary>
+            Gets or sets an optional URL that contains more information about the method,
+            why it requires dynamic code, and what options a consumer has to deal with it.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CollectionBuilderAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initialize the attribute to refer to the <paramref name="methodName"/> method on the <paramref name="builderType"/> type.
+            </summary>
+            <param name="builderType">The type of the builder to use to construct the collection.</param>
+            <param name="methodName">The name of the method on the builder to use to construct the collection.</param>
+            <remarks>
+            <paramref name="methodName"/> must refer to a static method that accepts a single parameter of
+            type <see cref="T:System.ReadOnlySpan`1"/> and returns an instance of the collection being built containing
+            a copy of the data from that span.  In future releases of .NET, additional patterns may be supported.
+            </remarks>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.BuilderType">
+            <summary>
+            Gets the type of the builder to use to construct the collection.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.MethodName">
+            <summary>
+            Gets the name of the method on the builder to use to construct the collection.
+            </summary>
+            <remarks>
+            This should match the metadata name of the target method.
+            For example, this might be ".ctor" if targeting the type's constructor.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
+            <summary>
+            Indicates that compiler support for a particular feature is required for the location where this attribute is applied.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute"/> type.
+            </summary>
+            <param name="featureName">The name of the feature to indicate.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName">
+            <summary>
+            The name of the compiler feature.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.IsOptional">
+            <summary>
+            If true, the compiler can choose to allow access to the location where this attribute is applied if it does not understand <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/>.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RefStructs">
+            <summary>
+            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the ref structs C# feature.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RequiredMembers">
+            <summary>
+            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the required members C# feature.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
+            <summary>
+            Specifies that a type has required members or that a member is required.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.DisableRuntimeMarshallingAttribute">
+             <summary>
+             Disables the built-in runtime managed/unmanaged marshalling subsystem for
+             P/Invokes, Delegate types, and unmanaged function pointer invocations.
+             </summary>
+             <remarks>
+             The built-in marshalling subsystem has some behaviors that cannot be changed due to
+             backward-compatibility requirements. This attribute allows disabling the built-in
+             subsystem and instead uses the following rules for P/Invokes, Delegates,
+             and unmanaged function pointer invocations:
+            
+             - All value types that do not contain reference type fields recursively (<c>unmanaged</c> in C#) are blittable
+             - Value types that recursively have any fields that have <c>[StructLayout(LayoutKind.Auto)]</c> are disallowed from interop.
+             - All reference types are disallowed from usage in interop scenarios.
+             - SetLastError support in P/Invokes is disabled.
+             - varargs support is disabled.
+             - LCIDConversionAttribute support is disabled.
+             </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.UnsafeAccessorAttribute">
+             <summary>
+             Provides access to an inaccessible member of a specific type.
+             </summary>
+             <remarks>
+             This attribute may be applied to an <code>extern static</code> method.
+             The implementation of the <code>extern static</code> method annotated with
+             this attribute will be provided by the runtime based on the information in
+             the attribute and the signature of the method that the attribute is applied to.
+             The runtime will try to find the matching method or field and forward the call
+             to it. If the matching method or field is not found, the body of the <code>extern</code>
+             method will throw <see cref="T:System.MissingFieldException" /> or <see cref="T:System.MissingMethodException" />.
+             Only the specific type defined will be examined for inaccessible members. The type hierarchy
+             is not walked looking for a match.
+            
+             For <see cref="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Method"/>,
+             <see cref="F:System.Runtime.CompilerServices.UnsafeAccessorKind.StaticMethod"/>,
+             <see cref="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Field"/>,
+             and <see cref="F:System.Runtime.CompilerServices.UnsafeAccessorKind.StaticField"/>, the type of
+             the first argument of the annotated <code>extern</code> method identifies the owning type.
+             The value of the first argument is treated as <code>this</code> pointer for instance fields and methods.
+             The first argument must be passed as <code>ref</code> for instance fields and methods on structs.
+             The value of the first argument is not used by the implementation for <code>static</code> fields and methods.
+            
+             Return type is considered for the signature match. modreqs and modopts are initially not considered for
+             the signature match. However, if an ambiguity exists ignoring modreqs and modopts, a precise match
+             is attempted. If an ambiguity still exists <see cref="T:System.Reflection.AmbiguousMatchException" /> is thrown.
+            
+             By default, the attributed method's name dictates the name of the method/field. This can cause confusion
+             in some cases since language abstractions, like C# local functions, generate mangled IL names. The
+             solution to this is to use the <code>nameof</code> mechanism and define the <see cref="P:System.Runtime.CompilerServices.UnsafeAccessorAttribute.Name"/> property.
+            
+             <code>
+             public void Method(Class c)
+             {
+                 PrivateMethod(c);
+            
+                 [UnsafeAccessor(UnsafeAccessorKind.Method, Name = nameof(PrivateMethod))]
+                 extern static void PrivateMethod(Class c);
+             }
+             </code>
+             </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.UnsafeAccessorAttribute.#ctor(System.Runtime.CompilerServices.UnsafeAccessorKind)">
+            <summary>
+            Instantiates an <see cref="T:System.Runtime.CompilerServices.UnsafeAccessorAttribute"/>
+            providing access to a member of kind <see cref="T:System.Runtime.CompilerServices.UnsafeAccessorKind"/>.
+            </summary>
+            <param name="kind">The kind of the target to which access is provided.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.UnsafeAccessorAttribute.Kind">
+            <summary>
+            Gets the kind of member to which access is provided.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.UnsafeAccessorAttribute.Name">
+            <summary>
+            Gets or sets the name of the member to which access is provided.
+            </summary>
+            <remarks>
+            The name defaults to the annotated method name if not specified.
+            The name must be unset/<code>null</code> for <see cref="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Constructor"/>.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.UnsafeAccessorKind">
+            <summary>
+            Specifies the kind of target to which an <see cref="T:System.Runtime.CompilerServices.UnsafeAccessorAttribute" /> is providing access.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Constructor">
+            <summary>
+            Provide access to a constructor.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Method">
+            <summary>
+            Provide access to a method.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.UnsafeAccessorKind.StaticMethod">
+            <summary>
+            Provide access to a static method.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.UnsafeAccessorKind.Field">
+            <summary>
+            Provide access to a field.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.UnsafeAccessorKind.StaticField">
+            <summary>
+            Provide access to a static field.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices2.InlineArrayAttribute">
+            <summary>
+            Indicates that the instance's storage is sequentially replicated "length" times.
+            </summary>
+            <remarks>
+            <para>
+            This attribute can be used to annotate a <see langword="struct"/> type with a single field.
+            The runtime will replicate that field in the actual type layout as many times as is specified.
+            </para>
+            <para>
+            Here's an example of how an inline array type with 8 <see cref="T:System.Single"/> values can be declared:
+            <code lang="csharp">
+            [InlineArray(8)]
+            struct Float8InlineArray
+            {
+                private float _value;
+            }
             </code>
+            </para>
             </remarks>
         </member>
-        <member name="M:System.Index.#ctor(System.Int32,System.Boolean)">
-            <summary>Construct an Index using a value and indicating if the index is from the start or from the end.</summary>
-            <param name="value">The index value. it has to be zero or positive number.</param>
-            <param name="fromEnd">Indicating if the index is from the start or from the end.</param>
+        <member name="M:System.Runtime.CompilerServices2.InlineArrayAttribute.#ctor(System.Int32)">
+            <summary>Creates a new <see cref="T:System.Runtime.CompilerServices2.InlineArrayAttribute"/> instance with the specified length.</summary>
+            <param name="length">The number of sequential fields to replicate in the inline array type.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices2.InlineArrayAttribute.Length">
+            <summary>Gets the number of sequential fields to replicate in the inline array type.</summary>
+        </member>
+        <member name="T:System.Runtime.Versioning.ObsoletedOSPlatformAttribute">
+            <summary>
+            Marks APIs that were obsoleted in a given operating system version.
+            </summary>
             <remarks>
-            If the Index constructed from the end, index value 1 means pointing at the last element and index value 0 means pointing at beyond last element.
+            Primarily used by OS bindings to indicate APIs that should not be used anymore.
             </remarks>
-        </member>
-        <member name="P:System.Index.Start">
-            <summary>Create an Index pointing at first element.</summary>
-        </member>
-        <member name="P:System.Index.End">
-            <summary>Create an Index pointing at beyond last element.</summary>
-        </member>
-        <member name="M:System.Index.FromStart(System.Int32)">
-            <summary>Create an Index from the start at the position indicated by the value.</summary>
-            <param name="value">The index value from the start.</param>
-        </member>
-        <member name="M:System.Index.FromEnd(System.Int32)">
-            <summary>Create an Index from the end at the position indicated by the value.</summary>
-            <param name="value">The index value from the end.</param>
-        </member>
-        <member name="P:System.Index.Value">
-            <summary>Returns the index value.</summary>
-        </member>
-        <member name="P:System.Index.IsFromEnd">
-            <summary>Indicates whether the index is from the start or the end.</summary>
-        </member>
-        <member name="M:System.Index.GetOffset(System.Int32)">
-            <summary>Calculate the offset from the start using the giving collection length.</summary>
-            <param name="length">The length of the collection that the Index will be used with. length has to be a positive value</param>
-            <remarks>
-            For performance reason, we don't validate the input length parameter and the returned offset value against negative values.
-            we don't validate either the returned offset is greater than the input length.
-            It is expected Index will be used with collections which always have non negative length/count. If the returned offset is negative and
-            then used to index a collection will get out of range exception which will be same affect as the validation.
-            </remarks>
-        </member>
-        <member name="M:System.Index.Equals(System.Object)">
-            <summary>Indicates whether the current Index object is equal to another object of the same type.</summary>
-            <param name="value">An object to compare with this object</param>
-        </member>
-        <member name="M:System.Index.Equals(System.Index)">
-            <summary>Indicates whether the current Index object is equal to another Index object.</summary>
-            <param name="other">An object to compare with this object</param>
-        </member>
-        <member name="M:System.Index.GetHashCode">
-            <summary>Returns the hash code for this instance.</summary>
-        </member>
-        <member name="M:System.Index.op_Implicit(System.Int32)~System.Index">
-            <summary>Converts integer number to an Index.</summary>
-        </member>
-        <member name="M:System.Index.ToString">
-            <summary>Converts the value of the current Index object to its equivalent string representation.</summary>
         </member>
     </members>
 </doc>
