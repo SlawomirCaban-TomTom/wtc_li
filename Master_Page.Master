@@ -37,7 +37,8 @@
         &nbsp;
     </div>
     <form id="form1" runat="server">
-<a href="/Start.aspx">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <a href="/Start.aspx">
             <img alt="Local Intelligence Info Page" src="/img/tt_logo.bmp" style="width: 193px; border: 0;" /></a>
         <asp:Label ID="Label1" runat="server" Text="LI Information Page" Style="font-family: Arial, Helvetica, sans-serif; font-size: x-large; font-weight: 600;"></asp:Label>
         <br />
@@ -54,7 +55,7 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC 5.0" Value="wtc"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/TEAMS/TEAMS_content.aspx" Text="Teams" Value="Teams"></asp:MenuItem>
-               
+
             </Items>
         </asp:Menu>
 

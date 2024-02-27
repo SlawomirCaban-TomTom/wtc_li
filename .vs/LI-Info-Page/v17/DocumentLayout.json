@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\slawo\\source\\repos\\wtc_li\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Master_Page.Master",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
+              "RelativeDocumentMoniker": "Master_Page.Master",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
+              "RelativeToolTip": "Master_Page.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-02-27T12:58:33.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
