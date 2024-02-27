@@ -1,11 +1,8 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using Syn.Bot.Channels.Testing;
-using Syn.Bot.Channels.Widget;
+﻿using Syn.Bot.Channels.Widget;
 using Syn.Bot.Oscova;
-using System.Diagnostics;
 using Syn.Bot.Oscova.Attributes;
+using System;
+using System.Web;
 
 namespace TomTom_Info_Page
 {
@@ -370,8 +367,8 @@ namespace TomTom_Info_Page
                 result.SendResponse("This entry should go under <ul><li><b>Sub Task Name: OT</b></li><li><b>Category: Scope Creep</b></li></ul>Don't forget to mention the Project Name in the remarks.");
             }
         }
-         public class thanks : Dialog
-        {           
+        public class thanks : Dialog
+        {
             [Expression("thanks")]
             [Expression("thx")]
             [Expression("thank you")]

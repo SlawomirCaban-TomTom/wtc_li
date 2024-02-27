@@ -107,7 +107,7 @@ namespace TomTom_Info_Page.WTC
                     int pu_id = 0;
                     bool import_valid = true;
                     string[] temp = alltext[i].Split(';');
-                    if (temp.Count() != 3) 
+                    if (temp.Count() != 3)
                     {
                         missing_params.Add(alltext[i]);
                         import_valid = false;
@@ -140,11 +140,11 @@ namespace TomTom_Info_Page.WTC
                     }
                     if (import_valid)
                     {
-                        import_project_task(temp[0], temp[1],  pu_id);
+                        import_project_task(temp[0], temp[1], pu_id);
                     }
                 }
                 lbl_v2_result.Text = "Done! Requested " + alltext.Length + " tasks to apply; Imported " + imported + " tasks!";
-                if ((missing_params.Count > 0) || (not_valid.Count > 0) || (missing_pu.Count > 0) )
+                if ((missing_params.Count > 0) || (not_valid.Count > 0) || (missing_pu.Count > 0))
                 {
                     lbl_fail.Visible = true;
                     int va = alltext.Length - imported;
@@ -220,7 +220,7 @@ namespace TomTom_Info_Page.WTC
             catch (Exception ex)
             {
                 lbl_err.Visible = true;
-                lbl_err.Text = ex.ToString() +  project_name + ","  + task + "," + pu_id;
+                lbl_err.Text = ex.ToString() + project_name + "," + task + "," + pu_id;
             }
             finally
             {
@@ -343,7 +343,7 @@ namespace TomTom_Info_Page.WTC
 
             return result;
         }
-       
+
         protected void bt2_Click(object sender, EventArgs e)
         {
             Server.Transfer("~/wtc/edit_project.aspx");

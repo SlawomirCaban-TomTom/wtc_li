@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Data.SqlTypes;
 using System.Drawing;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 namespace TomTom_Info_Page.WTC
 {
     public partial class back_dated_entry : System.Web.UI.Page
@@ -27,7 +22,7 @@ namespace TomTom_Info_Page.WTC
         public int timesheet_id;
 
 
-      
+
 
 
         private void fill_leave_type()
@@ -80,10 +75,10 @@ namespace TomTom_Info_Page.WTC
                 else
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert(' User not started work!')</script>");
-                   // Response.Redirect("https://wtc-li.azurewebsites.net/wtc/wtc_main.aspx");
+                    // Response.Redirect("https://wtc-li.azurewebsites.net/wtc/wtc_main.aspx");
                 }
             }
-           
+
         }
         public bool check_login()
         {
@@ -120,7 +115,7 @@ namespace TomTom_Info_Page.WTC
                     result = true;
                 }
                 else
-                    result=false;
+                    result = false;
                 //lbl_err.Visible = true;
                 //lbl_err.Text = "User not found in WTC database! Please contact TCO!";
 
@@ -225,7 +220,7 @@ namespace TomTom_Info_Page.WTC
 
                         sql1 = " insert into leaves (timesheet_id, user_id, local_time, start_time_server, end_time_server, first_name, last_name, domain_username, task_type_id,  duration, description, task_type_name ) "
                        + "values ('" + Session["timesheet"] + "', "
-                              + " '" + Session["user"] + "', dateadd(\"mi\",(select utc from users where user_id=" + Session["user"].ToString() +"),getdate()), '" + txtdate.Text + "' , '" + txtdate.Text + "','" + lbl_firstname.Text + "', '" + lbl_lastname.Text + "', '" + user + "', '" + ddl_leave_type.SelectedValue + "', "
+                              + " '" + Session["user"] + "', dateadd(\"mi\",(select utc from users where user_id=" + Session["user"].ToString() + "),getdate()), '" + txtdate.Text + "' , '" + txtdate.Text + "','" + lbl_firstname.Text + "', '" + lbl_lastname.Text + "', '" + user + "', '" + ddl_leave_type.SelectedValue + "', "
                              + " '480', '" + txt_desc.Text + "', '" + ddl_leave_type.SelectedItem.Text + "') ";
 
                         cmd = new SqlCommand(sql1, conn);
@@ -496,7 +491,7 @@ namespace TomTom_Info_Page.WTC
         protected void gvVochByDate_RowCommand(object sender, GridViewDeleteEventArgs e)
         {
             DataTable temp = (DataTable)Session["reported"];
-            string query = "delete from leaves where timesheet_id=" + temp.Rows[e.RowIndex][0].ToString() +  " and task_type_id=" +temp.Rows[e.RowIndex][7].ToString();
+            string query = "delete from leaves where timesheet_id=" + temp.Rows[e.RowIndex][0].ToString() + " and task_type_id=" + temp.Rows[e.RowIndex][7].ToString();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             SqlCommand cmd = new SqlCommand(query, conn);
             try
@@ -522,7 +517,7 @@ namespace TomTom_Info_Page.WTC
             try
             {
 
-                if (int.Parse(ddl_leave_type.SelectedValue)>900)
+                if (int.Parse(ddl_leave_type.SelectedValue) > 900)
                 {
                     txt_time.Visible = true;
                     lb_dely_time.Visible = true;
@@ -552,8 +547,8 @@ namespace TomTom_Info_Page.WTC
 
 
         }
-       
-        
+
+
 
     }
 }

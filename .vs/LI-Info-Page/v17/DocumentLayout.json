@@ -3,7 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\slawo\\source\\repos\\wtc_li\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LI-Info-Page||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|C:\\Users\\slawo\\source\\repos\\wtc_li\\master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     }
   ],
@@ -19,6 +34,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config",
+              "RelativeDocumentMoniker": "packages.config",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config",
+              "RelativeToolTip": "packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-02-27T13:40:23.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config",
+              "RelativeDocumentMoniker": "web.config",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config",
+              "RelativeToolTip": "web.config",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-02-27T13:40:15.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "project_details.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
+              "RelativeDocumentMoniker": "WTC\\project_details.aspx.cs",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
+              "RelativeToolTip": "WTC\\project_details.aspx.cs",
+              "ViewState": "AQIAAOAAAAAAAAAAAAAewPcAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T13:37:16.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LI-Info-Page",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\LI-Info-Page.csproj",
+              "RelativeDocumentMoniker": "LI-Info-Page.csproj",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\LI-Info-Page.csproj",
+              "RelativeToolTip": "LI-Info-Page.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-02-27T13:17:33.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Master_Page.Master",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
               "RelativeDocumentMoniker": "Master_Page.Master",
@@ -28,10 +93,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-02-27T12:58:33.754Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

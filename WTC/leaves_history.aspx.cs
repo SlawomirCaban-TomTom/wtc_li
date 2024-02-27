@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using Npgsql;
-using Syn.Bot.Oscova;
+using System.Web.UI.WebControls;
 
 namespace TomTom_Info_Page.WTC
 {
@@ -30,7 +24,7 @@ namespace TomTom_Info_Page.WTC
                 if (dt.Rows.Count > 0)
                 {
                     Session["user"] = dt.Rows[0][0].ToString();
-                    string query2 = "select top(1) role_id from user_role where user_id =" + Session["user"] +"  order by role_id asc";
+                    string query2 = "select top(1) role_id from user_role where user_id =" + Session["user"] + "  order by role_id asc";
                     SqlCommand cmd = new SqlCommand(query2, conn);
                     object test = cmd.ExecuteScalar();
                     if (test != null)
@@ -139,9 +133,9 @@ namespace TomTom_Info_Page.WTC
             string query = "sp_del_leaves";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("date", SqlDbType.NVarChar,20).Value = temp.Rows[e.RowIndex][0].ToString();
+            cmd.Parameters.Add("date", SqlDbType.NVarChar, 20).Value = temp.Rows[e.RowIndex][0].ToString();
 
-            cmd.Parameters.Add("type", SqlDbType.NVarChar,20).Value = temp.Rows[e.RowIndex][1].ToString();
+            cmd.Parameters.Add("type", SqlDbType.NVarChar, 20).Value = temp.Rows[e.RowIndex][1].ToString();
             cmd.Parameters.Add("user", SqlDbType.Int).Value = Session["user"].ToString();
             try
             {

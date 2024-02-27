@@ -3,7 +3,6 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -40,59 +39,59 @@ namespace TomTom_Info_Page.WTC
                     DateTime tend = DateTime.ParseExact(end, "dd/MMM/yyyy HH:mm:ss", new CultureInfo("en-US"));
                     TimeSpan span = tend - start;
                     Session["user"] = dt.Rows[0][0].ToString();
-                    Session["utc"]= dt.Rows[0][2].ToString();
+                    Session["utc"] = dt.Rows[0][2].ToString();
                     string timelimit2 = "23:59:59";
-                        DateTime start2 = DateTime.Now;
-                        string end2 = DateTime.Now.ToString("dd/MMM/yyyy") + " " + timelimit2;
-                        DateTime tend2 = DateTime.ParseExact(end2, "dd/MMM/yyyy HH:mm:ss", new CultureInfo("en-US"));
-                        TimeSpan span2 = tend2 - start2;
-                        
-                            lbl_name.Text = "Hi " + dt.Rows[0][1].ToString() + "!";
-                            string query2 = "select timesheet_id,start_time_server,convert(nvarchar, start_time_local ,120) from timesheet where user_id =" + Session["user"] + " and end_time_local is null";
-                            string query3 = "select top (1)role_id from user_role where user_id =" + Session["user"] + " order by 1 desc";
-                            SqlCommand cmd3 = new SqlCommand(query3, conn);
-                            object test = cmd3.ExecuteScalar();
-                            if (test != null)
-                                int.TryParse(test.ToString(), out role_id);
-                            if (role_id != 0)
-                            {
-                                menu_std.Visible = false;
-                                Menu_mng.Visible = true;
-                            }
-                            SqlDataAdapter da2 = new SqlDataAdapter(query2, conn);
-                            DataTable dt2 = new DataTable();
-                            da2.Fill(dt2);
-                            if (dt2.Rows.Count > 0)
-                            {
+                    DateTime start2 = DateTime.Now;
+                    string end2 = DateTime.Now.ToString("dd/MMM/yyyy") + " " + timelimit2;
+                    DateTime tend2 = DateTime.ParseExact(end2, "dd/MMM/yyyy HH:mm:ss", new CultureInfo("en-US"));
+                    TimeSpan span2 = tend2 - start2;
 
-                                Session["working"] = 1;
-                                Session["timesheet"] = dt2.Rows[0][0].ToString();
-                                lbl_date.Text = dt2.Rows[0][1].ToString();
-                                //     DateTime login_= DateTime.Parse(dt2.Rows[0][1].ToString());
-                                //  TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
-                                //          DateTime login_tz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
-                                DateTime login_tz = DateTime.Parse(dt2.Rows[0][1].ToString());
-                                Session["login_time"] = login_tz;
+                    lbl_name.Text = "Hi " + dt.Rows[0][1].ToString() + "!";
+                    string query2 = "select timesheet_id,start_time_server,convert(nvarchar, start_time_local ,120) from timesheet where user_id =" + Session["user"] + " and end_time_local is null";
+                    string query3 = "select top (1)role_id from user_role where user_id =" + Session["user"] + " order by 1 desc";
+                    SqlCommand cmd3 = new SqlCommand(query3, conn);
+                    object test = cmd3.ExecuteScalar();
+                    if (test != null)
+                        int.TryParse(test.ToString(), out role_id);
+                    if (role_id != 0)
+                    {
+                        menu_std.Visible = false;
+                        Menu_mng.Visible = true;
+                    }
+                    SqlDataAdapter da2 = new SqlDataAdapter(query2, conn);
+                    DataTable dt2 = new DataTable();
+                    da2.Fill(dt2);
+                    if (dt2.Rows.Count > 0)
+                    {
 
-                                // Timer1.Enabled = true;
-                                //DateTime.ParseExact(dt2.Rows[0][1].ToString(),"yyyy-MM-dd HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture);
+                        Session["working"] = 1;
+                        Session["timesheet"] = dt2.Rows[0][0].ToString();
+                        lbl_date.Text = dt2.Rows[0][1].ToString();
+                        //     DateTime login_= DateTime.Parse(dt2.Rows[0][1].ToString());
+                        //  TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+                        //          DateTime login_tz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
+                        DateTime login_tz = DateTime.Parse(dt2.Rows[0][1].ToString());
+                        Session["login_time"] = login_tz;
 
-                                //DateTime login_ = DateTime.Parse(Session["login_time"].ToString());
-                                // TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
-                               // DateTime login_tzz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
+                        // Timer1.Enabled = true;
+                        //DateTime.ParseExact(dt2.Rows[0][1].ToString(),"yyyy-MM-dd HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture);
+
+                        //DateTime login_ = DateTime.Parse(Session["login_time"].ToString());
+                        // TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+                        // DateTime login_tzz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
 
 
 
-                                lbl_date.Text = "Start time: " + dt2.Rows[0][2].ToString();
-                                //.ToString("yyyy-MM-dd HH:mm:ss");
-                                result = true;
-                            }
-                            else
+                        lbl_date.Text = "Start time: " + dt2.Rows[0][2].ToString();
+                        //.ToString("yyyy-MM-dd HH:mm:ss");
+                        result = true;
+                    }
+                    else
 
-                                Session["working"] = 0;
-                        }
-                    
-                
+                        Session["working"] = 0;
+                }
+
+
                 else
                 {
                     lbl_err.Visible = true;
@@ -128,7 +127,7 @@ namespace TomTom_Info_Page.WTC
                 if (dt3.Rows.Count > 0)
                 {
 
-                 
+
                     for (int i = 0; i < dt3.Rows.Count; i++)
                     {
                         string time = string.Empty;
@@ -162,7 +161,7 @@ namespace TomTom_Info_Page.WTC
                         rt = rt + ":" + min2.ToString();
 
                     lbl_total_reported.Text = rt;
-                  
+
                 }
                 else
                 {
@@ -291,7 +290,7 @@ namespace TomTom_Info_Page.WTC
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = string.Empty;
             query = "select task_type_id,task_type_name from task_type where task_type_id in (select task_type_id from int_project_task_type where is_active =1 and project_id=" + ddl_project.SelectedItem.Value + " ) order by task_type_name";
-     
+
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             try
@@ -333,37 +332,37 @@ namespace TomTom_Info_Page.WTC
         private void fill_sub_task()
         {
 
-                ddl_sub_task.Enabled = true;
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                string query = string.Empty;
-                query = "select sub_task_id,sub_task_name from sub_task";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                try 
-                {
-                    conn.Open();
-                    //da.FillSchema(ds, SchemaType.Source, "project_types_id");
-                    da.Fill(dt);
-                }
-                catch (Exception ex)
-                {
-                    lbl_err.Visible = true;
-                    lbl_err.Text = ex.ToString();
-                }
-                finally
-                {
-                    conn.Close();
-                    conn.Dispose();
-                }
+            ddl_sub_task.Enabled = true;
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+            string query = string.Empty;
+            query = "select sub_task_id,sub_task_name from sub_task";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                //da.FillSchema(ds, SchemaType.Source, "project_types_id");
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                lbl_err.Visible = true;
+                lbl_err.Text = ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
 
-                ddl_sub_task.DataSource = dt;
-                ddl_sub_task.DataValueField = "sub_task_id";
-                ddl_sub_task.DataTextField = "sub_task_name";
-                ddl_sub_task.DataBind();
+            ddl_sub_task.DataSource = dt;
+            ddl_sub_task.DataValueField = "sub_task_id";
+            ddl_sub_task.DataTextField = "sub_task_name";
+            ddl_sub_task.DataBind();
 
 
         }
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -392,7 +391,7 @@ namespace TomTom_Info_Page.WTC
 
                     pause_check();
                     state++;
-                   
+
                     fill_grid(state);
                     /*if ((!string.IsNullOrEmpty((string)Page.Session["task_id"])) && (!string.IsNullOrEmpty((string)Page.Session["project_id"])) && (!string.IsNullOrEmpty((string)Page.Session["sub_task_id"])))
                     {
@@ -597,34 +596,34 @@ namespace TomTom_Info_Page.WTC
                             }
                             else
                             {
-                                   
-                                       SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                                            string query = "sp_add_TASK";
-                                            SqlCommand cmd = new SqlCommand(query, conn);
-                                            cmd.CommandType = CommandType.StoredProcedure;
-                                            cmd.Parameters.Add("project", SqlDbType.Int).Value = ddl_project.SelectedValue;
-                                            cmd.Parameters.Add("task_type", SqlDbType.Int).Value = ddl_task.SelectedValue;
-                                            cmd.Parameters.Add("sub_task", SqlDbType.Int).Value = ddl_sub_task.SelectedValue;
-                                            cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
-                                            cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-                                            cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = tb_desc.Text;
-                                            try
-                                            {
-                                                conn.Open();
-                                                cmd.ExecuteNonQuery();
-                                                conn.Close();
-                                                conn.Dispose();
-                                                Response.Redirect(Request.RawUrl);
-                                            }
-                                            catch (Exception ex)
-                                            {
-                                                conn.Close();
-                                                conn.Dispose();
-                                                lbl_err.Visible = true;
-                                                lbl_err.Text = ex.ToString() + query;
-                                                bt_report.Enabled = true;
-                                            }
-                                
+
+                                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+                                string query = "sp_add_TASK";
+                                SqlCommand cmd = new SqlCommand(query, conn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.Add("project", SqlDbType.Int).Value = ddl_project.SelectedValue;
+                                cmd.Parameters.Add("task_type", SqlDbType.Int).Value = ddl_task.SelectedValue;
+                                cmd.Parameters.Add("sub_task", SqlDbType.Int).Value = ddl_sub_task.SelectedValue;
+                                cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
+                                cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
+                                cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = tb_desc.Text;
+                                try
+                                {
+                                    conn.Open();
+                                    cmd.ExecuteNonQuery();
+                                    conn.Close();
+                                    conn.Dispose();
+                                    Response.Redirect(Request.RawUrl);
+                                }
+                                catch (Exception ex)
+                                {
+                                    conn.Close();
+                                    conn.Dispose();
+                                    lbl_err.Visible = true;
+                                    lbl_err.Text = ex.ToString() + query;
+                                    bt_report.Enabled = true;
+                                }
+
                             }
                         }
 
@@ -698,7 +697,7 @@ namespace TomTom_Info_Page.WTC
             else
             {
 
-              
+
 
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
                 string query = "sp_add_TASK";
@@ -759,25 +758,26 @@ namespace TomTom_Info_Page.WTC
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-            try { 
-
-            conn.Open();
-
-            SqlDataReader pc = cmd.ExecuteReader();
-
-            if (pc.HasRows)
+            try
             {
-                pause_button.Text = "Continue";
-                bt_report.Visible = false;
-                bt_report.Enabled = false;
+
+                conn.Open();
+
+                SqlDataReader pc = cmd.ExecuteReader();
+
+                if (pc.HasRows)
+                {
+                    pause_button.Text = "Continue";
+                    bt_report.Visible = false;
+                    bt_report.Enabled = false;
+                }
+                else
+                {
+                    pause_button.Text = "Pause";
+                    bt_report.Visible = true;
+                    bt_report.Enabled = true;
+                }
             }
-            else
-            {
-                pause_button.Text = "Pause";
-                bt_report.Visible = true;
-                bt_report.Enabled = true;
-            }
-        }
             catch (Exception ex)
             {
                 lbl_err.Text = ex.ToString();
@@ -902,7 +902,7 @@ namespace TomTom_Info_Page.WTC
                     cmd.Parameters.Add("duration", SqlDbType.Int).Value = p_mins;
                     cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
                     cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = "Paused Entry";
-                     string query2 = "sp_add_pause_time_dlt";
+                    string query2 = "sp_add_pause_time_dlt";
                     SqlCommand cmd2 = new SqlCommand(query2, conn);
                     cmd2.CommandType = CommandType.StoredProcedure;
 

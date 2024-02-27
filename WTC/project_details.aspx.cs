@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -54,7 +53,7 @@ namespace TomTom_Info_Page.WTC
             }
             lbl_p_name.Text = dt.Rows[0][0].ToString();
             lbl_pu.Text = dt.Rows[0][1].ToString();
-            
+
             ddl_pu.DataSource = dt3;
             ddl_pu.DataValueField = "pu_id";
             ddl_pu.DataTextField = "pu";
@@ -121,7 +120,7 @@ namespace TomTom_Info_Page.WTC
             }
         }
 
-           protected void Unnamed8_Click(object sender, EventArgs e)
+        protected void Unnamed8_Click(object sender, EventArgs e)
         {
 
             if (ddl_pm.SelectedIndex > 0)
@@ -221,7 +220,7 @@ namespace TomTom_Info_Page.WTC
                 lbl_err.Visible = true;
             }
         }
-        
+
 
         protected void gv_tasks_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
@@ -231,7 +230,7 @@ namespace TomTom_Info_Page.WTC
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
                 RadioButtonList active = (RadioButtonList)e.Item.FindControl("rb_active");
                 string query1 = "select case when is_active ='true' then 1 else 0 end from int_project_task_type where project_id = " + Request.QueryString["ID"] + " and task_type_id=" + task_id;
-              
+
                 DataTable topic_list = new DataTable();
                 DataTable iris_list = new DataTable();
                 DataTable at_list = new DataTable();
@@ -239,26 +238,17 @@ namespace TomTom_Info_Page.WTC
                 DataTable effi_t_list = new DataTable();
                 DataTable pt_list = new DataTable();
                 SqlCommand cmd1 = new SqlCommand(query1, conn); //dpu remarks
-          
+
 
 
                 try
                 {
                     conn.Open();
 
-                   int tr1 = 0;
-                    int tr2 = 0;
-                    int tr3 = 0;
-                    int tr4 = 0;
-                    int tr5 = 0;
-                    int tr6 = 0;
-                    int tr7 = 0;
-                    int tr8 = 0;
-                    int tr13 = 0;
-                    int tr15 = 0;
+                    int tr1 = 0;
                     int.TryParse(cmd1.ExecuteScalar().ToString(), out tr1);
-                     active.SelectedValue = tr1.ToString();
-          }
+                    active.SelectedValue = tr1.ToString();
+                }
                 catch (Exception ex)
                 {
                     lbl_err.Text = ex.ToString();
@@ -619,7 +609,7 @@ namespace TomTom_Info_Page.WTC
                 lbl_err.Visible = true;
                 lbl_err.Text = "New Task Name field is empty!";
             }
-           
+
             else
             {
                 if (!exist_project_task(Request.QueryString["ID"], tb_new_task_name.Text))
