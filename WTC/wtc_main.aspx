@@ -225,7 +225,7 @@
                 </tr>
                  <tr>
                     <td>
-                        <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_task" Visible="false"></asp:Label>
+                        <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="false"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
