@@ -23,25 +23,23 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
-             <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
-                 <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-              
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing PlanningId" Value="Manage Existing PlanningId"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New PlanningId" Value="Add New PlanningId"></asp:MenuItem>
+             
               </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
-<h3>Projects:</h3>
+<h3>PlanningId:</h3>
 
         <br />
         <table>
              <tr>
                  <td>        <asp:DropDownList ID="ddl_pu" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_pu_SelectedIndexChanged" Width="136px"></asp:DropDownList></td>
 <td>        <asp:DropDownList ID="ddl_state" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_state_SelectedIndexChanged">
-    <asp:ListItem Selected="True">Only Active Projects</asp:ListItem>
-    <asp:ListItem>All Projects</asp:ListItem>
+    <asp:ListItem Selected="True">Only Active PlanningIds</asp:ListItem>
+    <asp:ListItem>All PlanningIds</asp:ListItem>
     </asp:DropDownList></td>
                 <td><asp:Button ID="Button1" runat="server" Text="Reset Filter" OnClick="Button1_Click1" /></td>
                 
@@ -55,7 +53,7 @@
         <asp:BoundField DataField="project_id" HeaderText="project_id" 
             InsertVisible="False" ReadOnly="True" SortExpression="project_id" 
             Visible="False"></asp:BoundField>
-        <asp:BoundField DataField="project_name" HeaderText="Planning Id" 
+        <asp:BoundField DataField="project_name" HeaderText="PlanningId" 
             SortExpression="project_name"></asp:BoundField>
        <asp:BoundField DataField="PU" HeaderText="PU" SortExpression="Requesting Unit">
         </asp:BoundField>

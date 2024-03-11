@@ -42,8 +42,8 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing PlanningId" Value="Manage Existing PlanningIds"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New PlanningId" Value="Add New PlanningId"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
                
@@ -173,7 +173,7 @@
 </tr>
                 <tr>
                     <td class="style2">
-                        <asp:Label runat="server" Text="Search Program:"></asp:Label></td>
+                        <asp:Label runat="server" Text="Search PlanningId:"></asp:Label></td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tb_mask" runat="server" Width="162px" BackColor="#FFFF99" BorderColor="Yellow"></asp:TextBox>
                         <asp:Button runat="server" Text="GO!" OnClick="Unnamed6_Click" ID="btn_go"></asp:Button></td>
@@ -206,7 +206,7 @@
                         <asp:Label runat="server" Text="Activity:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_task" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_task_SelectedIndexChanged" ToolTip="Please report DPA as main subtask if you are working on DPA projects (unless other reporting rules were set)" Width="370px">
+                        <asp:DropDownList ID="ddl_task" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_task_SelectedIndexChanged" ToolTip="Please report DPA as main subtask if you are working on DPA PlanningId (unless other reporting rules were set)" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>

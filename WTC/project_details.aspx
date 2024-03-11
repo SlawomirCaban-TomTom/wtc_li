@@ -1,4 +1,4 @@
-﻿<%@ Page Title="WTC Project Details"  MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Master_Page.Master" AutoEventWireup="true" CodeBehind="project_details.aspx.cs" Inherits="TomTom_Info_Page.WTC.WebForm1" %>
+﻿<%@ Page Title="WTC PlanningId Details"  MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/Master_Page.Master" AutoEventWireup="true" CodeBehind="project_details.aspx.cs" Inherits="TomTom_Info_Page.WTC.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style1
@@ -73,16 +73,14 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Projects" Value="Manage Existing Programs"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Project" Value="Add New Program"></asp:MenuItem>                           
-              <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
-              <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-                   </Items>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing PlanningId" Value="Manage Existing PlanningId"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New PlanningId" Value="Add New PlanningId"></asp:MenuItem>                           
+                    </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
-<h3>Update Project:</h3>
+<h3>Update PlanningId:</h3>
 <br />
 <table>
 <tr>
@@ -95,7 +93,7 @@
 <tr>
 
 <td class="auto-style16">
-<asp:Label runat="server" Text="Program:" ></asp:Label>
+<asp:Label runat="server" Text="PlanningId:" ></asp:Label>
 </td>
 <td>
 <asp:Label runat="server" Text="" id ="lbl_p_name" ></asp:Label>
@@ -155,7 +153,7 @@
        
 <br />
 <hr />
-<h4><b>Add new activity to Program</b></h4>
+<h4><b>Add new activity to PlanningId</b></h4>
     <table>
         <tr>
             <td class="auto-style7"><strong>new Activity</strong></td>     

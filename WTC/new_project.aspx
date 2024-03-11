@@ -29,23 +29,21 @@
             <Items>
                 <asp:MenuItem NavigateUrl="~/WTC/wtc_main.aspx" Text="WTC Main Page" Value="WTC Main Page"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing Programs" Value="Manage Existing Projects"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New Program" Value="Add New Program"></asp:MenuItem>
-                <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
-               <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-              </Items>
+                <asp:MenuItem NavigateUrl="~/WTC/edit_project.aspx" Text="Manage Existing PlanningId" Value="Manage Existing PlanningId"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New PlanningId" Value="Add New PlanningId"></asp:MenuItem>
+                  </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
 
-        <h1>Add new Program</h1>
+        <h1>Add new PlanningId</h1>
         <h4>
             <asp:Label runat="server" Text="required format:"></asp:Label>
         </h4>
         <table>
             <tr>
-                <td>Program</td>
+                <td>PlanningId</td>
                 <td>;</td>
                 <td>Activity</td>
                 <td>;</td>
@@ -84,7 +82,7 @@
 
         <asp:Panel ID="p_not_valid" runat="server" Visible="false">
             <strong>
-                <asp:Label runat="server" Text="Project + task already exist"></asp:Label>
+                <asp:Label runat="server" Text="PlanningId + task already exist"></asp:Label>
             </strong>
             <asp:GridView ID="gv_not_valid" runat="server" ShowHeader="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                 <FooterStyle BackColor="#CCCCCC" />
