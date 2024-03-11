@@ -55,7 +55,7 @@
         <asp:BoundField DataField="project_id" HeaderText="project_id" 
             InsertVisible="False" ReadOnly="True" SortExpression="project_id" 
             Visible="False"></asp:BoundField>
-        <asp:BoundField DataField="project_name" HeaderText="Program" 
+        <asp:BoundField DataField="project_name" HeaderText="Planning Id" 
             SortExpression="project_name"></asp:BoundField>
        <asp:BoundField DataField="PU" HeaderText="PU" SortExpression="Requesting Unit">
         </asp:BoundField>

@@ -188,7 +188,7 @@
                 </tr>
                 <tr>
                     <td class="style2">
-                        <asp:Label runat="server" Text="Program:"></asp:Label>
+                        <asp:Label runat="server" Text="Planning Id:"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_project" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_project_SelectedIndexChanged" Width="370px">
@@ -216,10 +216,19 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Operation type:" ID="lbl_sub_task" Visible="false"></asp:Label>
+                        <asp:Label runat="server" Text="Region:" ID="lbl_sub_task" Visible="false"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_task" Visible="false"></asp:Label>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
