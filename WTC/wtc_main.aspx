@@ -216,19 +216,19 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Region:" ID="lbl_sub_task" Visible="false"></asp:Label>
+                        <asp:Label runat="server" Text="Region:" ID="lbl_sub_task" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="false"></asp:Label>
+                        <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="false" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
