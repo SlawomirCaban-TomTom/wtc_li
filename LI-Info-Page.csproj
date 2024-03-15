@@ -484,13 +484,6 @@
     <Compile Include="TEAMS\teams_content2.aspx.designer.cs">
       <DependentUpon>teams_content2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WTC\back_dated_entry.aspx.cs">
       <DependentUpon>back_dated_entry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -588,7 +581,6 @@
     <Content Include="start.aspx" />
     <Content Include="TEAMS\TEAMS_content.aspx" />
     <Content Include="TEAMS\teams_content2.aspx" />
-    <Content Include="test.aspx" />
     <Content Include="WTC\back_dated_entry.aspx" />
     <Content Include="WTC\calendar.aspx" />
     <Content Include="WTC\edit_project.aspx" />
