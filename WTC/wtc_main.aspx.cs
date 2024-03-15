@@ -13,7 +13,7 @@ namespace TomTom_Info_Page.WTC
     {
         public static DataTable reported;
 
-        public static DataTable qc_data;
+
         public static int reported_time;
         public static DateTime p_time;
         public static DateTime r_time;
@@ -166,7 +166,6 @@ namespace TomTom_Info_Page.WTC
                 else
                 {
 
-                    p_qc_results.Visible = false;
                     lbl_total_reported.Text = "00:00";
                     reported_time = temp;
                     Session["reported_time"] = temp;
@@ -425,7 +424,6 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     lbl_date.Visible = true;
                     btn_start.Text = "Stop Work";
                     report_time.Visible = true;
-                    pause_button.Visible = false;
                     fill_planingid();
                     fill_region();
                     fill_sub_region();
