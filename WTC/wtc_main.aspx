@@ -105,15 +105,7 @@
                 <td class="style1"></td>
 
             </tr>
-            <tr>
-
-                <td>
-                    <asp:Button ID="pause_button" runat="server" Height="40px" OnClick="pause_button_Click" Text="Pause" Width="70px" Visible="False" />
-                </td>
-
-                <td class="style1" align="justify">&nbsp;</td>
-
-            </tr>
+      
 
         </table>
         <br />
