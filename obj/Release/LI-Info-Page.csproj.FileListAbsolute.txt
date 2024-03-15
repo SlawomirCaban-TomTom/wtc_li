@@ -420,7 +420,6 @@ C:/Users/slawo/source/repos/wtc_li/obj/Release/TomTomIP.pdb
 /Users/caban/Projects/wtc_li/bin/Microsoft.Identity.Web.xml
 /Users/caban/Projects/wtc_li/bin/Telegram.Bot.pdb
 /Users/caban/Projects/wtc_li/bin/Telegram.Bot.xml
-/Users/caban/Projects/wtc_li/obj/Release/LI-Info-Page.csproj.AssemblyReference.cache
 /Users/caban/Projects/wtc_li/obj/Release/LI-Info-Page.csproj.CoreCompileInputs.cache
 /Users/caban/Projects/wtc_li/obj/Release/LI-Info-Page.csproj.CopyComplete
 /Users/caban/Projects/wtc_li/obj/Release/TomTomIP.dll

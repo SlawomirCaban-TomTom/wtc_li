@@ -118,9 +118,7 @@
 
                 <ContentTemplate>
 
-                    <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick">
-                    </asp:Timer>
-                    <table>
+                   <table>
                         <tr>
                             <td class="auto-style3"></td>
 
