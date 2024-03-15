@@ -114,7 +114,7 @@ namespace TomTom_Info_Page.WTC
         }
         private void fill_grid(int state)
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+          /*  SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query3 = " select task_id,t.project_id, project_name,t.task_type_id,task_type_name,t.sub_task_id,sub_task_name,  cAST(duration AS NVARCHAR) as duration,description from task t join project p on t.project_id = p.project_id join             task_type ta on t.task_type_id = ta.task_type_id join sub_task st on t.sub_task_id = st.sub_task_id join int_project_task_type iptt on t.project_id = iptt.project_id and t.task_type_id = iptt.task_type_id where  timesheet_id =" + Session["timesheet"];
             SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
             DataTable dt3 = new DataTable();
@@ -224,7 +224,7 @@ namespace TomTom_Info_Page.WTC
                 conn.Close();
                 conn.Dispose();
             }
-
+          */
         }
 
         private void fill_planingid()
@@ -455,38 +455,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             }
 
         }
-        protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                // System.Threading.Thread.Sleep(100);
-                TimeSpan span = DateTime.UtcNow.Subtract(DateTime.Parse(Session["login_time"].ToString()));
-                int totalsec = (int)span.TotalSeconds;
-                int h = totalsec / 3600;
-                int min = (totalsec - (3600 * h)) / 60;
-                int sec = (totalsec - (3600 * h) - 60 * min);
-                string temp = string.Empty;
-                if (h < 10)
-                    temp = "0" + h;
-                else
-                    temp = h.ToString();
-                if (min < 10)
-                    temp = temp + ":0" + min;
-                else
-                    temp = temp + ":" + min;
-                if (sec < 10)
-                    temp = temp + ":0" + sec;
-                else
-                    temp = temp + ":" + sec;
-                lbl_total_work_time.Text = temp;
-            }
-            catch (Exception ex)
-            {
-                lbl_err.Visible = true;
-                lbl_err.Text = ex.ToString();
-
-            }
-        }
+        
 
         protected void btn_start_Click(object sender, EventArgs e)
         {

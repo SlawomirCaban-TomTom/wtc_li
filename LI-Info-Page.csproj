@@ -442,20 +442,6 @@
     <Compile Include="BotService.aspx.designer.cs">
       <DependentUpon>BotService.aspx</DependentUpon>
     </Compile>
-    <Compile Include="reports\NDE_report.aspx.cs">
-      <DependentUpon>NDE_report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reports\NDE_report.aspx.designer.cs">
-      <DependentUpon>NDE_report.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="reports\QC_backlog.aspx.cs">
-      <DependentUpon>QC_backlog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reports\QC_backlog.aspx.designer.cs">
-      <DependentUpon>QC_backlog.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Master_Page.Master.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -561,8 +547,6 @@
     <Content Include="img\azure-logo.jpg" />
     <Content Include="img\azure.jpg" />
     <Content Include="img\wtc.jpg" />
-    <Content Include="reports\NDE_report.aspx" />
-    <Content Include="reports\QC_backlog.aspx" />
     <Content Include="img\cal_close.gif" />
     <Content Include="img\cal_fastforward.gif" />
     <Content Include="img\cal_fastreverse.gif" />

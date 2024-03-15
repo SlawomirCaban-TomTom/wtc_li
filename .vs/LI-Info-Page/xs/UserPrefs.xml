@@ -1,45 +1,56 @@
-﻿<Properties StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|" NuGet.AddPackagesDialog.IncludePrerelease="True">
+﻿<Properties NuGet.AddPackagesDialog.IncludePrerelease="True" StartupConfiguration="{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <Debugger.DebugSourceFolders />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/wtc_main.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WTC/wtc_main.aspx.cs">
     <Files>
-      <File FileName="web.config" Line="29" Column="61" />
-      <File FileName="packages.config" />
-      <File FileName="start.aspx" />
-      <File FileName="Master_Page.Master" />
-      <File FileName="WTC/wtc_main.aspx" Line="214" Column="27" />
-      <File FileName="WTC/wtc_main.aspx.cs" Line="280" Column="80" />
+      <File FileName="web.config" Line="11" Column="66" />
+      <File FileName="packages.config" Line="1" Column="1" />
+      <File FileName="start.aspx" Line="1" Column="1" />
+      <File FileName="Master_Page.Master" Line="1" Column="1" />
+      <File FileName="WTC/wtc_main.aspx" Line="194" Column="59" />
+      <File FileName="WTC/wtc_main.aspx.cs" Line="420" Column="19" />
       <File FileName="WTC/edit_project.aspx" />
       <File FileName="WTC/project_details.aspx" />
       <File FileName="WTC/edit_project.aspx.cs" />
-      <File FileName="test.aspx.cs" />
       <File FileName="start.aspx.cs" />
       <File FileName="Master_Page.Master.cs" />
       <File FileName="BotService.aspx.cs" />
       <File FileName="WTC/time.aspx.cs" />
       <File FileName="reports/NDE_report.aspx" />
       <File FileName="reports/NDE_report.aspx.cs" />
-      <File FileName="reports/NDE_report.aspx.designer.cs" />
       <File FileName="TEAMS/TEAMS_content.aspx" />
-      <File FileName="TEAMS/TEAMS_content.aspx.cs" />
       <File FileName="TEAMS/teams_content2.aspx.cs" />
       <File FileName="WTC/back_dated_entry.aspx.cs" />
       <File FileName="WTC/calendar.aspx.cs" />
-      <File FileName="WTC/enjoy.aspx.cs" />
       <File FileName="WTC/history.aspx.cs" />
       <File FileName="WTC/leaves_history.aspx.cs" />
       <File FileName="WTC/new_project.aspx.cs" />
       <File FileName="WTC/project_details.aspx.cs" />
       <File FileName="WTC/back_dated_entry.aspx.designer.cs" />
       <File FileName="start.aspx.designer.cs" />
-      <File FileName="WTC/new_project.aspx" Line="1" Column="1" />
+      <File FileName="WTC/new_project.aspx" />
+      <File FileName="WTC/wtc_main.aspx.designer.cs" Line="229" Column="85" />
+      <File FileName="../../../../Applications/Visual Studio.app/Contents/MonoBundle/MSBuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="2218" Column="5" />
+      <File FileName="bin/TomTomIP.dll.config" Line="6" Column="114" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LI-Info-Page">
             <Node name="LI-Info-Page">
+              <Node name="reports" expanded="True">
+                <Node name="NDE_report.aspx" expanded="True" />
+              </Node>
+              <Node name="TEAMS" expanded="True">
+                <Node name="TEAMS_content.aspx" expanded="True" />
+              </Node>
               <Node name="WTC" expanded="True">
-                <Node name="wtc_main.aspx" expanded="True" selected="True" />
+                <Node name="enjoy.aspx" expanded="True" />
+                <Node name="wtc_main.aspx" expanded="True" />
               </Node>
               <Node name="Master_Page.Master" expanded="True" />
             </Node>
@@ -49,10 +60,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.LI-Info-Page PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MultiItemStartupConfigurations />
 </Properties>
