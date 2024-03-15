@@ -192,7 +192,7 @@ namespace TomTom_Info_Page.WTC
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_project;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_planning_id;
 
         /// <summary>
         /// ddl_topic control.
@@ -210,7 +210,7 @@ namespace TomTom_Info_Page.WTC
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_task;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_activity;
 
         /// <summary>
         /// lbl_sub_task control.
@@ -228,8 +228,9 @@ namespace TomTom_Info_Page.WTC
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_sub_task;
-
+        protected global::System.Web.UI.WebControls.DropDownList ddl_region;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_sub_region;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_country;
         /// <summary>
         /// p_work_type control.
         /// </summary>

@@ -212,7 +212,7 @@
                         <asp:Label runat="server" Text="Region:" ID="lbl_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" Visible="true" Height="28px"  Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -221,7 +221,7 @@
                         <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_region_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px"  Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -230,7 +230,7 @@
                         <asp:Label runat="server" Text="Country:" ID="lbl_sub_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_country" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_country_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_country" runat="server" AutoPostBack="True" Visible="true" Height="28px" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>

@@ -261,7 +261,7 @@ namespace TomTom_Info_Page.WTC
                 ddl_planning_id.DataTextField = "planning_id";
                 ddl_planning_id.DataBind();
                 ddl_planning_id.Items.Insert(0, "--Select--");
-                if (ddl_project.SelectedIndex == 0)
+                if (ddl_planning_id.SelectedIndex == 0)
                 {
                     ddl_activity.Enabled = false;
                 }
@@ -273,7 +273,7 @@ namespace TomTom_Info_Page.WTC
             }
         }
 
-        private void ddl_activity()
+        private void fill_activity()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = string.Empty;
@@ -298,32 +298,20 @@ namespace TomTom_Info_Page.WTC
                 conn.Dispose();
             }
 
-            ddl_task.DataSource = dt;
-            ddl_task.DataValueField = "task_type_id";
-            ddl_task.DataTextField = "task_type_name";
-            ddl_task.DataBind();
-            if (dt.Rows.Count == 1)
-            {
-                ddl_task.SelectedIndex = 0;
-                Session["task_type_id"] = ddl_task.SelectedValue;
-                fill_sub_task();
-
-            }
-            else
-            {
+            ddl_activity.DataSource = dt;
+            ddl_activity.DataValueField = "task_type_id";
+            ddl_activity.DataTextField = "task_type_name";
+            ddl_activity.DataBind();
                 ListItem l = new ListItem("--Select--", "0");
-                ddl_task.Items.Insert(0, l);
-                fill_sub_task();
-            }
-            ddl_task.Enabled = true;
+            ddl_activity.Items.Insert(0, l);
+            
+             ddl_activity.Enabled = true;
         }
-        private void fill_sub_task()
+        private void fill_region()
         {
-
-            ddl_sub_task.Enabled = true;
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = string.Empty;
-            query = "select sub_task_id,sub_task_name from sub_task";
+            query = "select region_id,region_name from region";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             try
@@ -343,10 +331,74 @@ namespace TomTom_Info_Page.WTC
                 conn.Dispose();
             }
 
-            ddl_sub_task.DataSource = dt;
-            ddl_sub_task.DataValueField = "sub_task_id";
-            ddl_sub_task.DataTextField = "sub_task_name";
-            ddl_sub_task.DataBind();
+            ddl_region.DataSource = dt;
+            ddl_region.DataValueField = "sub_task_id";
+            ddl_region.DataTextField = "sub_task_name";
+            ddl_region.DataBind();
+
+
+        }
+        private void fill_sub_region()
+        {
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+            string query = string.Empty;
+            query = "select sub_region_id,sub_region_name from sub_region";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                //da.FillSchema(ds, SchemaType.Source, "project_types_id");
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                lbl_err.Visible = true;
+                lbl_err.Text = ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
+            ddl_sub_region.DataSource = dt;
+            ddl_sub_region.DataValueField = "sub_region_id";
+            ddl_sub_region.DataTextField = "sub_region_name";
+            ddl_sub_region.DataBind();
+
+
+        }
+        private void fill_country()
+        {
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+            string query = string.Empty;
+            query = "select country_id,country_name from country";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                conn.Open();
+                //da.FillSchema(ds, SchemaType.Source, "project_types_id");
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                lbl_err.Visible = true;
+                lbl_err.Text = ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
+            ddl_country.DataSource = dt;
+            ddl_country.DataValueField = "country_id";
+            ddl_country.DataTextField = "country_name";
+            ddl_country.DataBind();
 
 
         }
@@ -375,9 +427,10 @@ namespace TomTom_Info_Page.WTC
                     report_time.Visible = true;
                     pause_button.Visible = false;
                     fill_planingid();
-                    fill_sub_task();
+                    fill_region();
+                    fill_sub_region();
+                    fill_country();
 
-                    pause_check();
                     state++;
 
                     fill_grid(state);
@@ -530,21 +583,17 @@ namespace TomTom_Info_Page.WTC
 
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddl_activity();
-            Session["project_id"] = ddl_project.SelectedValue;
+            fill_activity();
+            Session["planning_id"] = ddl_planning_id.SelectedValue;
 
-            Session["task_id"] = null;
-            ddl_sub_task.Visible = false;
-            lbl_sub_task.Visible = false;
-            ddl_sub_task.Enabled = true;
-            Session["sub_task_id"] = null;
+         
         }
 
         protected void Unnamed7_Click(object sender, EventArgs e)
         {
             bt_report.Enabled = false;
             string temp = tb_time_left.Text;
-            if (ddl_project.SelectedIndex == 0)
+            if (ddl_planning_id.SelectedIndex == 0)
             {
                 lbl_err.Visible = true;
                 lbl_err.Text = "Please select project!";
@@ -554,7 +603,7 @@ namespace TomTom_Info_Page.WTC
             }
             else
             {
-                if (ddl_task.SelectedItem.Value == "0")
+                if (ddl_activity.SelectedItem.Value == "0")
                 {
                     lbl_err.Visible = true;
                     lbl_err.Text = "Please select task!";
@@ -589,9 +638,9 @@ namespace TomTom_Info_Page.WTC
                                 string query = "sp_add_TASK";
                                 SqlCommand cmd = new SqlCommand(query, conn);
                                 cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.Add("project", SqlDbType.Int).Value = ddl_project.SelectedValue;
-                                cmd.Parameters.Add("task_type", SqlDbType.Int).Value = ddl_task.SelectedValue;
-                                cmd.Parameters.Add("sub_task", SqlDbType.Int).Value = ddl_sub_task.SelectedValue;
+                                cmd.Parameters.Add("project", SqlDbType.Int).Value = ddl_planning_id.SelectedValue;
+                                cmd.Parameters.Add("task_type", SqlDbType.Int).Value = ddl_activity.SelectedValue;
+                                cmd.Parameters.Add("region", SqlDbType.Int).Value = ddl_region.SelectedValue;
                                 cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
                                 cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
                                 cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = tb_desc.Text;
@@ -651,18 +700,14 @@ namespace TomTom_Info_Page.WTC
             }
         }
 
-        protected void ddl_task_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddl_activity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["task_id"] = ddl_task.SelectedValue;
-            Session["sub_task_id"] = null;
-            ddl_sub_task.Enabled = true;
-
+            Session["activity_id"] = ddl_activity.SelectedValue;
+            Session["region"] = null;
+            Session["sub_region"] = null;
+            Session["country"] = null;
         }
-        protected void ddl_sub_task_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["task_id"] = ddl_task.SelectedValue;
-            Session["sub_task_id"] = ddl_sub_task.SelectedValue;
-        }
+        
         protected void tb_mask_TextChanged(object sender, System.EventArgs e)
         {
             fill_planingid();
@@ -720,7 +765,6 @@ namespace TomTom_Info_Page.WTC
         protected void Unnamed6_Click(object sender, EventArgs e)
         {
             fill_planingid();
-            fill_sub_task();
 
         }
         protected void Buttonref_Click(object sender, EventArgs e)
@@ -728,232 +772,13 @@ namespace TomTom_Info_Page.WTC
             Response.Redirect(Request.RawUrl);
 
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("~/WTC/project_details_TSD.aspx?ID=" + ddl_project.SelectedValue);
-        }
+        
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             fill_planingid();
-            fill_sub_task();
         }
 
-        protected void pause_check()
-        {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query = "sp_add_pause_time_chk";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-            try
-            {
-
-                conn.Open();
-
-                SqlDataReader pc = cmd.ExecuteReader();
-
-                if (pc.HasRows)
-                {
-                    pause_button.Text = "Continue";
-                    bt_report.Visible = false;
-                    bt_report.Enabled = false;
-                }
-                else
-                {
-                    pause_button.Text = "Pause";
-                    bt_report.Visible = true;
-                    bt_report.Enabled = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                lbl_err.Text = ex.ToString();
-                lbl_err.Visible = true;
-            }
-            finally
-            {
-                conn.Close();
-                conn.Dispose();
-            }
-        }
-        protected void pause_st()
-        {
-            //if (Session["pause_started"] == null)
-            //{
-            //    pause_button.Text = "Pause";
-            //    bt_report.Visible = true;
-            //    bt_report.Enabled = true;
-            //}
-            //else
-            //{
-            //    pause_button.Text = "Continue";
-            //    bt_report.Visible = false;
-            //    bt_report.Enabled = false;
-
-            //}
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query = "sp_add_pause_time_chk";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-            try
-            {
-                conn.Open();
-                p_time = (DateTime)cmd.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                lbl_err.Text = ex.ToString();
-                lbl_err.Visible = true;
-            }
-            finally
-            {
-                conn.Close();
-                conn.Dispose();
-            }
-        }
-        private void pause_fn()
-        {
-
-            if (pause_button.Text == "Pause")
-            {
-                pause_button.Text = "Continue";
-
-                bt_report.Enabled = false;
-                bt_report.Visible = false;
-                Timer1.Enabled = false;
-                DateTime p_t = DateTime.Now;
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                string query = "sp_add_pause_time";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-                cmd.Parameters.Add("pause_start_time", SqlDbType.DateTime).Value = p_t;
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    conn.Dispose();
-                    Response.Redirect(Request.RawUrl);
-                    //pause_check();
-
-                }
-
-
-                catch (Exception ex)
-                {
-                    conn.Close();
-                    conn.Dispose();
-                    lbl_err.Visible = true;
-                    lbl_err.Text = ex.ToString() + query;
-                    bt_report.Enabled = true;
-                }
-
-
-
-
-
-
-
-
-
-            }
-
-            else
-            {
-
-
-
-                DateTime r_time = DateTime.Now;
-                pause_st();
-                p_span = r_time - p_time;
-                int p_Secs = (int)p_span.TotalSeconds;
-                int p_mins = p_Secs / 60;
-                bt_report.Enabled = true;
-                bt_report.Visible = true;
-
-                if (p_mins >= 5)
-                {
-                    pause_button.Text = "Pause";
-
-                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                    string query = "sp_add_TASK";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("project", SqlDbType.Int).Value = 3;
-                    cmd.Parameters.Add("task_type", SqlDbType.Int).Value = 12;
-                    cmd.Parameters.Add("sub_task", SqlDbType.Int).Value = 1;
-                    cmd.Parameters.Add("duration", SqlDbType.Int).Value = p_mins;
-                    cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-                    cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = "Paused Entry";
-                    string query2 = "sp_add_pause_time_dlt";
-                    SqlCommand cmd2 = new SqlCommand(query2, conn);
-                    cmd2.CommandType = CommandType.StoredProcedure;
-
-                    cmd2.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-
-                    try
-                    {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        cmd2.ExecuteNonQuery();
-
-                        conn.Close();
-                        conn.Dispose();
-                        Response.Redirect(Request.RawUrl);
-                    }
-
-
-                    catch (Exception ex)
-                    {
-                        conn.Close();
-                        conn.Dispose();
-                        lbl_err.Visible = true;
-                        lbl_err.Text = ex.ToString() + query;
-                        bt_report.Enabled = true;
-                    }
-                }
-                else
-                {
-                    pause_button.Text = "Pause";
-                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                    string query = "sp_add_pause_time_dlt";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-
-                    try
-                    {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                        conn.Dispose();
-                        Response.Redirect(Request.RawUrl);
-                    }
-
-
-                    catch (Exception ex)
-                    {
-                        conn.Close();
-                        conn.Dispose();
-                        lbl_err.Visible = true;
-                        lbl_err.Text = ex.ToString() + query;
-                        bt_report.Enabled = true;
-                    }
-
-                }
-
-            }
-        }
-
-        protected void pause_button_Click(object sender, EventArgs e)
-        {
-            pause_fn();
-        }
+       
     }
 }
