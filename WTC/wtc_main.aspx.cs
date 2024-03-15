@@ -260,10 +260,7 @@ namespace TomTom_Info_Page.WTC
                 ddl_planning_id.DataTextField = "planning_id";
                 ddl_planning_id.DataBind();
                 ddl_planning_id.Items.Insert(0, "--Select--");
-                if (ddl_planning_id.SelectedIndex == 0)
-                {
-                    ddl_activity.Enabled = false;
-                }
+                
             }
             else
             {
@@ -299,7 +296,7 @@ namespace TomTom_Info_Page.WTC
 
             ddl_activity.DataSource = dt;
             ddl_activity.DataValueField = "task_type_id";
-            ddl_activity.DataTextField = "task_type_name";
+            ddl_activity.DataTextField = "Activity";
             ddl_activity.DataBind();
                 ListItem l = new ListItem("--Select--", "0");
             ddl_activity.Items.Insert(0, l);
@@ -334,6 +331,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             ddl_region.DataValueField = "region_id";
             ddl_region.DataTextField = "region_name";
             ddl_region.DataBind();
+            ddl_region.Items.Insert(0, "--Select--");
 
 
         }
@@ -366,6 +364,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             ddl_sub_region.DataValueField = "sub_region_id";
             ddl_sub_region.DataTextField = "sub_region_name";
             ddl_sub_region.DataBind();
+            ddl_sub_region.Items.Insert(0, "--Select--");
 
 
         }
@@ -398,6 +397,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             ddl_country.DataValueField = "country_id";
             ddl_country.DataTextField = "country_name";
             ddl_country.DataBind();
+            ddl_country.DataBind();
+            ddl_country.Items.Insert(0, "--Select--");
 
 
         }
@@ -425,6 +426,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     btn_start.Text = "Stop Work";
                     report_time.Visible = true;
                     fill_planingid();
+                    fill_activity();
                     fill_region();
                     fill_sub_region();
                     fill_country();
@@ -581,7 +583,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
 
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
-            fill_activity();
+            
             Session["planning_id"] = ddl_planning_id.SelectedValue;
 
          
