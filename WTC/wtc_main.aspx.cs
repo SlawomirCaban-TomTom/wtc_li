@@ -415,14 +415,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             if (!Page.IsPostBack)
             {
                 //ddl_sub_task.Visible = true;
-                if (check_login())
+              
                 {
-                    if (Session["utc"].ToString() == "270")
-                        bt_break.Text = "Report 60 min break";
-                    else
-                        bt_break.Text = "Report 35 min break";
-                    // Timer1_Tick();
-                    lbl_date.Visible = true;
                     btn_start.Text = "Stop Work";
                     report_time.Visible = true;
                     fill_planingid();
@@ -453,24 +447,11 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                     }*/
                 }
-                else
-                {
-
-                    lbl_date.Visible = false;
-                    Session["working"] = 0;
-                    report_time.Visible = false;
-                    btn_start.Text = "Start Work";
-
-                }
+             
             }
             else
             {
-                if (Session["working"].ToString() == "1")
-                {
-                    // Timer1_Tick();
-
-                    fill_grid(state);
-                }
+               
             }
 
         }
