@@ -227,7 +227,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Country:" ID="lbl_sub_region" Visible="true"></asp:Label>
+                        <asp:Label runat="server" Text="Country:" ID="lbl_country" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddl_country" runat="server" AutoPostBack="True" Visible="true" Height="28px" Width="370px">
