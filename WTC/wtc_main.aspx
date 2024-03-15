@@ -258,19 +258,7 @@
         Width="831px"
         OnRowDeleting="gvVochByDate_RowCommand">
         <Columns>
-            <asp:BoundField HeaderText="task_id" DataField="task_id" Visible="False"></asp:BoundField>
-            <asp:BoundField HeaderText="project_id" DataField="project_id" Visible="False"></asp:BoundField>
-            <asp:BoundField HeaderText="Project Name" DataField="project_name"></asp:BoundField>
-            <asp:BoundField HeaderText="task_type_id" DataField="task_type_id"
-                Visible="False"></asp:BoundField>
-            <asp:BoundField HeaderText="Task Name" DataField="task_type_name"></asp:BoundField>
-            <asp:BoundField HeaderText="sub_task_id" DataField="sub_task_id"
-                Visible="False"></asp:BoundField>
-            <asp:BoundField HeaderText="Sub Task Name" DataField="sub_task_name"></asp:BoundField>
-            <asp:BoundField HeaderText="Description" DataField="description"></asp:BoundField>
-            <asp:BoundField HeaderText="Duration" DataField="duration"></asp:BoundField>
-            <asp:CommandField ButtonType="Button" ShowDeleteButton="True"></asp:CommandField>
-
+           
 
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

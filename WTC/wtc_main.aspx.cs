@@ -331,8 +331,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             }
 
             ddl_region.DataSource = dt;
-            ddl_region.DataValueField = "sub_task_id";
-            ddl_region.DataTextField = "sub_task_name";
+            ddl_region.DataValueField = "region_id";
+            ddl_region.DataTextField = "region_name";
             ddl_region.DataBind();
 
 
