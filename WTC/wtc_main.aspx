@@ -178,20 +178,13 @@
                         <asp:TextBox ID="tb_mask" runat="server" Width="162px" BackColor="#FFFF99" BorderColor="Yellow"></asp:TextBox>
                         <asp:Button runat="server" Text="GO!" OnClick="Unnamed6_Click" ID="btn_go"></asp:Button></td>
                 </tr>
-                <tr>
-                    <td class="style2">
-                        <asp:Label runat="server" Text="Search Activity:"></asp:Label></td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="tb_task_mask" runat="server" BackColor="#FFFF99" BorderColor="Yellow" Width="162px"></asp:TextBox>
-                        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="GO!" />
-                    </td>
-                </tr>
+              
                 <tr>
                     <td class="style2">
                         <asp:Label runat="server" Text="Planning Id:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_project" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_project_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_planning_id" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_planning_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -206,7 +199,7 @@
                         <asp:Label runat="server" Text="Activity:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_task" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_task_SelectedIndexChanged" ToolTip="Please report DPA as main subtask if you are working on DPA PlanningId (unless other reporting rules were set)" Width="370px">
+                        <asp:DropDownList ID="ddl_activity" runat="server" AutoPostBack="True" Height="28px" OnSelectedIndexChanged="ddl_activity_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -216,10 +209,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Region:" ID="lbl_sub_task" Visible="true"></asp:Label>
+                        <asp:Label runat="server" Text="Region:" ID="lbl_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_task" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -228,7 +221,16 @@
                         <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_task_SelectedIndexChanged" Width="370px">
+                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_sub_region_SelectedIndexChanged" Width="370px">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" Text="Country:" ID="lbl_sub_region" Visible="true"></asp:Label>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="ddl_country" runat="server" AutoPostBack="True" Visible="true" Height="28px" OnSelectedIndexChanged="ddl_country_SelectedIndexChanged" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -287,22 +289,6 @@
     </asp:GridView>
 
 
-    <br />
-    <asp:Panel runat="server" ID="p_qc_results" Visible="false">
-        <h4 style="color: #008080; font-weight: bold">QC stats</h4>
-        <asp:GridView ID="gv_qc_reported" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="Vertical">
-            <AlternatingRowStyle BackColor="PaleGoldenrod" HorizontalAlign="Center" VerticalAlign="Middle" />
-            <FooterStyle BackColor="Tan" />
-            <HeaderStyle BackColor="Tan" Font-Bold="True" HorizontalAlign="Center" />
-            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-            <RowStyle HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-            <SortedAscendingCellStyle BackColor="#FAFAE7" />
-            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
-            <SortedDescendingCellStyle BackColor="#E1DB9C" />
-            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
-        </asp:GridView>
-    </asp:Panel>
     <br />
     <br />
     <asp:Label ID="lbl_err" runat="server" Font-Bold="True" ForeColor="#FF3300"

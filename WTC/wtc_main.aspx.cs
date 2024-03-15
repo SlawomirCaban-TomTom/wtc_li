@@ -228,24 +228,14 @@ namespace TomTom_Info_Page.WTC
 
         }
 
-        private void fill_project()
+        private void fill_planingid()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = string.Empty;
             if (tb_mask.Text.Trim().Length < 1)
-            {
-                if (tb_task_mask.Text.Trim().Length < 1)
-                    query = "select distinct project_id, project_name  from project where project_id in (select project_id from int_project_task_type where is_active =1 ) order by project_name";
-                else
-                    query = "select distinct project_id, project_name  from project where project_id in (select project_id from int_project_task_type intt join task_type tt on intt.task_type_id=tt.task_type_id where is_active =1 and LOWER( task_type_name) like '%" + tb_task_mask.Text.Trim().ToLower() + "%')order by project_name";
-            }
-            else
-            {
-                if (tb_task_mask.Text.Trim().Length < 1)
-                    query = "select distinct project_id, project_name  from project where project_id in (select distinct project_id from int_project_task_type where is_active =1) and  LOWER( project_name) like '%" + tb_mask.Text.Trim().ToLower() + "%' order by project_name";
-                else
-                    query = "select distinct project_id, project_name  from project where project_id in (select distinct project_id from int_project_task_type intt join task_type tt on intt.task_type_id=tt.task_type_id where is_active =1 and  LOWER( task_type_name) like '%" + tb_task_mask.Text.Trim().ToLower() + "%') and  LOWER( project_name) like '%" + tb_mask.Text.Trim().ToLower() + "%' order by project_name";
-            }
+                query = "select project_id,project_name planning_id from project where is_active=1 order by project_name";
+             else
+                query = "select distinct project_id,project_name planning_id from project where is_active=1 and LOWER( task_type_name) like '%" + tb_mask.Text.Trim().ToLower() + "%')order by project_name";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             try
@@ -266,16 +256,14 @@ namespace TomTom_Info_Page.WTC
             }
             if (dt.Rows.Count > 0)
             {
-                ddl_project.DataSource = dt;
-                ddl_project.DataValueField = "project_id";
-                ddl_project.DataTextField = "project_name";
-                ddl_project.DataBind();
-                ddl_project.Items.Insert(0, "--Select--");
+                ddl_planning_id.DataSource = dt;
+                ddl_planning_id.DataValueField = "project_id";
+                ddl_planning_id.DataTextField = "planning_id";
+                ddl_planning_id.DataBind();
+                ddl_planning_id.Items.Insert(0, "--Select--");
                 if (ddl_project.SelectedIndex == 0)
                 {
-                    ddl_task.Enabled = false;
-
-                    ddl_sub_task.Enabled = false;
+                    ddl_activity.Enabled = false;
                 }
             }
             else
@@ -285,11 +273,11 @@ namespace TomTom_Info_Page.WTC
             }
         }
 
-        private void fill_task()
+        private void ddl_activity()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = string.Empty;
-            query = "select task_type_id,task_type_name from task_type where task_type_id in (select task_type_id from int_project_task_type where is_active =1 and project_id=" + ddl_project.SelectedItem.Value + " ) order by task_type_name";
+            query = "select task_type_id,task_type_name Activity from task_type order by task_type_name";
 
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
@@ -386,7 +374,7 @@ namespace TomTom_Info_Page.WTC
                     btn_start.Text = "Stop Work";
                     report_time.Visible = true;
                     pause_button.Visible = false;
-                    fill_project();
+                    fill_planingid();
                     fill_sub_task();
 
                     pause_check();
@@ -540,9 +528,9 @@ namespace TomTom_Info_Page.WTC
 
         }
 
-        protected void ddl_project_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
-            fill_task();
+            ddl_activity();
             Session["project_id"] = ddl_project.SelectedValue;
 
             Session["task_id"] = null;
@@ -677,7 +665,7 @@ namespace TomTom_Info_Page.WTC
         }
         protected void tb_mask_TextChanged(object sender, System.EventArgs e)
         {
-            fill_project();
+            fill_planingid();
         }
         protected void Unnamed10_Click(object sender, EventArgs e)
         {
@@ -731,7 +719,7 @@ namespace TomTom_Info_Page.WTC
 
         protected void Unnamed6_Click(object sender, EventArgs e)
         {
-            fill_project();
+            fill_planingid();
             fill_sub_task();
 
         }
@@ -747,7 +735,7 @@ namespace TomTom_Info_Page.WTC
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            fill_project();
+            fill_planingid();
             fill_sub_task();
         }
 
