@@ -435,13 +435,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BotService.aspx.cs">
-      <DependentUpon>BotService.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BotService.aspx.designer.cs">
-      <DependentUpon>BotService.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Master_Page.Master.cs">
       <DependentUpon>Master_Page.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -469,13 +462,6 @@
     </Compile>
     <Compile Include="TEAMS\teams_content2.aspx.designer.cs">
       <DependentUpon>teams_content2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WTC\back_dated_entry.aspx.cs">
-      <DependentUpon>back_dated_entry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WTC\back_dated_entry.aspx.designer.cs">
-      <DependentUpon>back_dated_entry.aspx</DependentUpon>
     </Compile>
     <Compile Include="WTC\calendar.aspx.cs">
       <DependentUpon>calendar.aspx</DependentUpon>
@@ -542,7 +528,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BotService.aspx" />
     <Content Include="img\ADP_LODZ.jpg" />
     <Content Include="img\azure-logo.jpg" />
     <Content Include="img\azure.jpg" />
@@ -565,7 +550,6 @@
     <Content Include="start.aspx" />
     <Content Include="TEAMS\TEAMS_content.aspx" />
     <Content Include="TEAMS\teams_content2.aspx" />
-    <Content Include="WTC\back_dated_entry.aspx" />
     <Content Include="WTC\calendar.aspx" />
     <Content Include="WTC\edit_project.aspx" />
     <Content Include="WTC\enjoy.aspx" />
@@ -584,7 +568,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="moderation\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>

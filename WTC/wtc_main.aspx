@@ -68,15 +68,19 @@
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
         <br />
-        <script type="text/javascript">
-            (function () {
-                var scriptElement = document.createElement('script');
-                scriptElement.type = 'text/javascript';
-                scriptElement.async = false;
-                scriptElement.src = '/BotService.aspx?Get=Script';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(scriptElement);
-            })();
-        </script>
+         <script language="javascript" type="text/javascript">
+             function openCalendar1() {
+
+                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
+          return false;
+      }
+      function openCalendar2() {
+
+          window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
+                 return false;
+             }
+
+         </script>
        <table>
             <tr>
                 <td>
@@ -148,12 +152,22 @@
                     <td class="auto-style3"></td>
 
                     <td class="auto-style2">
-                        <asp:Label runat="server" Text="Pending work time: "></asp:Label></td>
+                        <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_time_left" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
+                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
 
                     </td>
                 </tr>
+                 <tr>
+     <td class="auto-style3"></td>
+
+     <td class="auto-style2">
+         <asp:Label runat="server" Text="End Date "></asp:Label></td>
+     <td>
+         <asp:TextBox ID="tb_end_date" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
+
+     </td>
+ </tr>
             </table>
             <table>
 <tr>

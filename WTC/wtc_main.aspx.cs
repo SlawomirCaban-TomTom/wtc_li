@@ -542,7 +542,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         protected void Unnamed7_Click(object sender, EventArgs e)
         {
             bt_report.Enabled = false;
-            string temp = tb_time_left.Text;
+            string temp = tb_start_date.Text;
             if (ddl_planning_id.SelectedIndex == 0)
             {
                 lbl_err.Visible = true;
@@ -666,7 +666,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         {
 
             bt_break.Enabled = false;
-            string temp = tb_time_left.Text;
+            string temp = tb_start_date.Text;
             int duration = 35;
             if (Session["utc"].ToString() == "270")
                 duration = 60;
