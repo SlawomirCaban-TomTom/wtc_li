@@ -154,8 +154,8 @@
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
-
+                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="7" Width="49px" Height="21px" ></asp:TextBox>
+                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1();"></asp:Button>
                     </td>
                 </tr>
                  <tr>
@@ -165,7 +165,7 @@
          <asp:Label runat="server" Text="End Date "></asp:Label></td>
      <td>
          <asp:TextBox ID="tb_end_date" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
-
+         <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar2();"></asp:Button>
      </td>
  </tr>
             </table>
