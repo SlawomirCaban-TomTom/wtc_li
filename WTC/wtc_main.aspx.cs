@@ -14,7 +14,6 @@ namespace TomTom_Info_Page.WTC
     {
         public static DataTable reported;
 
-
         public static int reported_time;
         public static DateTime p_time;
         public static DateTime r_time;
@@ -502,7 +501,17 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
-                            DataRow row = null;
+                            reported.Columns.Add("Date");
+                            reported.Columns.Add("Planning_id");
+                            reported.Columns.Add("Activity");
+                            reported.Columns.Add("Region");
+                            reported.Columns.Add("SubRegion");
+                            reported.Columns.Add("Country");
+                            reported.Columns.Add("Duration");
+                            reported.Columns.Add("Remarks");
+
+
+                            DataRow row = reported.NewRow();
                             row[0] = tb_start_date.Text;
                             row[1] = ddl_planning_id.SelectedItem.Text;
                             row[2] = ddl_activity.SelectedItem.Text;
