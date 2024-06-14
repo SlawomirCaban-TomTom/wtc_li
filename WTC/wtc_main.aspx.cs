@@ -131,7 +131,6 @@ namespace TomTom_Info_Page.WTC
                   reported = dt3;
                   Session["reported"] = dt3;
                   gv_reported_time.DataSource = dt3.DefaultView;
-                gv_reported_time.AutoGenerateColumns = true;
                   gv_reported_time.DataBind();
                   gv_reported_time.Visible = true;
             }

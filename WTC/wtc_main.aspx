@@ -261,7 +261,7 @@
         Width="831px"
         OnRowDeleting="gvVochByDate_RowCommand">
         <Columns>
-            <asp:BoundField HeaderText="id" DataField="task_id" Visible="False"></asp:BoundField>
+            <asp:BoundField HeaderText="id" DataField="id" Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Date" DataField="working_date" Visible="True"></asp:BoundField>
             <asp:BoundField HeaderText="project_id" DataField="project_id" Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Planning ID" DataField="project_name"></asp:BoundField>
