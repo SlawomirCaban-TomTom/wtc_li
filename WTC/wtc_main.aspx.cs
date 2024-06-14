@@ -130,6 +130,7 @@ namespace TomTom_Info_Page.WTC
                   Session["reported"] = dt3;
                   gv_reported_time.DataSource = reported;
                   gv_reported_time.DataBind();
+                  gv_reported_time.Visible = true;
 
               }
               catch (Exception ex)
@@ -316,7 +317,6 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             ddl_country.DataSource = dt;
             ddl_country.DataValueField = "country_id";
             ddl_country.DataTextField = "country_name";
-            ddl_country.DataBind();
             ddl_country.DataBind();
             ddl_country.Items.Insert(0, "--Select--");
 
