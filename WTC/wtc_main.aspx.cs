@@ -141,7 +141,8 @@ namespace TomTom_Info_Page.WTC
               {
                   conn.Close();
                   conn.Dispose();
-              }            
+              }
+            lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
         }
 
         private void fill_planingid()
