@@ -72,7 +72,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as Date)";
+              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)";
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
               try
@@ -142,7 +142,9 @@ namespace TomTom_Info_Page.WTC
                   conn.Close();
                   conn.Dispose();
               }
-            lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
+            //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
+
+            lbl_total_work_time.Text = query3 ;
         }
 
         private void fill_planingid()
