@@ -502,7 +502,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
-                            DataRow row = reported.NewRow();
+                            DataRow row = null;
                             row[0] = tb_start_date.Text;
                             row[1] = ddl_planning_id.SelectedItem.Text;
                             row[2] = ddl_activity.SelectedItem.Text;

@@ -40,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,15 +48,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -64,9 +56,9 @@
               "Title": "wtc_main.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx.cs",
-              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs*",
-              "RelativeToolTip": "WTC\\wtc_main.aspx.cs*",
-              "ViewState": "AQIAADcBAAAAAAAAAAAiwIQBAAARAAAA",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
+              "RelativeToolTip": "WTC\\wtc_main.aspx.cs",
+              "ViewState": "AQIAAO0BAAAAAAAAAAAowPwBAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T20:53:29.732Z",
               "EditorCaption": ""
@@ -120,7 +112,8 @@
               "RelativeToolTip": "WTC\\project_details.aspx.cs",
               "ViewState": "AQIAAOAAAAAAAAAAAAAewPcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T13:37:16.908Z"
+              "WhenOpened": "2024-02-27T13:37:16.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
