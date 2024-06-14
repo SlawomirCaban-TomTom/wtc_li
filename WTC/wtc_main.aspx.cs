@@ -465,7 +465,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     lbl_err.Visible = false;
                 }
                 fill_grid();
-                
+
+                Response.Redirect(Request.RawUrl);
             }
         }
         protected double check_diff(DateTime start_date, DateTime end_date)
