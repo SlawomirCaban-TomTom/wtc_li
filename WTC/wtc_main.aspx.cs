@@ -449,53 +449,80 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 }
                 else
                 {
-                    if (Regex.IsMatch(temp, "^[0-9]+:[0-9]{2}$"))
+                    if (ddl_region.SelectedItem.Value == "0")
                     {
-                        string[] time = temp.Split(':');
-                        int duration = 60 * int.Parse(time[0]) + int.Parse(time[1]);
-                        if (duration == 0)
+                        lbl_err.Visible = true;
+                        lbl_err.Text = "Please select region!";
+                        bt_report.Enabled = true;
+                    }
+                    else
+                    {
+                        if (ddl_sub_region.SelectedItem.Value == "0")
                         {
                             lbl_err.Visible = true;
-                            lbl_err.Text = "Please report more time!";
+                            lbl_err.Text = "Please select sub region!";
                             bt_report.Enabled = true;
                         }
                         else
                         {
-                            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                            string query = "sp_add_temp_report";
-                            SqlCommand cmd = new SqlCommand(query, conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.Add("user_id", SqlDbType.Int).Value = Session["user"].ToString();
-                            cmd.Parameters.Add("working_date", SqlDbType.Int).Value = DateTime.Parse(tb_start_date.Text);
-                            cmd.Parameters.Add("project_id", SqlDbType.Int).Value = ddl_planning_id.SelectedItem.Value;
-                            cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedValue;
-                            cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedValue;
-                            cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedValue;
-                            cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedValue;
-                            cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
-                            cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = string.Empty;
-                            try
+                            if (ddl_country.SelectedItem.Value == "0")
                             {
-                                conn.Open();
-                                cmd.ExecuteNonQuery();
-                                conn.Close();
-                                conn.Dispose();
-                                Response.Redirect(Request.RawUrl);
-                            }
-                            catch (Exception ex)
-                            {
-                                conn.Close();
-                                conn.Dispose();
                                 lbl_err.Visible = true;
-                                lbl_err.Text = ex.ToString() + query;                                
+                                lbl_err.Text = "Please select country!";
+                                bt_report.Enabled = true;
+                            }
+                            else
+                            {
+                                if (Regex.IsMatch(temp, "^[0-9]+:[0-9]{2}$"))
+                                {
+                                    string[] time = temp.Split(':');
+                                    int duration = 60 * int.Parse(time[0]) + int.Parse(time[1]);
+                                    if (duration == 0)
+                                    {
+                                        lbl_err.Visible = true;
+                                        lbl_err.Text = "Please report more time!";
+                                        bt_report.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+                                        string query = "sp_add_temp_report";
+                                        SqlCommand cmd = new SqlCommand(query, conn);
+                                        cmd.CommandType = CommandType.StoredProcedure;
+                                        cmd.Parameters.Add("user_id", SqlDbType.Int).Value = Session["user"].ToString();
+                                        cmd.Parameters.Add("working_date", SqlDbType.DateTime).Value = DateTime.Parse(tb_start_date.Text);
+                                        cmd.Parameters.Add("project_id", SqlDbType.Int).Value = ddl_planning_id.SelectedItem.Value;
+                                        cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedValue;
+                                        cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedValue;
+                                        cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedValue;
+                                        cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedValue;
+                                        cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
+                                        cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = string.Empty;
+                                        try
+                                        {
+                                            conn.Open();
+                                            cmd.ExecuteNonQuery();
+                                            conn.Close();
+                                            conn.Dispose();
+                                            Response.Redirect(Request.RawUrl);
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            conn.Close();
+                                            conn.Dispose();
+                                            lbl_err.Visible = true;
+                                            lbl_err.Text = ex.ToString() + query;
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    lbl_err.Visible = true;
+                                    lbl_err.Text = "Reported time contains syntax error!";
+                                }
                             }
                         }
-
-                    }
-                    else
-                    {
-                        lbl_err.Visible = true;
-                        lbl_err.Text = "Reported time contains syntax error!";
                     }
                 }
             }
