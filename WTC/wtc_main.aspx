@@ -100,43 +100,12 @@
                 </td>
 
             </tr>
-            <tr>
-
-                <td>
-                    <asp:Button runat="server" Text="Start work" Height="70px" Width="131px"
-                        ID="btn_start" OnClick="btn_start_Click"></asp:Button></td>
-
-                <td class="style1"></td>
-
-            </tr>
+          
 
 
         </table>
         <br />
 
-        <asp:Panel runat="server" ID="report_time" Visible="False">
-            <br />
-            <hr />
-            <br />
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-
-                <ContentTemplate>
-
-                    <table>
-                        <tr>
-                            <td class="auto-style3"></td>
-
-                            <td class="auto-style2">
-                                <asp:Label runat="server" Text="Total work time: "></asp:Label></td>
-                            <td>
-                                <asp:Label runat="server" ID="lbl_total_work_time" Text=""></asp:Label>
-
-
-                            </td>
-                        </tr>
-                    </table>
-                </ContentTemplate>
-            </asp:UpdatePanel>
             <table>
                 <tr>
                     <td class="auto-style3"></td>
@@ -264,15 +233,28 @@
             <asp:Button runat="server" Text="Report Time" Height="68px" Width="110px"
                 OnClick="bt_insert_temp_report" ID="bt_report"></asp:Button><br />
             <hr />
-
-            <asp:Button runat="server" Text="Report 35 min break" Height="30px" Width="111px" Font-Bold="True" Font-Size="X-Small" OnClick="Unnamed10_Click" ID="bt_break"></asp:Button><br />
-
-        </asp:Panel>
+                 
+     
 
     </div>
 
     <br />
     <hr />
+     <table>
+     <tr>
+         <td class="auto-style3"></td>
+
+         <td class="auto-style2">
+             <asp:Label runat="server" Text="Total work time: "></asp:Label></td>
+         <td>
+             <asp:Label runat="server" ID="lbl_total_work_time" Text=""></asp:Label>
+
+
+         </td>
+     </tr>
+ </table>
+    <hr />
+    <br />
     <asp:GridView runat="server" ID="gv_reported_time" AutoGenerateColumns="true"
         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
         CellPadding="4" EnableModelValidation="True" ForeColor="Black"

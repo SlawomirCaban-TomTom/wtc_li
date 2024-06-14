@@ -51,42 +51,6 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.Label lbl_date;
 
         /// <summary>
-        /// Kontrolka btn_start.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_start;
-
-        /// <summary>
-        /// Kontrolka report_time.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel report_time;
-
-        /// <summary>
-        /// Kontrolka UpdatePanel1.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
-        /// <summary>
-        /// Kontrolka lbl_total_work_time.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_work_time;
-
-        /// <summary>
         /// Kontrolka lbl_total_reported.
         /// </summary>
         /// <remarks>
@@ -240,13 +204,13 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.Button bt_report;
 
         /// <summary>
-        /// Kontrolka bt_break.
+        /// Kontrolka lbl_total_work_time.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_break;
+        protected global::System.Web.UI.WebControls.Label lbl_total_work_time;
 
         /// <summary>
         /// Kontrolka gv_reported_time.
