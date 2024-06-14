@@ -107,16 +107,7 @@
         <br />
 
             <table>
-                <tr>
-                    <td class="auto-style3"></td>
-
-                    <td class="auto-style2">
-                        <asp:Label runat="server" Text="Total reported time: "></asp:Label></td>
-                    <td>
-                        <asp:Label ID="lbl_total_reported" runat="server"></asp:Label>
-
-                    </td>
-                </tr>
+       
                 <tr>
                     <td class="auto-style3"></td>
 
@@ -241,17 +232,15 @@
     <br />
     <hr />
      <table>
-     <tr>
-         <td class="auto-style3"></td>
+             <tr>
+            
+             <td class="auto-style2">
+                 <asp:Label runat="server" Text="Total reported time: "></asp:Label></td>
+             <td>
+                 <asp:Label ID="lbl_total_reported" runat="server"></asp:Label>
 
-         <td class="auto-style2">
-             <asp:Label runat="server" Text="Total work time: "></asp:Label></td>
-         <td>
-             <asp:Label runat="server" ID="lbl_total_work_time" Text=""></asp:Label>
-
-
-         </td>
-     </tr>
+             </td>
+         </tr>
  </table>
     <hr />
     <br />
@@ -263,13 +252,8 @@
         <Columns>
             <asp:BoundField HeaderText="id" DataField="id" Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Date" DataField="working_date" Visible="True"></asp:BoundField>
-            <asp:BoundField HeaderText="project_id" DataField="project_id" Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Planning ID" DataField="project_name"></asp:BoundField>
-            <asp:BoundField HeaderText="task_type_id" DataField="task_type_id"
-                Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Activity" DataField="task_type_name"></asp:BoundField>
-            <asp:BoundField HeaderText="region_id" DataField="region_id"
-                Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Region" DataField="region_name"></asp:BoundField>
             <asp:BoundField HeaderText="Sub Region" DataField="sub_region_name"></asp:BoundField>
             <asp:BoundField HeaderText="Country" DataField="country_name"></asp:BoundField>

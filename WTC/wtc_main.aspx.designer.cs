@@ -51,15 +51,6 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.Label lbl_date;
 
         /// <summary>
-        /// Kontrolka lbl_total_reported.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_reported;
-
-        /// <summary>
         /// Kontrolka tb_start_date.
         /// </summary>
         /// <remarks>
@@ -204,13 +195,13 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.Button bt_report;
 
         /// <summary>
-        /// Kontrolka lbl_total_work_time.
+        /// Kontrolka lbl_total_reported.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_work_time;
+        protected global::System.Web.UI.WebControls.Label lbl_total_reported;
 
         /// <summary>
         /// Kontrolka gv_reported_time.

@@ -74,7 +74,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
+              string query3 = " select id, cast(working_date as nvarchar(10) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration  from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
               try
@@ -90,7 +90,7 @@ namespace TomTom_Info_Page.WTC
                       for (int i = 0; i < dt3.Rows.Count; i++)
                       {
                           string time = string.Empty;
-                          int total = int.Parse(dt3.Rows[i][13].ToString());
+                          int total = int.Parse(dt3.Rows[i][8].ToString());
                           temp += total;
                           int h = total / 60;
                           int min = total % 60;
@@ -101,7 +101,7 @@ namespace TomTom_Info_Page.WTC
                               time = time + ":0" + min.ToString();
                           else
                               time = time + ":" + min.ToString();
-                          dt3.Rows[i][13] = time;
+                          dt3.Rows[i][8] = time;
                       }
 
                       string rt = string.Empty;
