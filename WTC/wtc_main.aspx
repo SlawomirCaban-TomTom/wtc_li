@@ -46,7 +46,7 @@
                 <asp:MenuItem NavigateUrl="~/WTC/new_project.aspx" Text="Add New PlanningId" Value="Add New PlanningId"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-               
+
             </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -62,26 +62,26 @@
                 <asp:MenuItem NavigateUrl="~/WTC/history.aspx" Text="History" Value="1"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/back_dated_entry.aspx" Text="Back dated entry" Value="Back dated entry"></asp:MenuItem>
                 <asp:MenuItem NavigateUrl="~/WTC/leaves_history.aspx" Text="Leaves History" Value="Leaves History"></asp:MenuItem>
-           </Items>
+            </Items>
             <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#5D7B9D" />
         </asp:Menu>
         <br />
-         <script language="javascript" type="text/javascript">
-             function openCalendar1() {
+        <script language="javascript" type="text/javascript">
+            function openCalendar1() {
 
-                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-          return false;
-      }
-      function openCalendar2() {
+                window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
+                return false;
+            }
+            function openCalendar2() {
 
-          window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-                 return false;
-             }
+                window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
+                return false;
+            }
 
-         </script>
-       <table>
+        </script>
+        <table>
             <tr>
                 <td>
 
@@ -109,11 +109,11 @@
                 <td class="style1"></td>
 
             </tr>
-      
+
 
         </table>
         <br />
-      
+
         <asp:Panel runat="server" ID="report_time" Visible="False">
             <br />
             <hr />
@@ -122,7 +122,7 @@
 
                 <ContentTemplate>
 
-                   <table>
+                    <table>
                         <tr>
                             <td class="auto-style3"></td>
 
@@ -154,27 +154,27 @@
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" ontextchanged="on_tb_date_update" ></asp:TextBox>
+                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
                         <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1();"></asp:Button>
                     </td>
                 </tr>
-                 <tr>
-     <td class="auto-style3"></td>
+                <tr>
+                    <td class="auto-style3"></td>
 
-     <td class="auto-style2">
-         <asp:Label runat="server" Text="End Date "></asp:Label></td>
-     <td>
-         <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" ontextchanged="on_tb_date_update"></asp:TextBox>
-         <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar2();"></asp:Button>
-     </td>
- </tr>
+                    <td class="auto-style2">
+                        <asp:Label runat="server" Text="End Date "></asp:Label></td>
+                    <td>
+                        <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
+                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar2();"></asp:Button>
+                    </td>
+                </tr>
             </table>
             <table>
-<tr>
-<td>
- <asp:Button ID="Button_ref" runat="server" OnClick="Buttonref_Click" Text="Reset Filter!" />
-</td>
-</tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="Button_ref" runat="server" OnClick="Buttonref_Click" Text="Reset Filter!" />
+                    </td>
+                </tr>
                 <tr>
                     <td class="style2">
                         <asp:Label runat="server" Text="Search PlanningId:"></asp:Label></td>
@@ -182,7 +182,7 @@
                         <asp:TextBox ID="tb_mask" runat="server" Width="162px" BackColor="#FFFF99" BorderColor="Yellow"></asp:TextBox>
                         <asp:Button runat="server" Text="GO!" OnClick="Unnamed6_Click" ID="btn_go"></asp:Button></td>
                 </tr>
-              
+
                 <tr>
                     <td class="style2">
                         <asp:Label runat="server" Text="Planning Id:"></asp:Label>
@@ -216,16 +216,16 @@
                         <asp:Label runat="server" Text="Region:" ID="lbl_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" Visible="true" Height="28px"  Width="370px">
+                        <asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
-                 <tr>
+                <tr>
                     <td>
                         <asp:Label runat="server" Text="Sub Region:" ID="lbl_sub_region" Visible="true"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px"  Width="370px">
+                        <asp:DropDownList ID="ddl_sub_region" runat="server" AutoPostBack="True" Visible="true" Height="28px" Width="370px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -246,19 +246,19 @@
                         <asp:TextBox ID="tb_desc" runat="server" Height="23px" MaxLength="50" Width="365px"></asp:TextBox>
                     </td>
                 </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        <asp:Label runat="server" Text="Register Time:"></asp:Label></td>
+                    <td>
+                        <asp:TextBox ID="tb_worked_time" runat="server" MaxLength="5" Width="45px" Height="21px"></asp:TextBox>
+                    </td>
+                </tr>
             </table>
 
-            <br />
-            <br />
-              <tr>
-      <td class="auto-style3"></td>
 
-      <td class="auto-style2">
-          <asp:Label runat="server" Text="Register Time:"></asp:Label></td>
-      <td>
-          <asp:TextBox ID="tb_worked_time" runat="server" MaxLength="5" Width="45px" Height="21px"  ></asp:TextBox>          
-      </td>
-  </tr>
 
             <br />
             <asp:Button runat="server" Text="Report Time" Height="68px" Width="110px"
@@ -268,7 +268,7 @@
             <asp:Button runat="server" Text="Report 35 min break" Height="30px" Width="111px" Font-Bold="True" Font-Size="X-Small" OnClick="Unnamed10_Click" ID="bt_break"></asp:Button><br />
 
         </asp:Panel>
-      
+
     </div>
 
     <br />
@@ -279,8 +279,6 @@
         Width="831px"
         OnRowDeleting="gvVochByDate_RowCommand">
         <Columns>
-           
-
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

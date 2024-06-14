@@ -574,7 +574,16 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
-                            reported.Rows.Add(tb_start_date.Text,ddl_planning_id.SelectedItem.Text,ddl_activity.SelectedItem.Text,ddl_region.SelectedItem.Text,ddl_sub_region.SelectedItem.Text,ddl_country.SelectedItem.Text,tb_worked_time.Text,tb_desc.Text);
+                            DataRow row = reported.NewRow();
+                            row[0] = tb_start_date.Text;
+                            row[1] = ddl_planning_id.SelectedItem.Text;
+                            row[2] = ddl_activity.SelectedItem.Text;
+                            row[3] = ddl_region.SelectedItem.Text;
+                            row[4] = ddl_sub_region.SelectedItem.Text;
+                            row[5] = ddl_country.SelectedItem.Text;
+                            row[6] = tb_worked_time.Text;
+                            row[7] = tb_desc.Text;
+                            reported.Rows.Add(row);
                             Response.Redirect(Request.RawUrl);
                             /*
                             TimeSpan span = DateTime.Now.Subtract(DateTime.Parse(Session["login_time"].ToString()));
