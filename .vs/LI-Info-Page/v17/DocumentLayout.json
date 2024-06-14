@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\slawo\\source\\repos\\wtc_li\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\wtc_main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\wtc_main.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\wtc_main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|C:\\Users\\slawo\\source\\repos\\wtc_li\\wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -26,10 +30,6 @@
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:master_page.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|C:\\Users\\slawo\\source\\repos\\wtc_li\\wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\project_details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
@@ -40,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -52,20 +52,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "wtc_main.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx.cs",
               "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs*",
               "RelativeToolTip": "WTC\\wtc_main.aspx.cs*",
-              "ViewState": "AQIAAJ8AAAAAAAAAAAAowLkAAAAiAAAA",
+              "ViewState": "AQIAAKEBAAAAAAAAAAAAAK0BAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T20:53:29.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "wtc_main.aspx",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx",
@@ -78,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
@@ -91,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "web.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config",
               "RelativeDocumentMoniker": "web.config",
@@ -104,20 +104,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "project_details.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\project_details.aspx.cs",
               "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
               "RelativeToolTip": "WTC\\project_details.aspx.cs",
-              "ViewState": "AQIAAOAAAAAAAAAAAAAewPcAAAAgAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAArwPcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-27T13:37:16.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LI-Info-Page",
               "DocumentMoniker": "C:\\Users\\slawo\\Source\\Repos\\wtc_li\\LI-Info-Page.csproj",
               "RelativeDocumentMoniker": "LI-Info-Page.csproj",
@@ -129,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Master_Page.Master",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
               "RelativeDocumentMoniker": "Master_Page.Master",

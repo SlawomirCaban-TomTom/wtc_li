@@ -71,8 +71,8 @@ namespace TomTom_Info_Page.WTC
         private void fill_grid()
         {
             DataTable dt3 = new DataTable();
-            /*  SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select task_id,t.project_id, project_name,t.task_type_id,task_type_name,t.sub_task_id,sub_task_name,  cAST(duration AS NVARCHAR) as duration,description from task t join project p on t.project_id = p.project_id join             task_type ta on t.task_type_id = ta.task_type_id join sub_task st on t.sub_task_id = st.sub_task_id join int_project_task_type iptt on t.project_id = iptt.project_id and t.task_type_id = iptt.task_type_id where  timesheet_id =" + Session["timesheet"];
+             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date='"+tb_start_date.Text+"'";
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
               try
@@ -89,7 +89,7 @@ namespace TomTom_Info_Page.WTC
                       {
                           string time = string.Empty;
 
-                          int total = int.Parse(dt3.Rows[i][7].ToString());
+                          int total = int.Parse(dt3.Rows[i][13].ToString());
                           temp = temp + total;
                           int h = total / 60;
                           int min = total % 60;
@@ -101,7 +101,7 @@ namespace TomTom_Info_Page.WTC
                           else
                               time = time + ":" + min.ToString();
 
-                          dt3.Rows[i][7] = time;
+                          dt3.Rows[i][13] = time;
                       }
 
                       string rt = string.Empty;
@@ -128,43 +128,6 @@ namespace TomTom_Info_Page.WTC
                       Session["reported_time"] = temp;
                   }
 
-                  TimeSpan span = DateTime.UtcNow.Subtract(DateTime.Parse(Session["login_time"].ToString()));
-                  int totalminutes = (int)span.TotalMinutes;
-                  int hw = totalminutes / 60;
-                  int minw = totalminutes % 60;
-                  string tempw = string.Empty;
-                  if (hw < 10)
-                      tempw = "0" + hw;
-                  else
-                      tempw = hw.ToString();
-                  if (minw < 10)
-                      tempw = tempw + ":0" + minw;
-                  else
-                      tempw = tempw + ":" + minw;
-                  lbl_total_work_time.Text = tempw;
-                  int totalminutesleft = totalminutes - reported_time;
-                  if (totalminutesleft <= 0)
-                      tb_time_left.Text = "00:00";
-                  else
-                  {
-                      if (state > 0)
-                      {
-                          int h2 = totalminutesleft / 60;
-                          int min2 = totalminutesleft % 60;
-
-                          string temp2 = string.Empty;
-                          if (h2 < 10)
-                              temp2 = "0" + h2;
-                          else
-                              temp2 = h2.ToString();
-                          if (min2 < 10)
-                              temp2 = temp2 + ":0" + min2;
-                          else
-                              temp2 = temp2 + ":" + min2;
-
-                          tb_time_left.Text = temp2;
-                      }
-                  }
                   reported = dt3;
                   Session["reported"] = dt3;
                   gv_reported_time.DataSource = reported;
@@ -180,11 +143,7 @@ namespace TomTom_Info_Page.WTC
               {
                   conn.Close();
                   conn.Dispose();
-              }
-            */
-            DataTable reported = (DataTable)Session["reported"];
-            gv_reported_time.DataSource = reported;
-            gv_reported_time.DataBind();
+              }            
         }
 
         private void fill_planingid()
@@ -468,7 +427,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
          
         }
 
-        protected void Unnamed7_Click(object sender, EventArgs e)
+        protected void bt_insert_temp_report(object sender, EventArgs e)
         {
             bt_report.Enabled = false;
             string temp = tb_worked_time.Text;
@@ -502,70 +461,34 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
-                            DataTable reported = new DataTable();
-                            reported.Columns.Add("Date");
-                            reported.Columns.Add("Planning_id");
-                            reported.Columns.Add("Activity");
-                            reported.Columns.Add("Region");
-                            reported.Columns.Add("SubRegion");
-                            reported.Columns.Add("Country");
-                            reported.Columns.Add("Duration");
-                            reported.Columns.Add("Remarks");
-
-
-                            DataRow row = reported.NewRow();
-                            row[0] = tb_start_date.Text;
-                            row[1] = ddl_planning_id.SelectedItem.Text;
-                            row[2] = ddl_activity.SelectedItem.Text;
-                            row[3] = ddl_region.SelectedItem.Text;
-                            row[4] = ddl_sub_region.SelectedItem.Text;
-                            row[5] = ddl_country.SelectedItem.Text;
-                            row[6] = tb_worked_time.Text;
-                            row[7] = tb_desc.Text;
-                            reported.Rows.Add(row);
-                            Session["reported"] = reported;
-                            Response.Redirect(Request.RawUrl);
-                            /*
-                            TimeSpan span = DateTime.Now.Subtract(DateTime.Parse(Session["login_time"].ToString()));
-
-                            if (span.TotalMinutes - reported_time - duration < -6)
+                            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+                            string query = "sp_add_temp_report";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("user_id", SqlDbType.Int).Value = Session["user"].ToString();
+                            cmd.Parameters.Add("working_date", SqlDbType.Int).Value = DateTime.Parse(tb_start_date.Text);
+                            cmd.Parameters.Add("project_id", SqlDbType.Int).Value = ddl_planning_id.SelectedItem.Value;
+                            cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedValue;
+                            cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedValue;
+                            cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedValue;
+                            cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedValue;
+                            cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
+                            cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = string.Empty;
+                            try
                             {
-                                lbl_err.Visible = true;
-                                lbl_err.Text = "You are trying too report more than you have been working today! total:" + span.TotalMinutes + " reported:" + reported_time + " duration:" + duration;
-                                bt_report.Enabled = true;
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                                conn.Dispose();
+                                Response.Redirect(Request.RawUrl);
                             }
-                            else
+                            catch (Exception ex)
                             {
-
-                                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                                string query = "sp_add_TASK";
-                                SqlCommand cmd = new SqlCommand(query, conn);
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.Add("project", SqlDbType.Int).Value = ddl_planning_id.SelectedValue;
-                                cmd.Parameters.Add("task_type", SqlDbType.Int).Value = ddl_activity.SelectedValue;
-                                cmd.Parameters.Add("region", SqlDbType.Int).Value = ddl_region.SelectedValue;
-                                cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
-                                cmd.Parameters.Add("timesheet", SqlDbType.Int).Value = Session["timesheet"];
-                                cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = tb_desc.Text;
-                                try
-                                {
-                                    conn.Open();
-                                    cmd.ExecuteNonQuery();
-                                    conn.Close();
-                                    conn.Dispose();
-                                    Response.Redirect(Request.RawUrl);
-                                }
-                                catch (Exception ex)
-                                {
-                                    conn.Close();
-                                    conn.Dispose();
-                                    lbl_err.Visible = true;
-                                    lbl_err.Text = ex.ToString() + query;
-                                    bt_report.Enabled = true;
-                                }
-                            
-                            
-                            */
+                                conn.Close();
+                                conn.Dispose();
+                                lbl_err.Visible = true;
+                                lbl_err.Text = ex.ToString() + query;                                
+                            }
                         }
 
                     }
