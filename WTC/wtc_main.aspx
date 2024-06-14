@@ -255,12 +255,27 @@
  </table>
     <hr />
     <br />
-    <asp:GridView runat="server" ID="gv_reported_time" AutoGenerateColumns="true"
+         <asp:GridView runat="server" ID="gv_reported_time" AutoGenerateColumns="False"
         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
         CellPadding="4" EnableModelValidation="True" ForeColor="Black"
         Width="831px"
-        OnRowDeleting="gvVochByDate_RowCommand">
+        OnRowDeleting="gvVochByDate_RowCommand" OnSelectedIndexChanged="gv_reported_time_SelectedIndexChanged1">
         <Columns>
+            <asp:BoundField HeaderText="id" DataField="task_id" Visible="False"></asp:BoundField>
+            <asp:BoundField HeaderText="Date" DataField="working_date" Visible="True"></asp:BoundField>
+            <asp:BoundField HeaderText="project_id" DataField="project_id" Visible="False"></asp:BoundField>
+            <asp:BoundField HeaderText="Planning ID" DataField="project_name"></asp:BoundField>
+            <asp:BoundField HeaderText="task_type_id" DataField="task_type_id"
+                Visible="False"></asp:BoundField>
+            <asp:BoundField HeaderText="Activity" DataField="task_type_name"></asp:BoundField>
+            <asp:BoundField HeaderText="region_id" DataField="region_id"
+                Visible="False"></asp:BoundField>
+            <asp:BoundField HeaderText="Region" DataField="region_name"></asp:BoundField>
+            <asp:BoundField HeaderText="Sub Region" DataField="sub_region_name"></asp:BoundField>
+            <asp:BoundField HeaderText="Country" DataField="country_name"></asp:BoundField>
+            <asp:BoundField HeaderText="Description" DataField="description"></asp:BoundField>
+            <asp:BoundField HeaderText="Duration" DataField="duration"></asp:BoundField>
+            <asp:CommandField ButtonType="Button" ShowDeleteButton="True"></asp:CommandField>
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -268,7 +283,6 @@
         <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
         <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
     </asp:GridView>
-
 
     <br />
     <br />

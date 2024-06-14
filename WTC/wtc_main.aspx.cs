@@ -570,10 +570,10 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         {
             DataTable temp = (DataTable)Session["reported"];
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query = "sp_del_reported_task";
+            string query = "sp_del_temp_reported_row";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("task_id", SqlDbType.Int).Value = temp.Rows[e.RowIndex][0].ToString();
+            cmd.Parameters.Add("id", SqlDbType.Int).Value = temp.Rows[e.RowIndex][0].ToString();
             try
             {
                 conn.Open();
