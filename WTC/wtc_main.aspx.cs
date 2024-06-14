@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 //using System.Globalization;
 namespace TomTom_Info_Page.WTC
 {
@@ -72,7 +73,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)";
+              string query3 = " select * from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
               try
@@ -128,11 +129,11 @@ namespace TomTom_Info_Page.WTC
 
                   reported = dt3;
                   Session["reported"] = dt3;
-                  gv_reported_time.DataSource = dt3;
+                  gv_reported_time.DataSource = dt3.DefaultView;
+                gv_reported_time.AutoGenerateColumns = true;
                   gv_reported_time.DataBind();
                   gv_reported_time.Visible = true;
-
-              }
+            }
               catch (Exception ex)
               {
                   lbl_err.Visible = true;
@@ -145,7 +146,7 @@ namespace TomTom_Info_Page.WTC
               }
             //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
 
-            lbl_total_work_time.Text = query3 ;
+            lbl_total_work_time.Text = query3 + dt3.Rows.Count;
         }
 
         private void fill_planingid()
@@ -339,12 +340,12 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     fill_sub_region();
                     fill_country();
 
-                    fill_grid();
+                   
                   
                 }
              
             }
-
+        fill_grid();
         }
         protected void btn_start_Click(object sender, EventArgs e)
         {
