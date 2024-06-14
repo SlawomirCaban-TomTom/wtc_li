@@ -109,8 +109,7 @@
             <table>
        
                 <tr>
-                    <td class="auto-style3"></td>
-
+                
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
@@ -119,8 +118,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
-
+             
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="End Date "></asp:Label></td>
                     <td>

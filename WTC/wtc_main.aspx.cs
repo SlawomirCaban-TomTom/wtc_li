@@ -77,7 +77,8 @@ namespace TomTom_Info_Page.WTC
               string query3 = " select id, cast(working_date as nvarchar(10) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration  from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
-              try
+            Session["reported_time"] = 0;
+            try
               {
                   int temp = 0;
                   conn.Open();
