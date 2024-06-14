@@ -262,7 +262,7 @@
 
             <br />
             <asp:Button runat="server" Text="Report Time" Height="68px" Width="110px"
-                OnClick="Unnamed7_Click" ID="bt_report"></asp:Button><br />
+                OnClick="bt_insert_temp_report" ID="bt_report"></asp:Button><br />
             <hr />
 
             <asp:Button runat="server" Text="Report 35 min break" Height="30px" Width="111px" Font-Bold="True" Font-Size="X-Small" OnClick="Unnamed10_Click" ID="bt_break"></asp:Button><br />
