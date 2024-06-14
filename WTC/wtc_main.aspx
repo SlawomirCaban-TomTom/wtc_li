@@ -273,7 +273,7 @@
             <asp:BoundField HeaderText="Region" DataField="region_name"></asp:BoundField>
             <asp:BoundField HeaderText="Sub Region" DataField="sub_region_name"></asp:BoundField>
             <asp:BoundField HeaderText="Country" DataField="country_name"></asp:BoundField>
-            <asp:BoundField HeaderText="Description" DataField="description"></asp:BoundField>
+            <asp:BoundField HeaderText="Description" DataField="comment"></asp:BoundField>
             <asp:BoundField HeaderText="Duration" DataField="duration"></asp:BoundField>
             <asp:CommandField ButtonType="Button" ShowDeleteButton="True"></asp:CommandField>
         </Columns>
