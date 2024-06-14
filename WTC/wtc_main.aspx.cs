@@ -21,6 +21,7 @@ namespace TomTom_Info_Page.WTC
         public static TimeSpan p_span;
         public bool check_login()
         {
+            tb_start_date.Text = DateTime.Now.ToString("dd MMM yyyy");
             int role_id = 0;
             bool result = false;
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
@@ -34,21 +35,9 @@ namespace TomTom_Info_Page.WTC
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
                 {
-                    string timelimit = "00:00:01";
-                    DateTime start = DateTime.Now;
-                    string end = DateTime.Now.ToString("dd/MMM/yyyy") + " " + timelimit;
-                    DateTime tend = DateTime.ParseExact(end, "dd/MMM/yyyy HH:mm:ss", new CultureInfo("en-US"));
-                    TimeSpan span = tend - start;
                     Session["user"] = dt.Rows[0][0].ToString();
                     Session["utc"] = dt.Rows[0][2].ToString();
-                    string timelimit2 = "23:59:59";
-                    DateTime start2 = DateTime.Now;
-                    string end2 = DateTime.Now.ToString("dd/MMM/yyyy") + " " + timelimit2;
-                    DateTime tend2 = DateTime.ParseExact(end2, "dd/MMM/yyyy HH:mm:ss", new CultureInfo("en-US"));
-                    TimeSpan span2 = tend2 - start2;
-
                     lbl_name.Text = "Hi " + dt.Rows[0][1].ToString() + "!";
-                    string query2 = "select timesheet_id,start_time_server,convert(nvarchar, start_time_local ,120) from timesheet where user_id =" + Session["user"] + " and end_time_local is null";
                     string query3 = "select top (1)role_id from user_role where user_id =" + Session["user"] + " order by 1 desc";
                     SqlCommand cmd3 = new SqlCommand(query3, conn);
                     object test = cmd3.ExecuteScalar();
@@ -59,45 +48,12 @@ namespace TomTom_Info_Page.WTC
                         menu_std.Visible = false;
                         Menu_mng.Visible = true;
                     }
-                    SqlDataAdapter da2 = new SqlDataAdapter(query2, conn);
-                    DataTable dt2 = new DataTable();
-                    da2.Fill(dt2);
-                    if (dt2.Rows.Count > 0)
-                    {
-
-                        Session["working"] = 1;
-                        Session["timesheet"] = dt2.Rows[0][0].ToString();
-                        lbl_date.Text = dt2.Rows[0][1].ToString();
-                        //     DateTime login_= DateTime.Parse(dt2.Rows[0][1].ToString());
-                        //  TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
-                        //          DateTime login_tz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
-                        DateTime login_tz = DateTime.Parse(dt2.Rows[0][1].ToString());
-                        Session["login_time"] = login_tz;
-
-                        // Timer1.Enabled = true;
-                        //DateTime.ParseExact(dt2.Rows[0][1].ToString(),"yyyy-MM-dd HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture);
-
-                        //DateTime login_ = DateTime.Parse(Session["login_time"].ToString());
-                        // TimeZoneInfo cstZone = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
-                        // DateTime login_tzz = TimeZoneInfo.ConvertTimeFromUtc(login_, cstZone);
-
-
-
-                        lbl_date.Text = "Start time: " + dt2.Rows[0][2].ToString();
-                        //.ToString("yyyy-MM-dd HH:mm:ss");
-                        result = true;
-                    }
-                    else
-
-                        Session["working"] = 0;
+                    result = true;  
                 }
-
-
                 else
                 {
                     lbl_err.Visible = true;
-                    lbl_err.Text = "User: " + User.Identity.Name + " not found in WTC database! Please contact TCO!";
-                    btn_start.Visible = false;
+                    lbl_err.Text = "User: " + User.Identity.Name + " not found in WTC database! Please contact TCO!";                    
                 }
             }
             catch (Exception ex)
@@ -113,119 +69,122 @@ namespace TomTom_Info_Page.WTC
 
             return result;
         }
-        private void fill_grid(int state)
+        private void fill_grid()
         {
-          /*  SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query3 = " select task_id,t.project_id, project_name,t.task_type_id,task_type_name,t.sub_task_id,sub_task_name,  cAST(duration AS NVARCHAR) as duration,description from task t join project p on t.project_id = p.project_id join             task_type ta on t.task_type_id = ta.task_type_id join sub_task st on t.sub_task_id = st.sub_task_id join int_project_task_type iptt on t.project_id = iptt.project_id and t.task_type_id = iptt.task_type_id where  timesheet_id =" + Session["timesheet"];
-            SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
             DataTable dt3 = new DataTable();
-            try
-            {
-                int temp = 0;
-                conn.Open();
-                da3.Fill(dt3);
+            /*  SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+              string query3 = " select task_id,t.project_id, project_name,t.task_type_id,task_type_name,t.sub_task_id,sub_task_name,  cAST(duration AS NVARCHAR) as duration,description from task t join project p on t.project_id = p.project_id join             task_type ta on t.task_type_id = ta.task_type_id join sub_task st on t.sub_task_id = st.sub_task_id join int_project_task_type iptt on t.project_id = iptt.project_id and t.task_type_id = iptt.task_type_id where  timesheet_id =" + Session["timesheet"];
+              SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
-                if (dt3.Rows.Count > 0)
-                {
+              try
+              {
+                  int temp = 0;
+                  conn.Open();
+                  da3.Fill(dt3);
+
+                  if (dt3.Rows.Count > 0)
+                  {
 
 
-                    for (int i = 0; i < dt3.Rows.Count; i++)
-                    {
-                        string time = string.Empty;
+                      for (int i = 0; i < dt3.Rows.Count; i++)
+                      {
+                          string time = string.Empty;
 
-                        int total = int.Parse(dt3.Rows[i][7].ToString());
-                        temp = temp + total;
-                        int h = total / 60;
-                        int min = total % 60;
-                        if (h < 10)
-                            time = "0" + h.ToString();
-                        else time = h.ToString();
-                        if (min < 10)
-                            time = time + ":0" + min.ToString();
-                        else
-                            time = time + ":" + min.ToString();
+                          int total = int.Parse(dt3.Rows[i][7].ToString());
+                          temp = temp + total;
+                          int h = total / 60;
+                          int min = total % 60;
+                          if (h < 10)
+                              time = "0" + h.ToString();
+                          else time = h.ToString();
+                          if (min < 10)
+                              time = time + ":0" + min.ToString();
+                          else
+                              time = time + ":" + min.ToString();
 
-                        dt3.Rows[i][7] = time;
-                    }
+                          dt3.Rows[i][7] = time;
+                      }
 
-                    string rt = string.Empty;
-                    reported_time = temp;
-                    Session["reported_time"] = temp;
-                    int h2 = temp / 60;
-                    int min2 = temp % 60;
-                    if (h2 < 10)
-                        rt = "0" + h2.ToString();
-                    else rt = h2.ToString();
-                    if (min2 < 10)
-                        rt = rt + ":0" + min2.ToString();
-                    else
-                        rt = rt + ":" + min2.ToString();
+                      string rt = string.Empty;
+                      reported_time = temp;
+                      Session["reported_time"] = temp;
+                      int h2 = temp / 60;
+                      int min2 = temp % 60;
+                      if (h2 < 10)
+                          rt = "0" + h2.ToString();
+                      else rt = h2.ToString();
+                      if (min2 < 10)
+                          rt = rt + ":0" + min2.ToString();
+                      else
+                          rt = rt + ":" + min2.ToString();
 
-                    lbl_total_reported.Text = rt;
+                      lbl_total_reported.Text = rt;
 
-                }
-                else
-                {
+                  }
+                  else
+                  {
 
-                    lbl_total_reported.Text = "00:00";
-                    reported_time = temp;
-                    Session["reported_time"] = temp;
-                }
+                      lbl_total_reported.Text = "00:00";
+                      reported_time = temp;
+                      Session["reported_time"] = temp;
+                  }
 
-                TimeSpan span = DateTime.UtcNow.Subtract(DateTime.Parse(Session["login_time"].ToString()));
-                int totalminutes = (int)span.TotalMinutes;
-                int hw = totalminutes / 60;
-                int minw = totalminutes % 60;
-                string tempw = string.Empty;
-                if (hw < 10)
-                    tempw = "0" + hw;
-                else
-                    tempw = hw.ToString();
-                if (minw < 10)
-                    tempw = tempw + ":0" + minw;
-                else
-                    tempw = tempw + ":" + minw;
-                lbl_total_work_time.Text = tempw;
-                int totalminutesleft = totalminutes - reported_time;
-                if (totalminutesleft <= 0)
-                    tb_time_left.Text = "00:00";
-                else
-                {
-                    if (state > 0)
-                    {
-                        int h2 = totalminutesleft / 60;
-                        int min2 = totalminutesleft % 60;
+                  TimeSpan span = DateTime.UtcNow.Subtract(DateTime.Parse(Session["login_time"].ToString()));
+                  int totalminutes = (int)span.TotalMinutes;
+                  int hw = totalminutes / 60;
+                  int minw = totalminutes % 60;
+                  string tempw = string.Empty;
+                  if (hw < 10)
+                      tempw = "0" + hw;
+                  else
+                      tempw = hw.ToString();
+                  if (minw < 10)
+                      tempw = tempw + ":0" + minw;
+                  else
+                      tempw = tempw + ":" + minw;
+                  lbl_total_work_time.Text = tempw;
+                  int totalminutesleft = totalminutes - reported_time;
+                  if (totalminutesleft <= 0)
+                      tb_time_left.Text = "00:00";
+                  else
+                  {
+                      if (state > 0)
+                      {
+                          int h2 = totalminutesleft / 60;
+                          int min2 = totalminutesleft % 60;
 
-                        string temp2 = string.Empty;
-                        if (h2 < 10)
-                            temp2 = "0" + h2;
-                        else
-                            temp2 = h2.ToString();
-                        if (min2 < 10)
-                            temp2 = temp2 + ":0" + min2;
-                        else
-                            temp2 = temp2 + ":" + min2;
+                          string temp2 = string.Empty;
+                          if (h2 < 10)
+                              temp2 = "0" + h2;
+                          else
+                              temp2 = h2.ToString();
+                          if (min2 < 10)
+                              temp2 = temp2 + ":0" + min2;
+                          else
+                              temp2 = temp2 + ":" + min2;
 
-                        tb_time_left.Text = temp2;
-                    }
-                }
-                reported = dt3;
-                Session["reported"] = dt3;
-                gv_reported_time.DataSource = reported;
-                gv_reported_time.DataBind();
+                          tb_time_left.Text = temp2;
+                      }
+                  }
+                  reported = dt3;
+                  Session["reported"] = dt3;
+                  gv_reported_time.DataSource = reported;
+                  gv_reported_time.DataBind();
 
-            }
-            catch (Exception ex)
-            {
-                lbl_err.Visible = true;
-                lbl_err.Text = ex.ToString();
-            }
-            finally
-            {
-                conn.Close();
-                conn.Dispose();
-            }
-          */
+              }
+              catch (Exception ex)
+              {
+                  lbl_err.Visible = true;
+                  lbl_err.Text = ex.ToString();
+              }
+              finally
+              {
+                  conn.Close();
+                  conn.Dispose();
+              }
+            */            
+            gv_reported_time.DataSource = reported;
+            gv_reported_time.DataBind();
         }
 
         private void fill_planingid()
@@ -406,19 +365,13 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            btn_start.Enabled = true;
-            //Timer1.Enabled = false;
-            Session.Timeout = 180;
             Page.EnableViewState = true;
             Page.MaintainScrollPositionOnPostBack = true;
-            int state = 0;
             if (!Page.IsPostBack)
             {
-                //ddl_sub_task.Visible = true;
-              
+                if(check_login())                
                 {
-                    btn_start.Text = "Stop Work";
+                    
                     report_time.Visible = true;
                     fill_planingid();
                     fill_activity();
@@ -426,45 +379,20 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     fill_sub_region();
                     fill_country();
 
-                    state++;
-
-                    fill_grid(state);
-                    /*if ((!string.IsNullOrEmpty((string)Page.Session["task_id"])) && (!string.IsNullOrEmpty((string)Page.Session["project_id"])) && (!string.IsNullOrEmpty((string)Page.Session["sub_task_id"])))
-                    {
-                        ddl_project.SelectedValue = Session["project_id"].ToString();
-                        fill_task();
-                        ddl_task.SelectedValue = Session["task_id"].ToString();
-                        ddl_sub_task.SelectedValue = Session["sub_task_id"].ToString();
-                        if (ddl_project.SelectedValue == "1")
-                        {
-                            ddl_sub_task.Enabled = false;
-
-                            ddl_sub_task.Visible = false;
-                        }
-                        else
-                        {
-                            ddl_sub_task.Visible = true;
-                            ddl_sub_task.Enabled = true;
-                        }
-                    }*/
+                    fill_grid();
+                  
                 }
              
             }
-            else
-            {
-               
-            }
 
         }
-        
-
         protected void btn_start_Click(object sender, EventArgs e)
         {
             btn_start.Enabled = false;
 
             if (Session["working"].ToString() == "1")
             {
-                fill_grid(0);
+                fill_grid();
                 TimeSpan span = DateTime.Now.Subtract(DateTime.Parse(Session["login_time"].ToString()));
                 int totalminutes = (int)span.TotalMinutes;
                 int totalminutesleft = totalminutes - reported_time;
