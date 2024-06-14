@@ -259,7 +259,7 @@
         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
         CellPadding="4" EnableModelValidation="True" ForeColor="Black"
         Width="831px"
-        OnRowDeleting="gvVochByDate_RowCommand" OnSelectedIndexChanged="gv_reported_time_SelectedIndexChanged1">
+        OnRowDeleting="gvVochByDate_RowCommand">
         <Columns>
             <asp:BoundField HeaderText="id" DataField="task_id" Visible="False"></asp:BoundField>
             <asp:BoundField HeaderText="Date" DataField="working_date" Visible="True"></asp:BoundField>
