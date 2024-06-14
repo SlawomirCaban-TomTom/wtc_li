@@ -181,7 +181,8 @@ namespace TomTom_Info_Page.WTC
                   conn.Close();
                   conn.Dispose();
               }
-            */            
+            */
+            DataTable reported = (DataTable)Session["reported"];
             gv_reported_time.DataSource = reported;
             gv_reported_time.DataBind();
         }
@@ -501,6 +502,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
+                            DataTable reported = new DataTable();
                             reported.Columns.Add("Date");
                             reported.Columns.Add("Planning_id");
                             reported.Columns.Add("Activity");
@@ -521,6 +523,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                             row[6] = tb_worked_time.Text;
                             row[7] = tb_desc.Text;
                             reported.Rows.Add(row);
+                            Session["reported"] = reported;
                             Response.Redirect(Request.RawUrl);
                             /*
                             TimeSpan span = DateTime.Now.Subtract(DateTime.Parse(Session["login_time"].ToString()));
