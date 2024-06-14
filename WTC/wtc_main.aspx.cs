@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Web.UI;
@@ -542,11 +543,11 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         protected void Unnamed7_Click(object sender, EventArgs e)
         {
             bt_report.Enabled = false;
-            string temp = tb_start_date.Text;
+            string temp = tb_worked_time.Text;
             if (ddl_planning_id.SelectedIndex == 0)
             {
                 lbl_err.Visible = true;
-                lbl_err.Text = "Please select project!";
+                lbl_err.Text = "Please select Planning ID!";
 
                 bt_report.Enabled = true;
 
@@ -556,7 +557,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 if (ddl_activity.SelectedItem.Value == "0")
                 {
                     lbl_err.Visible = true;
-                    lbl_err.Text = "Please select task!";
+                    lbl_err.Text = "Please select Activity!";
                     bt_report.Enabled = true;
                 }
                 else
@@ -573,6 +574,9 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         }
                         else
                         {
+                            reported.Rows.Add(tb_start_date.Text,ddl_planning_id.SelectedItem.Text,ddl_activity.SelectedItem.Text,ddl_region.SelectedItem.Text,ddl_sub_region.SelectedItem.Text,ddl_country.SelectedItem.Text,tb_worked_time.Text,tb_desc.Text);
+                            Response.Redirect(Request.RawUrl);
+                            /*
                             TimeSpan span = DateTime.Now.Subtract(DateTime.Parse(Session["login_time"].ToString()));
 
                             if (span.TotalMinutes - reported_time - duration < -6)
@@ -610,8 +614,9 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                                     lbl_err.Text = ex.ToString() + query;
                                     bt_report.Enabled = true;
                                 }
-
-                            }
+                            
+                            
+                            */
                         }
 
                     }
@@ -623,7 +628,28 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 }
             }
         }
-
+        protected void on_tb_date_update(object sender, EventArgs e)
+        {
+            if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
+                {
+                if (check_diff(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)) > 14)
+                {
+                    tb_end_date.Text = string.Empty;
+                    lbl_err.Text = "Please chose shorter period!";
+                    lbl_err.Visible = true;
+                }
+                else
+                { 
+                    lbl_err.Visible = false;
+                }
+                
+            }
+        }
+        protected double check_diff(DateTime start_date, DateTime end_date)
+        {
+            return (end_date - start_date).TotalDays;
+        }
+            
         protected void gvVochByDate_RowCommand(object sender, GridViewDeleteEventArgs e)
         {
             DataTable temp = (DataTable)Session["reported"];

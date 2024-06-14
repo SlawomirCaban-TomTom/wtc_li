@@ -222,6 +222,15 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.TextBox tb_desc;
 
         /// <summary>
+        /// Kontrolka tb_worked_time.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_worked_time;
+
+        /// <summary>
         /// Kontrolka bt_report.
         /// </summary>
         /// <remarks>

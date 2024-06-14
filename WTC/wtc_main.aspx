@@ -154,7 +154,7 @@
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="7" Width="49px" Height="21px" ></asp:TextBox>
+                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" ontextchanged="on_tb_date_update" ></asp:TextBox>
                         <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1();"></asp:Button>
                     </td>
                 </tr>
@@ -164,7 +164,7 @@
      <td class="auto-style2">
          <asp:Label runat="server" Text="End Date "></asp:Label></td>
      <td>
-         <asp:TextBox ID="tb_end_date" runat="server" MaxLength="7" Width="49px" Height="21px"></asp:TextBox>
+         <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" ontextchanged="on_tb_date_update"></asp:TextBox>
          <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar2();"></asp:Button>
      </td>
  </tr>
@@ -249,7 +249,16 @@
             </table>
 
             <br />
+            <br />
+              <tr>
+      <td class="auto-style3"></td>
 
+      <td class="auto-style2">
+          <asp:Label runat="server" Text="Register Time:"></asp:Label></td>
+      <td>
+          <asp:TextBox ID="tb_worked_time" runat="server" MaxLength="5" Width="45px" Height="21px"  ></asp:TextBox>          
+      </td>
+  </tr>
 
             <br />
             <asp:Button runat="server" Text="Report Time" Height="68px" Width="110px"
