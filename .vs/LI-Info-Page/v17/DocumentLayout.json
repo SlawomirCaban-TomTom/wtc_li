@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\history.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\history.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -40,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -52,20 +56,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "history.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\history.aspx.cs",
+              "RelativeDocumentMoniker": "WTC\\history.aspx.cs",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\history.aspx.cs",
+              "RelativeToolTip": "WTC\\history.aspx.cs",
+              "ViewState": "AQIAAF8BAAAAAAAAAAAiwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T10:47:32.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "wtc_main.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx.cs",
               "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs*",
               "RelativeToolTip": "WTC\\wtc_main.aspx.cs*",
-              "ViewState": "AQIAAIQBAAAAAAAAAAAiwA4CAAARAAAA",
+              "ViewState": "AQIAALcBAAAAAAAAAAAswPIBAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T20:53:29.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "wtc_main.aspx",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx",
@@ -78,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "web.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config",
               "RelativeDocumentMoniker": "web.config",
@@ -104,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "project_details.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\project_details.aspx.cs",
@@ -117,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LI-Info-Page",
               "DocumentMoniker": "C:\\Users\\slawo\\Source\\Repos\\wtc_li\\LI-Info-Page.csproj",
               "RelativeDocumentMoniker": "LI-Info-Page.csproj",
@@ -129,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Master_Page.Master",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
               "RelativeDocumentMoniker": "Master_Page.Master",

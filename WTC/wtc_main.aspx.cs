@@ -492,10 +492,10 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                                         cmd.Parameters.Add("user_id", SqlDbType.Int).Value = Session["user"].ToString();
                                         cmd.Parameters.Add("working_date", SqlDbType.DateTime).Value = DateTime.Parse(tb_start_date.Text);
                                         cmd.Parameters.Add("project_id", SqlDbType.Int).Value = ddl_planning_id.SelectedItem.Value;
-                                        cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedValue;
-                                        cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedValue;
-                                        cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedValue;
-                                        cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedValue;
+                                        cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedItem.Value;
+                                        cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedItem.Value;
+                                        cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedItem.Value;
+                                        cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedItem.Value;
                                         cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
                                         cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = string.Empty;
                                         try
