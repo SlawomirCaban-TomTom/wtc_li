@@ -128,7 +128,7 @@ namespace TomTom_Info_Page.WTC
 
                   reported = dt3;
                   Session["reported"] = dt3;
-                  gv_reported_time.DataSource = reported;
+                  gv_reported_time.DataSource = dt3;
                   gv_reported_time.DataBind();
                   gv_reported_time.Visible = true;
 
@@ -542,6 +542,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 { 
                     lbl_err.Visible = false;
                 }
+                fill_grid();
                 
             }
         }

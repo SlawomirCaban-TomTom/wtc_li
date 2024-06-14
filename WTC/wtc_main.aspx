@@ -273,7 +273,7 @@
 
     <br />
     <hr />
-    <asp:GridView runat="server" ID="gv_reported_time" AutoGenerateColumns="False"
+    <asp:GridView runat="server" ID="gv_reported_time" AutoGenerateColumns="true"
         BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
         CellPadding="4" EnableModelValidation="True" ForeColor="Black"
         Width="831px"
