@@ -22,7 +22,7 @@ namespace TomTom_Info_Page.WTC
         public static TimeSpan p_span;
         public bool check_login()
         {
-            tb_start_date.Text = DateTime.Now.ToString("dd MMM yyyy");
+           // tb_start_date.Text = DateTime.Now.ToString("dd MMM yyyy");
             int role_id = 0;
             bool result = false;
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
