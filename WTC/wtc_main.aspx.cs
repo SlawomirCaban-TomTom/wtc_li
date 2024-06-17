@@ -453,7 +453,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         }
         protected void on_tb_date_update(object sender, EventArgs e)
         {
-            Response.Redirect(Request.RawUrl);
+           // Response.Redirect(Request.RawUrl);
             if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
                 {
                 if (check_diff(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)) > 14)

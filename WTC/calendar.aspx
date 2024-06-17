@@ -29,7 +29,6 @@ Height="220px"
 Width="400px"
 OnDayRender="Calendar1_DayRender" FirstDayOfWeek="Sunday" NextPrevFormat="FullMonth" 
             TitleFormat="Month">
-
     <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
     <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" 
                Font-Size="8pt" ForeColor="#333333" Width="1%" />

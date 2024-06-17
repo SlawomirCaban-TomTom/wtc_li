@@ -13,8 +13,7 @@ namespace TomTom_Info_Page.WTC
         {
             string script = "javascript:passDateValue('" + Request.QueryString["ctlid"] + "','" + e.Day.Date.ToString("dd MMM yyyy") + "')";
 
-            e.Cell.Text = "<a href=\"" + script + "\">" + e.Day.Date.Day.ToString() + "</a>";
-         
+            e.Cell.Text = "<a href=\"" + script + "\">" + e.Day.Date.Day.ToString() + "</a>";         
         }
     }
 }
