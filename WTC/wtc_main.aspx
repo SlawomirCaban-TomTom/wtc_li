@@ -72,7 +72,6 @@
             function openCalendar1() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-                __doPostBack('', '');
                 return false;
 
         }
@@ -84,7 +83,6 @@
             function openCalendar2() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-                __doPostBack('', '');
                 return false;
             }
 
@@ -122,7 +120,7 @@
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
                         <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
-                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1();"></asp:Button>
+                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1(); __doPostBack('', '');"></asp:Button>
                     </td>
                 </tr>
                 <tr>
