@@ -72,7 +72,7 @@
             function openCalendar1() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-                __doPostBack('<%= btn.UniqueID %>', '');
+                __doPostBack('<%= tb_start_date.UniqueID %>', '');
                 return false;
 
         }
