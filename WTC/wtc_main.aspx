@@ -119,8 +119,8 @@
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
-                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1(); __doPostBack('', '');"></asp:Button>
+                        <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update" AutoPostBack="True"></asp:TextBox>
+                        <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar1();"></asp:Button>
                     </td>
                 </tr>
                 <tr>

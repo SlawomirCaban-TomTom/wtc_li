@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\calendar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\calendar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\wtc_main.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\wtc_main.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\calendar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\calendar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\calendar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|solutionrelative:wtc\\calendar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A228FE3E-7B6A-49F2-AD43-E3C2A964B46D}|LI-Info-Page.csproj|c:\\users\\slawo\\source\\repos\\wtc_li\\wtc\\history.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,7 +52,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -60,7 +64,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "calendar.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\calendar.aspx.cs",
+              "RelativeDocumentMoniker": "WTC\\calendar.aspx.cs",
+              "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\calendar.aspx.cs*",
+              "RelativeToolTip": "WTC\\calendar.aspx.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T07:58:46.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "calendar.aspx",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\calendar.aspx",
               "RelativeDocumentMoniker": "WTC\\calendar.aspx",
@@ -73,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "history.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\history.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\history.aspx.cs",
@@ -86,13 +103,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "wtc_main.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\wtc_main.aspx.cs",
               "ToolTip": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\wtc_main.aspx.cs",
               "RelativeToolTip": "WTC\\wtc_main.aspx.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAAAmwMUBAAAoAAAA",
+              "ViewState": "AQIAAPkAAAAAAAAAAAAAAMUBAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T20:53:29.732Z",
               "EditorCaption": ""
@@ -112,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
@@ -125,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "web.config",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\web.config",
               "RelativeDocumentMoniker": "web.config",
@@ -138,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "project_details.aspx.cs",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\WTC\\project_details.aspx.cs",
               "RelativeDocumentMoniker": "WTC\\project_details.aspx.cs",
@@ -151,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LI-Info-Page",
               "DocumentMoniker": "C:\\Users\\slawo\\Source\\Repos\\wtc_li\\LI-Info-Page.csproj",
               "RelativeDocumentMoniker": "LI-Info-Page.csproj",
@@ -163,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Master_Page.Master",
               "DocumentMoniker": "C:\\Users\\slawo\\source\\repos\\wtc_li\\Master_Page.Master",
               "RelativeDocumentMoniker": "Master_Page.Master",
