@@ -72,8 +72,8 @@
             function openCalendar1() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
+                __doPostBack('', '');
                 return false;
-                        __doPostBack('', '');
 
         }
 
@@ -84,8 +84,8 @@
             function openCalendar2() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
-                return false;
                 __doPostBack('', '');
+                return false;
             }
 
         </script>
