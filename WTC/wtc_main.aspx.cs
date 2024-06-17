@@ -22,7 +22,17 @@ namespace TomTom_Info_Page.WTC
         public static TimeSpan p_span;
         public bool check_login()
         {
-            tb_start_date.Text = DateTime.Now.ToString("dd MMM yyyy");
+            if (Session["start_date"] != null)
+            {
+                tb_start_date.Text = Session["start_date"].ToString();
+            }
+            else            
+                tb_start_date.Text = DateTime.Now.ToString("dd MMM yyyy");
+            if (Session["end_date"] != null)
+            {
+                tb_end_date.Text = Session["end_date"].ToString();
+            }
+
             int role_id = 0;
             bool result = false;
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
@@ -433,6 +443,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         cmd.ExecuteNonQuery();
                         conn.Close();
                         conn.Dispose();
+                        Session["start_date"] = tb_start_date.Text;
+                        Session["end_date"] = tb_end_date.Text;
                         Response.Redirect(Request.RawUrl);
                     }
                     catch (Exception ex)
