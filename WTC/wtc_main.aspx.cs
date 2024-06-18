@@ -260,13 +260,13 @@ namespace TomTom_Info_Page.WTC
         {
             tb_start_date.Text = c_start_date.SelectedDate.ToString("dd MMM yyyy") ;
             c_start_date.Visible = false;
-            on_tb_date_update();
+            check_dates();
         }
         protected void c_end_date_click_SelectionChanged(object sender, EventArgs e)
         {
             tb_end_date.Text = c_end_date.SelectedDate.ToString("dd MMM yyyy");
             c_end_date.Visible = false;
-            on_tb_date_update();
+            check_dates();
         }
         private void block_report()
         {
@@ -644,7 +644,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             }
 
         }
-        protected void on_tb_date_update()
+        protected void on_tb_date_update(object sender, EventArgs e)
         {
             Session["start_date"] = tb_start_date.Text;
             Session["end_date"] = tb_end_date.Text;
@@ -678,6 +678,41 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 fill_grid();
               //  Response.Redirect(Request.RawUrl);
             }
+        }
+        protected void check_dates()
+        {
+            if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
+            {
+                Session["start_date"] = tb_start_date.Text;
+                if (check_diff(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)) > 14)
+                {
+                    tb_end_date.Text = string.Empty;
+                    lbl_err.Text = "Please chose shorter period!";
+                    lbl_err.Visible = true;
+                }
+                else if (check_end_date(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)))
+                {
+                    cb_use_end_date.Enabled = true;
+                    lbl_err.Visible = false;
+                }
+                else
+                {
+                    lbl_err.Visible = false;
+                    cb_use_end_date.Enabled = false;
+                    tb_end_date.Text = tb_start_date.Text;
+                }
+
+                Session["end_date"] = tb_end_date.Text;
+            }
+            else
+            {
+                if (tb_end_date.Text.Length > 7)
+                    Session["start_date"] = string.Empty;
+                else
+                    Session["end_date"] = tb_start_date.Text;
+            }
+
+            Response.Redirect(Request.RawUrl);
         }
         protected bool check_end_date(DateTime start_date, DateTime end_date)
         {
