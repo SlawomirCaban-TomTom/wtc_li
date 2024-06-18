@@ -264,7 +264,7 @@ namespace TomTom_Info_Page.WTC
         protected void c_end_date_click_SelectionChanged(object sender, EventArgs e)
         {
             tb_end_date.Text = c_end_date.SelectedDate.ToString("dd MMM yyyy");
-            c_start_date.Visible = false;
+            c_end_date.Visible = false;
         }
         private void block_report()
         {
@@ -507,7 +507,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         {
             if (cb_use_end_date.Checked)
             {
-                DataTable initial_date = (DataTable)Session["reported_r"];
+                DataTable initial_date = (DataTable)Session["reported"];
                 double count_days = 0;
                 count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
                 if (count_days > 0)
@@ -650,7 +650,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
         }
         protected void on_tb_date_update(object sender, EventArgs e)
         {
-           
+            Session["start_date"] = tb_start_date.Text;
+            Session["end_date"] = tb_end_date.Text;
             fill_planingid();
             fill_activity();
             fill_region();
@@ -672,7 +673,6 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     cb_use_end_date.Enabled = true;
                     lbl_err.Visible = false;
                 }
-
                 else
                 {
                     lbl_err.Visible = false;
@@ -680,8 +680,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     tb_end_date.Text=tb_start_date.Text;
                 }
                 fill_grid();
-
-                Response.Redirect(Request.RawUrl);
+              //  Response.Redirect(Request.RawUrl);
             }
         }
         protected bool check_end_date(DateTime start_date, DateTime end_date)
