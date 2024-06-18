@@ -506,7 +506,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                  double count_days = 0;
                 GridView1.DataSource = initial_date;
                 GridView1.DataBind();
-               /* count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
+                count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
                   if (count_days > 0)
                   {
                       DateTime start_date = DateTime.Parse(tb_start_date.Text);
@@ -515,11 +515,13 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                           DateTime temp_date = start_date.AddDays(i);
                           for (int j = 0; j <= initial_date.Rows.Count; j++)
                           {
-                              insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
+                               string[] time = initial_date.Rows[j][8].ToString().Split(':');
+                              int duration = 60 * int.Parse(time[0]) + int.Parse(time[1]);
+                              insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), duration, initial_date.Rows[j][7].ToString()) ;
                           }
                       }
                   }
-                Response.Redirect(Request.RawUrl);*/
+                Response.Redirect(Request.RawUrl);
             }
             else
             {
