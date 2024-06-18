@@ -74,12 +74,6 @@
                 window.open('calendar.aspx?Ctlid=<%=tb_start_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
                 return false;
 
-        }
-
-        </script>
-        
-        <script language="javascript" type="text/javascript">
-            }
             function openCalendar2() {
 
                 window.open('calendar.aspx?Ctlid=<%=tb_end_date.ClientID %>', 'Calendar', 'scrollbars=no,resizable=no,width=450,height=250');
@@ -128,7 +122,7 @@
                     <td class="auto-style2">
                         <asp:Label runat="server" Text="End Date "></asp:Label></td>
                     <td>
-                        <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
+                        <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update" AutoPostBack="True"></asp:TextBox>
                         <asp:Button runat="server" Text="..." OnClientClick="javascript:return openCalendar2();"></asp:Button>
                     </td>
                 </tr>

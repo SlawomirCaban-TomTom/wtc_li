@@ -436,7 +436,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             Page.MaintainScrollPositionOnPostBack = true;
             if (!Page.IsPostBack)
             {
-                if(check_login())                
+                if (check_login())
                 {
 
                     unblock_report();
@@ -447,11 +447,21 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     fill_country();
                     fill_grid();
                 }
-             
+
             }
-            if(tb_end_date.Text.Length>5)
-                cb_use_end_date.Enabled = true; 
-            else cb_use_end_date.Enabled=false; 
+            else
+            {
+                if (cb_use_end_date.Enabled)
+                {
+                    fill_grid2();
+                }
+                else
+                    fill_grid();
+            }
+                if(tb_end_date.Text.Length>5)
+                    cb_use_end_date.Enabled = true; 
+                else 
+                    cb_use_end_date.Enabled=false; 
         }
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
