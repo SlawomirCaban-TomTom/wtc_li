@@ -173,7 +173,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date)";
+            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date) order by working_date";
             SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -468,33 +468,26 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 }
 
             }
-            else
-            {
-                if (cb_use_end_date.Enabled)
-                {
-                    fill_grid2();
-                }
-                else
-                    fill_grid();
-            }
             if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
             {
                 if (check_end_date(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)))
                 {
                     cb_use_end_date.Enabled = true;
+                    fill_grid2();
                 }
                 else
                 {
                     cb_use_end_date.Enabled = false;
                     tb_end_date.Text = tb_start_date.Text;
+                    fill_grid();
                 }
             }
             else
             {
                 cb_use_end_date.Enabled = false;
                 tb_end_date.Text = tb_start_date.Text;
+                fill_grid();
             }
-
         }
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
