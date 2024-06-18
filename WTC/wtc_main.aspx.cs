@@ -85,7 +85,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration  from v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
+              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,p.project_id,tt.task_type_id,r.region_id,sr.sub_region_id,p.project_id,c.country_id from  v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -246,6 +246,23 @@ namespace TomTom_Info_Page.WTC
            
             //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
 
+        }
+        protected void c_start_date_click(object sender, EventArgs e)
+        {
+            c_start_date.Visible = true;
+        }
+        protected void c_end_date_click(object sender, EventArgs e)
+        {
+            c_end_date.Visible = true;
+        }
+        protected void c_start_date_click_SelectionChanged(object sender, EventArgs e)
+        {
+            tb_start_date.Text = c_start_date.SelectedDate.ToString("dd MMM yyyy") ;
+            c_start_date.Visible = false;
+        }
+        protected void c_end_date_click_SelectionChanged(object sender, EventArgs e)
+        {
+            tb_end_date.Text = c_end_date.SelectedDate.ToString("dd MMM yyyy");
         }
         private void block_report()
         {
