@@ -247,7 +247,7 @@
 
              </td>
                  <td>
-                     <asp:CheckBox ID="cb_use_end_date" runat="server" AutoPostBack="True" Text="Propagate till selected End Date" />
+                     <asp:CheckBox ID="cb_use_end_date" runat="server" AutoPostBack="True" OnCheckedChanged="cb_range_change"  Text="Propagate till selected End Date" />
                  </td>
          </tr>
  </table>

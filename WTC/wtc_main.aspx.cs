@@ -264,6 +264,7 @@ namespace TomTom_Info_Page.WTC
         protected void c_end_date_click_SelectionChanged(object sender, EventArgs e)
         {
             tb_end_date.Text = c_end_date.SelectedDate.ToString("dd MMM yyyy");
+            c_start_date.Visible = false;
         }
         private void block_report()
         {
@@ -481,6 +482,11 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 if (check_end_date(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)))
                 {
                     cb_use_end_date.Enabled = true;
+                }
+                else
+                {
+                    cb_use_end_date.Enabled = false;
+                    tb_end_date.Text = tb_start_date.Text;
                 }
             }
             else
