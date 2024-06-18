@@ -504,7 +504,9 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             {
                 DataTable initial_date = (DataTable)Session["reported"];
                  double count_days = 0;
-                  count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
+                GridView1.DataSource = initial_date;
+                GridView1.DataBind();
+               /* count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
                   if (count_days > 0)
                   {
                       DateTime start_date = DateTime.Parse(tb_start_date.Text);
@@ -517,9 +519,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                           }
                       }
                   }
-                //       GridView1.DataSource = initial_date;
-                //  GridView1.DataBind();
-                Response.Redirect(Request.RawUrl);
+                Response.Redirect(Request.RawUrl);*/
             }
             else
             {
