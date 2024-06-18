@@ -641,9 +641,8 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             fill_region();
             fill_sub_region();
             fill_country();
-         /*   Response.Redirect(Request.RawUrl);
 
-
+     
 
             if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
                 {
@@ -660,7 +659,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 fill_grid();
 
                 Response.Redirect(Request.RawUrl);
-            }*/
+            }
         }
         protected double check_diff(DateTime start_date, DateTime end_date)
         {
