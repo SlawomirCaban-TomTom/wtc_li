@@ -85,7 +85,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from  v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
+              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,country_id from  v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -173,7 +173,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date) order by working_date";
+            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date) order by working_date";
             SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -260,11 +260,13 @@ namespace TomTom_Info_Page.WTC
         {
             tb_start_date.Text = c_start_date.SelectedDate.ToString("dd MMM yyyy") ;
             c_start_date.Visible = false;
+            on_tb_date_update();
         }
         protected void c_end_date_click_SelectionChanged(object sender, EventArgs e)
         {
             tb_end_date.Text = c_end_date.SelectedDate.ToString("dd MMM yyyy");
             c_end_date.Visible = false;
+            on_tb_date_update();
         }
         private void block_report()
         {
@@ -501,7 +503,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             if (cb_use_end_date.Checked)
             {
                 DataTable initial_date = (DataTable)Session["reported"];
-                /*  double count_days = 0;
+                 double count_days = 0;
                   count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
                   if (count_days > 0)
                   {
@@ -514,10 +516,10 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                               insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
                           }
                       }
-                  }*/
-                GridView1.DataSource = initial_date;
-                GridView1.DataBind();
-                fill_grid2();
+                  }
+                //       GridView1.DataSource = initial_date;
+                //  GridView1.DataBind();
+                Response.Redirect(Request.RawUrl);
             }
             else
             {
@@ -642,7 +644,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             }
 
         }
-        protected void on_tb_date_update(object sender, EventArgs e)
+        protected void on_tb_date_update()
         {
             Session["start_date"] = tb_start_date.Text;
             Session["end_date"] = tb_end_date.Text;
