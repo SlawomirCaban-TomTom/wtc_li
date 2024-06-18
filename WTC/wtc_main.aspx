@@ -130,7 +130,7 @@
                       
                   </td>
                     <td>
-                        <asp:Calendar ID="c_end_date" runat="server" OnSelectionChanged="c_end_date_click_SelectionChanged"></asp:Calendar>
+                        <asp:Calendar ID="c_end_date" runat="server" OnSelectionChanged="c_end_date_click_SelectionChanged"  Visible="false"></asp:Calendar>
            
                     </td>
                 </tr>

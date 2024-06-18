@@ -85,7 +85,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
              SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,task_type_id,region_id,sub_region_id,project_id,country_id from  v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
+              string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from  v_temp_data where  user_id =" + Session["user"] +" and working_date=cast('"+tb_start_date.Text+"' as date)" ;
               SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -173,7 +173,7 @@ namespace TomTom_Info_Page.WTC
         {
             DataTable dt3 = new DataTable();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,task_type_id,region_id,sub_region_id,project_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date)";
+            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,project_id,activity_id,region_id,sub_region_id,project_id,country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date)";
             SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
 
             Session["reported_time"] = 0;
@@ -254,7 +254,7 @@ namespace TomTom_Info_Page.WTC
         protected void c_end_date_click(object sender, EventArgs e)
         {
             c_end_date.Visible = true;
-           Response.Redirect(Request.RawUrl);
+         //  Response.Redirect(Request.RawUrl);
         }
         protected void c_start_date_click_SelectionChanged(object sender, EventArgs e)
         {
