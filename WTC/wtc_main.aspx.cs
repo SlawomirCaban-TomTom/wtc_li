@@ -5,6 +5,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -167,6 +168,94 @@ namespace TomTom_Info_Page.WTC
             }
             //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
             
+        }
+        private void fill_grid2()
+        {
+            DataTable dt3 = new DataTable();
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+            string query3 = " select id, cast(working_date as nvarchar(10)) working_date,project_name,task_type_name, region_name,sub_region_name,country_name,comment,duration,p.project_id,tt.task_type_id,r.region_id,sr.sub_region_id,p.project_id,c.country_id from v_temp_data where  user_id =" + Session["user"] + " and working_date between cast('" + tb_start_date.Text + "' as date) and cast('" + tb_end_date.Text + "' as date)";
+            SqlDataAdapter da3 = new SqlDataAdapter(query3, conn);
+
+            Session["reported_time"] = 0;
+            try
+            {
+                int temp = 0;
+                conn.Open();
+                da3.Fill(dt3);
+
+                if (dt3.Rows.Count > 0)
+                {
+
+
+                    for (int i = 0; i < dt3.Rows.Count; i++)
+                    {
+                        string time = string.Empty;
+                        int total = int.Parse(dt3.Rows[i][8].ToString());
+                        temp += total;
+                        int h = total / 60;
+                        int min = total % 60;
+                        if (h < 10)
+                            time = "0" + h.ToString();
+                        else time = h.ToString();
+                        if (min < 10)
+                            time = time + ":0" + min.ToString();
+                        else
+                            time = time + ":" + min.ToString();
+                        dt3.Rows[i][8] = time;
+                    }
+
+                    string rt = string.Empty;
+                    reported_time = temp;
+                    Session["reported_time"] = temp;
+                    int h2 = temp / 60;
+                    int min2 = temp % 60;
+                    if (h2 < 10)
+                        rt = "0" + h2.ToString();
+                    else rt = h2.ToString();
+                    if (min2 < 10)
+                        rt = rt + ":0" + min2.ToString();
+                    else
+                        rt = rt + ":" + min2.ToString();
+
+                    lbl_total_reported.Text = rt;
+
+                }
+                else
+                {
+
+                    lbl_total_reported.Text = "00:00";
+                    reported_time = temp;
+                    Session["reported_time"] = temp;
+                }
+
+                reported = dt3;
+                Session["reported_r"] = dt3;
+                gv_reported_time.DataSource = dt3;
+                gv_reported_time.DataBind();
+            }
+            catch (Exception ex)
+            {
+                lbl_err.Visible = true;
+                lbl_err.Text = ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+            if (int.Parse(Session["reported_time"].ToString()) >= 600)
+            {
+                block_report();
+                lbl_err.Text = "Reported above 10 hours in single day, please check your entries!";
+                lbl_err.Visible = true;
+            }
+            else
+            {
+                unblock_report();
+                lbl_err.Visible = false;
+            }
+            //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
+
         }
         private void block_report()
         {
@@ -369,7 +458,9 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 }
              
             }
-        fill_grid();
+            if(tb_end_date.Text.Length>5)
+                cb_use_end_date.Enabled = true; 
+            else cb_use_end_date.Enabled=false; 
         }
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -378,7 +469,52 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
 
          
         }
+        protected void cb_range_change(object sender, EventArgs e)
+        {
+            if (cb_use_end_date.Checked)
+            {
+                DataTable initial_date = (DataTable)Session["reported_r"];
+                double count_days = 0;
+                count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
+                if (count_days > 0)
+                {
+                    DateTime start_date = DateTime.Parse(tb_start_date.Text);
+                    for (int i = 1; i <= count_days; i++)
+                    {
+                        DateTime temp_date = start_date.AddDays(i);
+                        for (int j = 0; j < initial_date.Rows.Count; j++)
+                        {
+                            insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
+                        }
+                    }
+                }
+                fill_grid2();
+            }
+            else
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+                string query3 = " delete  from temporary_report where  user_id =" + Session["user"] + " and working_date<>cast('" + tb_start_date.Text + "' as date)";
+                SqlCommand cmd = new SqlCommand(query3, conn);      
+                try
+                {
+                                                           conn.Open();
+                    cmd.ExecuteNonQuery();
 
+                }
+                catch (Exception ex)
+                {
+                    lbl_err.Visible = true;
+                    lbl_err.Text = ex.ToString();
+                }
+                finally
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+                fill_grid();
+                Response.Redirect(Request.RawUrl);
+            }
+        }
         protected void bt_insert_temp_report(object sender, EventArgs e)
         {
             bt_report.Enabled = false;
@@ -423,37 +559,21 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                         bt_report.Enabled = true;
                     }
             else
-            {
-                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
-                    string query = "sp_add_temp_report";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("user_id", SqlDbType.Int).Value = Session["user"].ToString();
-                    cmd.Parameters.Add("working_date", SqlDbType.Date).Value = DateTime.Parse(tb_start_date.Text);
-                    cmd.Parameters.Add("project_id", SqlDbType.Int).Value = ddl_planning_id.SelectedItem.Value;
-                    cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = ddl_activity.SelectedItem.Value;
-                    cmd.Parameters.Add("region_id", SqlDbType.Int).Value = ddl_region.SelectedItem.Value;
-                    cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = ddl_sub_region.SelectedItem.Value;
-                    cmd.Parameters.Add("country_id", SqlDbType.Int).Value = ddl_country.SelectedItem.Value;
-                    cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
-                    cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = tb_desc.Text;
-                    try
+                {
+                    Session["start_date"] = tb_start_date.Text;
+                    Session["end_date"] = tb_end_date.Text;
+                    insert_temp_report(int.Parse(Session["user"].ToString()), DateTime.Parse(tb_start_date.Text), int.Parse(ddl_planning_id.SelectedItem.Value), int.Parse(ddl_activity.SelectedItem.Value), int.Parse(ddl_region.SelectedItem.Value), int.Parse(ddl_sub_region.SelectedItem.Value), int.Parse(ddl_country.SelectedItem.Value), duration, tb_desc.Text);
+                    if (tb_end_date.Text.Length > 7)
                     {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-                        conn.Dispose();
-                        Session["start_date"] = tb_start_date.Text;
-                        Session["end_date"] = tb_end_date.Text;
-                        Response.Redirect(Request.RawUrl);
+                        cb_use_end_date.Enabled = true;
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        conn.Close();
-                        conn.Dispose();
-                        lbl_err.Visible = true;
-                        lbl_err.Text = ex.ToString() + query;
+                        cb_use_end_date.Enabled = true;
                     }
+
+                    Response.Redirect(Request.RawUrl);
+
                 }
 
             }
@@ -462,6 +582,37 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 lbl_err.Visible = true;
                 lbl_err.Text = "Reported time contains syntax error!";
             }
+        }
+        protected void insert_temp_report(int user_id, DateTime start_date, int project_id, int activity_id, int region_id, int sub_region_id, int country_id, int duration, string description)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
+            string query = "sp_add_temp_report";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("user_id", SqlDbType.Int).Value = user_id;
+            cmd.Parameters.Add("working_date", SqlDbType.Date).Value = start_date;
+            cmd.Parameters.Add("project_id", SqlDbType.Int).Value = project_id;
+            cmd.Parameters.Add("activity_id", SqlDbType.Int).Value = activity_id;
+            cmd.Parameters.Add("region_id", SqlDbType.Int).Value = region_id;
+            cmd.Parameters.Add("sub_region_id", SqlDbType.Int).Value = sub_region_id;
+            cmd.Parameters.Add("country_id", SqlDbType.Int).Value = country_id;
+            cmd.Parameters.Add("duration", SqlDbType.Int).Value = duration;
+            cmd.Parameters.Add("description", SqlDbType.NVarChar, 400).Value = description;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                conn.Dispose();
+                 }
+            catch (Exception ex)
+            {
+                conn.Close();
+                conn.Dispose();
+                lbl_err.Visible = true;
+                lbl_err.Text = ex.ToString() + query;
+            }
+
         }
         protected void on_tb_date_update(object sender, EventArgs e)
         {

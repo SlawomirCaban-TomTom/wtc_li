@@ -204,6 +204,15 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.Label lbl_total_reported;
 
         /// <summary>
+        /// Kontrolka cb_use_end_date.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_use_end_date;
+
+        /// <summary>
         /// Kontrolka gv_reported_time.
         /// </summary>
         /// <remarks>

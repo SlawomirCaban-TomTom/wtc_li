@@ -244,6 +244,9 @@
                  <asp:Label ID="lbl_total_reported" runat="server"></asp:Label>
 
              </td>
+                 <td>
+                     <asp:CheckBox ID="cb_use_end_date" runat="server" AutoPostBack="True" Text="Propagate till selected End Date" />
+                 </td>
          </tr>
  </table>
     <hr />
