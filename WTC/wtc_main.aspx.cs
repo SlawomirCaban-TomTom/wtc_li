@@ -254,7 +254,7 @@ namespace TomTom_Info_Page.WTC
         protected void c_end_date_click(object sender, EventArgs e)
         {
             c_end_date.Visible = true;
-           // Response.Redirect(Request.RawUrl);
+           Response.Redirect(Request.RawUrl);
         }
         protected void c_start_date_click_SelectionChanged(object sender, EventArgs e)
         {
