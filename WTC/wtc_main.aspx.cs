@@ -509,7 +509,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     for (int i = 1; i <= count_days; i++)
                     {
                         DateTime temp_date = start_date.AddDays(i);
-                        for (int j = 0; j < initial_date.Rows.Count; j++)
+                        for (int j = 1; j <= initial_date.Rows.Count; j++)
                         {
                             insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
                         }
