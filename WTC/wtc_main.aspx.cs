@@ -243,17 +243,7 @@ namespace TomTom_Info_Page.WTC
                 conn.Close();
                 conn.Dispose();
             }
-            if (int.Parse(Session["reported_time"].ToString()) >= 600)
-            {
-                block_report();
-                lbl_err.Text = "Reported above 10 hours in single day, please check your entries!";
-                lbl_err.Visible = true;
-            }
-            else
-            {
-                unblock_report();
-                lbl_err.Visible = false;
-            }
+           
             //lbl_total_work_time.Text = DateTime.Parse(tb_start_date.Text).ToString();
 
         }
@@ -455,6 +445,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     fill_region();
                     fill_sub_region();
                     fill_country();
+                    fill_grid();
                 }
              
             }
