@@ -60,6 +60,15 @@ namespace TomTom_Info_Page.WTC
         protected global::System.Web.UI.WebControls.TextBox tb_start_date;
 
         /// <summary>
+        /// Kontrolka btn_s.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_s;
+
+        /// <summary>
         /// Kontrolka c_start_date.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace TomTom_Info_Page.WTC
         /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_end_date;
+
+        /// <summary>
+        /// Kontrolka btn_e.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// Aby wprowadzić zmiany, przenieś deklarację pola z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_e;
 
         /// <summary>
         /// Kontrolka c_end_date.

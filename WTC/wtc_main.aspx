@@ -114,7 +114,7 @@
                         <asp:Label runat="server" Text="Start Date "></asp:Label></td>
                     <td>
                         <asp:TextBox ID="tb_start_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update" ></asp:TextBox>
-                        <asp:Button runat="server" Text="..." OnClientClick="c_start_date_click"></asp:Button>
+                        <asp:Button runat="server" Text="..." OnClientClick="c_start_date_click" ID="btn_s"></asp:Button>
                        
                             <asp:Calendar ID="c_start_date" runat="server" Visible="false" OnSelectionChanged="c_start_date_click_SelectionChanged"></asp:Calendar>
                    
@@ -126,7 +126,7 @@
                         <asp:Label runat="server" Text="End Date "></asp:Label></td>
                     <td>
                         <asp:TextBox ID="tb_end_date" runat="server" MaxLength="15" Width="75px" Height="21px" OnTextChanged="on_tb_date_update"></asp:TextBox>
-                        <asp:Button runat="server" Text="..." OnClientClick="c_end_date_click"></asp:Button>
+                        <asp:Button runat="server" Text="..." OnClientClick="c_end_date_click" ID="btn_e"></asp:Button>
                   
                         <asp:Calendar ID="c_end_date" runat="server" Visible="false" OnSelectionChanged="c_end_date_click_SelectionChanged"></asp:Calendar>
            
