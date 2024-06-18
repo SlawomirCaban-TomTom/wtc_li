@@ -476,10 +476,19 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                 else
                     fill_grid();
             }
-                if(tb_end_date.Text.Length>5)
-                    cb_use_end_date.Enabled = true; 
-                else 
-                    cb_use_end_date.Enabled=false; 
+            if ((tb_start_date.Text.Length > 7) && (tb_end_date.Text.Length > 7))
+            {
+                if (check_end_date(DateTime.Parse(tb_start_date.Text), DateTime.Parse(tb_end_date.Text)))
+                {
+                    cb_use_end_date.Enabled = true;
+                }
+            }
+            else
+            {
+                cb_use_end_date.Enabled = false;
+                tb_end_date.Text = tb_start_date.Text;
+            }
+
         }
         protected void ddl_planning_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -652,14 +661,29 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     lbl_err.Text = "Please chose shorter period!";
                     lbl_err.Visible = true;
                 }
-                else
-                { 
+                else if (check_end_date(DateTime.Parse(tb_start_date.Text),DateTime.Parse(tb_end_date.Text)))
+                {
+                    cb_use_end_date.Enabled = true;
                     lbl_err.Visible = false;
+                }
+
+                else
+                {
+                    lbl_err.Visible = false;
+                    cb_use_end_date.Enabled = false;
+                    tb_end_date.Text=tb_start_date.Text;
                 }
                 fill_grid();
 
                 Response.Redirect(Request.RawUrl);
             }
+        }
+        protected bool check_end_date(DateTime start_date, DateTime end_date)
+        {
+            bool result = false;
+            if(end_date>start_date)
+                result=true;    
+            return result;
         }
         protected double check_diff(DateTime start_date, DateTime end_date)
         {
