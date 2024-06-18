@@ -501,20 +501,22 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             if (cb_use_end_date.Checked)
             {
                 DataTable initial_date = (DataTable)Session["reported"];
-                double count_days = 0;
-                count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
-                if (count_days > 0)
-                {
-                    DateTime start_date = DateTime.Parse(tb_start_date.Text);
-                    for (int i = 1; i <= count_days; i++)
-                    {
-                        DateTime temp_date = start_date.AddDays(i);
-                        for (int j = 0; j <= initial_date.Rows.Count; j++)
-                        {
-                            insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
-                        }
-                    }
-                }
+                /*  double count_days = 0;
+                  count_days = (DateTime.Parse(tb_end_date.Text) - DateTime.Parse(tb_start_date.Text)).TotalDays;                
+                  if (count_days > 0)
+                  {
+                      DateTime start_date = DateTime.Parse(tb_start_date.Text);
+                      for (int i = 1; i <= count_days; i++)
+                      {
+                          DateTime temp_date = start_date.AddDays(i);
+                          for (int j = 0; j <= initial_date.Rows.Count; j++)
+                          {
+                              insert_temp_report(int.Parse(Session["user"].ToString()), temp_date, int.Parse(initial_date.Rows[j][9].ToString()), int.Parse(initial_date.Rows[j][10].ToString()), int.Parse(initial_date.Rows[j][11].ToString()), int.Parse(initial_date.Rows[j][12].ToString()), int.Parse(initial_date.Rows[j][13].ToString()), int.Parse(initial_date.Rows[j][8].ToString()), initial_date.Rows[j][7].ToString()) ;
+                          }
+                      }
+                  }*/
+                GridView1.DataSource = initial_date;
+                GridView1.DataBind();
                 fill_grid2();
             }
             else
@@ -538,8 +540,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                     conn.Close();
                     conn.Dispose();
                 }
-                fill_grid();
-                Response.Redirect(Request.RawUrl);
+              Response.Redirect(Request.RawUrl);
             }
         }
         protected void bt_insert_temp_report(object sender, EventArgs e)

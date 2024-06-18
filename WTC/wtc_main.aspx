@@ -282,6 +282,11 @@
     <asp:Label ID="lbl_err" runat="server" Font-Bold="True" ForeColor="#FF3300"
         Visible="False"></asp:Label>
 
-
+         <asp:GridView runat="server" ID="GridView1" AutoGenerateColumns="true"
+    BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"
+    CellPadding="4" EnableModelValidation="True" ForeColor="Black"
+    Width="831px">  
+   
+</asp:GridView>
 
 </asp:Content>
