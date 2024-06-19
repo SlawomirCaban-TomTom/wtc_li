@@ -513,7 +513,7 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
                       for (int i = 1; i <= count_days; i++)
                       {
                           DateTime temp_date = start_date.AddDays(i);
-                          for (int j = 0; j <= initial_date.Rows.Count; j++)
+                          for (int j = 0; j < initial_date.Rows.Count; j++)
                           {
                                string[] time = initial_date.Rows[j][8].ToString().Split(':');
                               int duration = 60 * int.Parse(time[0]) + int.Parse(time[1]);
