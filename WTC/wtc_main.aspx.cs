@@ -730,7 +730,11 @@ SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["W
             
         protected void gvVochByDate_RowCommand(object sender, GridViewDeleteEventArgs e)
         {
-            DataTable temp = (DataTable)Session["reported"];
+            DataTable temp = new DataTable();
+            if (cb_use_end_date.Checked)
+                temp = (DataTable)Session["reported_r"];
+            else
+                temp = (DataTable)Session["reported"];
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["WTCConnStr"].ConnectionString);
             string query = "sp_del_temp_reported_row";
             SqlCommand cmd = new SqlCommand(query, conn);
